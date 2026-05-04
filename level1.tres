@@ -1,0 +1,40 @@
+[gd_resource type="Resource" script_class="LevelData" format=3 uid="uid://bflg8w5n0q18i"]
+
+[ext_resource type="Script" uid="uid://b2sjpfcewboge" path="res://Script/Resource/LevelItems.gd" id="1_6xjby"]
+[ext_resource type="Script" uid="uid://c0xxw7qnyq5kj" path="res://Script/Resource/LevelData.gd" id="2_jomf0"]
+[ext_resource type="Script" uid="uid://dfjyeafm4sf02" path="res://Script/Resource/ObstracleData.gd" id="2_q7g2w"]
+[ext_resource type="PackedScene" uid="uid://bou1d7cm1dpsr" path="res://Scenes/obstracle.tscn" id="3_1aqvl"]
+[ext_resource type="Script" uid="uid://du7akue1br5mm" path="res://Script/Resource/PlayerData.gd" id="3_bsp1q"]
+[ext_resource type="PackedScene" uid="uid://3j7di31jsdc2" path="res://Scenes/Rope.tscn" id="4_1aqvl"]
+[ext_resource type="PackedScene" uid="uid://b337d8huoe6nu" path="res://Scenes/plugIn.tscn" id="5_gqpmn"]
+
+[sub_resource type="Resource" id="Resource_q7g2w"]
+script = ExtResource("2_q7g2w")
+obstracle_type = 1
+Obstracle = ExtResource("3_1aqvl")
+Position = Vector2(-241.909, 174.545)
+metadata/_custom_type_script = "uid://dfjyeafm4sf02"
+
+[sub_resource type="Resource" id="Resource_g3g64"]
+script = ExtResource("3_bsp1q")
+player = ExtResource("4_1aqvl")
+position = Vector2(-197.925, -632.727)
+metadata/_custom_type_script = "uid://du7akue1br5mm"
+
+[sub_resource type="Resource" id="Resource_mta6g"]
+script = ExtResource("3_bsp1q")
+player = ExtResource("5_gqpmn")
+position = Vector2(241.909, 610.909)
+rotation = 90.0
+metadata/_custom_type_script = "uid://du7akue1br5mm"
+
+[sub_resource type="Resource" id="Resource_anass"]
+script = ExtResource("1_6xjby")
+PlayerDatas = Array[ExtResource("3_bsp1q")]([SubResource("Resource_g3g64"), SubResource("Resource_mta6g")])
+ObstacleDatas = Array[ExtResource("2_q7g2w")]([SubResource("Resource_q7g2w")])
+metadata/_custom_type_script = "uid://b2sjpfcewboge"
+
+[resource]
+script = ExtResource("2_jomf0")
+Levels = Array[ExtResource("1_6xjby")]([SubResource("Resource_anass")])
+metadata/_custom_type_script = "uid://c0xxw7qnyq5kj"

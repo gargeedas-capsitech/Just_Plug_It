@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bou1d7cm1dpsr"]
+
+[ext_resource type="Texture2D" uid="uid://cr2ot2sijg38d" path="res://Image/rotatorSpriteNew.png" id="1_wnwhl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_osoa6"]
+radius = 53.987816
+
+[sub_resource type="Animation" id="Animation_wnwhl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_osoa6"]
+resource_name = "rotate"
+length = 1.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1.1),
+"transitions": PackedFloat32Array(1, 7.7274833),
+"update": 0,
+"values": [0.0, 6.283185307179586]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_umk4y"]
+_data = {
+&"RESET": SubResource("Animation_wnwhl"),
+&"rotate": SubResource("Animation_osoa6")
+}
+
+[node name="Obstracle" type="StaticBody2D" unique_id=734204976]
+scale = Vector2(1.2907314, 1.3139169)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2069264904]
+scale = Vector2(0.339925, 0.34818116)
+texture = ExtResource("1_wnwhl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1780251165]
+scale = Vector2(1.1480435, 1.1615045)
+shape = SubResource("CircleShape2D_osoa6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=767838685]
+libraries/ = SubResource("AnimationLibrary_umk4y")
+autoplay = &"rotate"

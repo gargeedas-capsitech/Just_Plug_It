@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cnck5i0ol6v7h"]
+
+[ext_resource type="Texture2D" uid="uid://vrfxdoex05p5" path="res://Image/Capsule.png" id="1_hqkr2"]
+[ext_resource type="Script" uid="uid://bmi2hosieoawh" path="res://Script/Main/rope_segment.gd" id="1_ogt5i"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_47ehi"]
+radius = 8.0
+
+[node name="RopeSegment" type="RigidBody2D" unique_id=504790251]
+mass = 0.5
+linear_damp = 1.0
+script = ExtResource("1_ogt5i")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=250254367]
+z_index = 3
+scale = Vector2(0.5892718, -0.46691394)
+shape = SubResource("CapsuleShape2D_47ehi")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=134923620]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=202319006]
+z_index = 3
+scale = Vector2(0.5892718, -0.46691394)
+shape = SubResource("CapsuleShape2D_47ehi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=827782395]
+modulate = Color(0.93777376, 0.86332834, 1.1551381e-06, 1)
+scale = Vector2(0.038824026, -0.02876202)
+texture = ExtResource("1_hqkr2")

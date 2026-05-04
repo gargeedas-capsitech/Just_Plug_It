@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dunye7yrawrsa"]
+
+[ext_resource type="Texture2D" uid="uid://c6tjmk75ahcp5" path="res://Image/ObsCutter Outer_1.png" id="1_ot13w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_whlr7"]
+radius = 36.529682
+
+[node name="Circle" type="StaticBody2D" unique_id=673980600]
+z_index = 10
+scale = Vector2(1.8033828, 1.7497184)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2023541372]
+texture = ExtResource("1_ot13w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1767803362]
+shape = SubResource("CircleShape2D_whlr7")

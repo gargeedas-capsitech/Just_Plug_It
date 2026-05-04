@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://b4dcpo0priwa8"]
+
+[ext_resource type="Texture2D" uid="uid://vync2pydiiu7" path="res://Image/LevelBtnGrp_Box.png" id="1_0tt7s"]
+[ext_resource type="Script" uid="uid://bmeucnx4kp70u" path="res://Script/UI/level_panel.gd" id="1_csvrj"]
+[ext_resource type="Texture2D" uid="uid://yrqoa2wikr0p" path="res://Image/levelBox.png" id="2_iw4b3"]
+[ext_resource type="Script" uid="uid://bar8kxt4hx86l" path="res://Script/UI/control.gd" id="3_lxgt1"]
+[ext_resource type="Texture2D" uid="uid://dc4ij1go2nfoo" path="res://Image/SideBtn.png" id="4_b6oqs"]
+[ext_resource type="Texture2D" uid="uid://dpu3myxduslon" path="res://Image/sideBtnRight.png" id="5_j4407"]
+[ext_resource type="PackedScene" uid="uid://dqd3tss3sj4fc" path="res://Scenes/UI_Scene/level_butoon.tscn" id="5_x6u7i"]
+
+[node name="Level_panel" type="CanvasLayer" unique_id=696317870]
+script = ExtResource("1_csvrj")
+
+[node name="Panel" type="Panel" parent="." unique_id=1046336183]
+self_modulate = Color(1, 1, 1, 0.5372549)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LevelBox" type="CenterContainer" parent="Panel" unique_id=2066704278]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 240.00003
+offset_right = 2798.0
+offset_bottom = 1513.0
+scale = Vector2(0.45885023, 0.48291662)
+
+[node name="Image" type="TextureRect" parent="Panel/LevelBox" unique_id=394876721]
+layout_mode = 2
+texture = ExtResource("1_0tt7s")
+
+[node name="LevelText" type="TextureRect" parent="Panel/LevelBox/Image" unique_id=889495064]
+layout_mode = 0
+offset_left = 575.35114
+offset_top = -33.132072
+offset_right = 1775.3511
+offset_bottom = 190.86792
+texture = ExtResource("2_iw4b3")
+
+[node name="Label" type="Label" parent="Panel/LevelBox/Image/LevelText" unique_id=99123265]
+layout_mode = 0
+offset_left = 366.13257
+offset_top = -16.566008
+offset_right = 815.13257
+offset_bottom = 188.43399
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 150
+text = "Levels"
+
+[node name="Control" type="Control" parent="Panel/LevelBox" unique_id=951896018]
+layout_mode = 2
+script = ExtResource("3_lxgt1")
+level_panel_path = NodePath("../../..")
+level_button = ExtResource("5_x6u7i")
+
+[node name="GridContainer" type="GridContainer" parent="Panel/LevelBox/Control" unique_id=229035786]
+layout_mode = 0
+offset_left = -873.17206
+offset_top = -354.378
+offset_right = 878.82794
+offset_bottom = 618.622
+theme_override_constants/h_separation = 84
+theme_override_constants/v_separation = 31
+columns = 6
+
+[node name="leftSlide" type="TextureButton" parent="Panel/LevelBox/Control" unique_id=1851683267]
+layout_mode = 0
+offset_left = -1169.5651
+offset_top = -89.32186
+offset_right = -997.56506
+offset_bottom = 58.67814
+texture_normal = ExtResource("4_b6oqs")
+
+[node name="rightSlide" type="TextureButton" parent="Panel/LevelBox/Control" unique_id=358809861]
+layout_mode = 0
+offset_left = 957.4906
+offset_top = -89.32186
+offset_right = 1130.4907
+offset_bottom = 58.67814
+texture_normal = ExtResource("5_j4407")

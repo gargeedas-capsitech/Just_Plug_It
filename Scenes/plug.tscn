@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://brsybe1a4kl3v"]
+
+[ext_resource type="Texture2D" uid="uid://cjfh4mgdaqn6f" path="res://Image/plugIn.png" id="1_6q5da"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5w8tk"]
+radius = 88.16295
+
+[node name="Plug" type="RigidBody2D" unique_id=861326373]
+light_mask = 2
+gravity_scale = 0.5
+continuous_cd = 1
+linear_damp = 0.5
+angular_damp = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1914033265]
+scale = Vector2(0.18148214, 0.18225953)
+shape = SubResource("CircleShape2D_5w8tk")
+debug_color = Color(0.48877835, 0.4602118, 0.9330447, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2077557242]
+rotation = 1.5707964
+scale = Vector2(0.16580607, 0.15203148)
+texture = ExtResource("1_6q5da")

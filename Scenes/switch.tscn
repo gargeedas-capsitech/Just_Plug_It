@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ch683m766lwl8"]
+
+[ext_resource type="Texture2D" uid="uid://d0cggbp3jkmrr" path="res://Image/lamp1_Green.png" id="1_it01i"]
+[ext_resource type="Texture2D" uid="uid://dw50tfhp7rhwe" path="res://Image/Switch.png" id="2_8307x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8307x"]
+radius = 50.205242
+
+[node name="Switch" type="StaticBody2D" unique_id=1149383985]
+scale = Vector2(1.314, 1.314)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=928426803]
+texture = ExtResource("1_it01i")
+
+[node name="Shader" type="Sprite2D" parent="." unique_id=657733052]
+modulate = Color(0.49993074, 0.39873204, 2.8878452e-07, 1)
+texture = ExtResource("1_it01i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1833528234]
+position = Vector2(6.08828, 0)
+shape = SubResource("CircleShape2D_8307x")
+
+[node name="Switch" type="Sprite2D" parent="." unique_id=1561234561]
+position = Vector2(54.79452, 18.264841)
+rotation = -0.10235296
+texture = ExtResource("2_8307x")
