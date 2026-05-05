@@ -1,16 +1,16 @@
 extends Node2D
-
+class_name Main
 @export var game_over_scene: PackedScene
 @export var game_win_scene: PackedScene
 @export var obstracle_scene: PackedScene
 
-var _rope: Node
+var _rope: Rope
 var board: StaticBody2D
 
 var is_dragging_add_button: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_rope = get_node("Background/Rope")
+	#_rope = get_node("Background/Rope")
 	board = get_node("Background")
 	
 func game_play_on():
@@ -84,7 +84,7 @@ func rotate_board():
 func rotate_board_right():
 	board.rotation_degrees -= 1.0
 		
-func  add_segment():
+func add_segment():
 	_rope.add_segment()
 func  remove_segment():
 	_rope.remove_last_segment()

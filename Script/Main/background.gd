@@ -4,8 +4,9 @@ class_name LevelManager
 @export var leveldata:LevelData
 @export var spawn_parent: Node2D
 @export var current_level: int = 0
-@export var Rope: Rope
 
+@export var main:Main
+#@export var Rope: Rope
 
 func _ready():
 	load_level_data()
@@ -53,15 +54,17 @@ func spawn_players(level):
 
 		var obj = player.player.instantiate()
 		spawn_parent.add_child(obj)
-
+		
 		if obj is Node2D:
 			obj.position = player.position
 			obj.rotation = player.rotation
+			print(obj, " type = ", typeof(obj))
 
 		if obj is Rope:
+			main._rope=obj
 			obj.set_switch_count(level.SwitchCount)
 		else:
-			push_error("RopeController not found!")
+			print("RopeController not found!")
 
 
 func clear_level():
