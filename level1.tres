@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://du7akue1br5mm" path="res://Script/Resource/PlayerData.gd" id="3_bsp1q"]
 [ext_resource type="PackedScene" uid="uid://3j7di31jsdc2" path="res://Scenes/Rope.tscn" id="4_1aqvl"]
 [ext_resource type="PackedScene" uid="uid://b337d8huoe6nu" path="res://Scenes/plugIn.tscn" id="5_gqpmn"]
+[ext_resource type="PackedScene" uid="uid://ch683m766lwl8" path="res://Scenes/switch.tscn" id="7_gqpmn"]
+[ext_resource type="PackedScene" uid="uid://dg7s8sop7jkgp" path="res://Scenes/static_cutter.tscn" id="8_g3g64"]
 
 [sub_resource type="Resource" id="Resource_q7g2w"]
 script = ExtResource("2_q7g2w")
@@ -34,7 +36,41 @@ PlayerDatas = Array[ExtResource("3_bsp1q")]([SubResource("Resource_g3g64"), SubR
 ObstacleDatas = Array[ExtResource("2_q7g2w")]([SubResource("Resource_q7g2w")])
 metadata/_custom_type_script = "uid://b2sjpfcewboge"
 
+[sub_resource type="Resource" id="Resource_sn2y4"]
+script = ExtResource("2_q7g2w")
+obstracle_type = 2
+Obstracle = ExtResource("7_gqpmn")
+Position = Vector2(189.678, -133.636)
+metadata/_custom_type_script = "uid://dfjyeafm4sf02"
+
+[sub_resource type="Resource" id="Resource_53k1n"]
+script = ExtResource("2_q7g2w")
+obstracle_type = 1
+Obstracle = ExtResource("8_g3g64")
+Position = Vector2(-288.641, 264.545)
+metadata/_custom_type_script = "uid://dfjyeafm4sf02"
+
+[sub_resource type="Resource" id="Resource_bsp1q"]
+script = ExtResource("3_bsp1q")
+player = ExtResource("4_1aqvl")
+position = Vector2(-197.925, -632.727)
+metadata/_custom_type_script = "uid://du7akue1br5mm"
+
+[sub_resource type="Resource" id="Resource_1aqvl"]
+script = ExtResource("3_bsp1q")
+player_type = 1
+player = ExtResource("5_gqpmn")
+position = Vector2(241.909, 610.909)
+metadata/_custom_type_script = "uid://du7akue1br5mm"
+
+[sub_resource type="Resource" id="Resource_gqpmn"]
+script = ExtResource("1_6xjby")
+SwitchCount = 1
+PlayerDatas = Array[ExtResource("3_bsp1q")]([SubResource("Resource_bsp1q"), SubResource("Resource_1aqvl")])
+ObstacleDatas = Array[ExtResource("2_q7g2w")]([SubResource("Resource_sn2y4"), SubResource("Resource_53k1n")])
+metadata/_custom_type_script = "uid://b2sjpfcewboge"
+
 [resource]
 script = ExtResource("2_jomf0")
-Levels = Array[ExtResource("1_6xjby")]([SubResource("Resource_anass")])
+Levels = Array[ExtResource("1_6xjby")]([SubResource("Resource_anass"), SubResource("Resource_gqpmn")])
 metadata/_custom_type_script = "uid://c0xxw7qnyq5kj"

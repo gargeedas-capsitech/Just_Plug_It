@@ -17,6 +17,7 @@ func game_play_on():
 	get_node("StartPanel").visible = false
 	get_node("GamePlayUI").visible = true
 	get_node("Background").visible = true
+	get_node("Level_panel").visible =false
 
 
 func on_level_panel_on():

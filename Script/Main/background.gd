@@ -14,7 +14,9 @@ func load_level_data():
 	if leveldata == null:
 		push_error("leveldata is not assigned in the Inspector!")
 		return
-	load_level(0)
+	if PlayerPrefs.get_int("current_Index")!= null:
+		print("save_level",PlayerPrefs.get_int("current_Index"))
+	 #load_level(1)
 
 
 func load_level(index: int):

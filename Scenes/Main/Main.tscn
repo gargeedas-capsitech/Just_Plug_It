@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dgergra0yntxc" path="res://Scenes/UI_Scene/game_play_ui.tscn" id="7_qdkat"]
 [ext_resource type="PackedScene" uid="uid://b4dcpo0priwa8" path="res://Scenes/UI_Scene/level_panel.tscn" id="8_udh0u"]
 [ext_resource type="PackedScene" uid="uid://dggj1o5fcpekt" path="res://Scenes/Main/background.tscn" id="9_7npjy"]
+[ext_resource type="Script" uid="uid://clm6b7krhur70" path="res://HTTPRequest/Auth.gd" id="11_dvlhv"]
 
 [node name="Main" type="Node2D" unique_id=1623683046]
 script = ExtResource("1_w20t6")
@@ -22,6 +23,13 @@ position = Vector2(1113.1478, 479.99994)
 scale = Vector2(0.36583203, 0.6461767)
 texture = ExtResource("5_epx8f")
 
+[node name="Background" parent="." unique_id=646736835 instance=ExtResource("9_7npjy")]
+visible = false
+position = Vector2(1001.1478, 471.99994)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=613858514]
+position = Vector2(992, 480)
+
 [node name="StartPanel" parent="." unique_id=80368554 instance=ExtResource("6_hcu3t")]
 script = ExtResource("7_4vhfm")
 
@@ -31,9 +39,5 @@ visible = false
 [node name="Level_panel" parent="." unique_id=696317870 instance=ExtResource("8_udh0u")]
 visible = false
 
-[node name="Background" parent="." unique_id=646736835 instance=ExtResource("9_7npjy")]
-visible = false
-position = Vector2(1001.1478, 471.99994)
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=613858514]
-position = Vector2(992, 480)
+[node name="Node" type="Node" parent="." unique_id=682682094]
+script = ExtResource("11_dvlhv")

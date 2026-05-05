@@ -29,6 +29,7 @@ func _ready():
 	level_panel = get_node(level_panel_path)
 	if level_panel == null:
 		print("cannot find levelpanel")
+	
 
 	generate_item()
 	show_page()
@@ -65,7 +66,11 @@ func generate_item():
 		var btn : TextureButton = level_button.instantiate()
 		btn.get_node("Label").text = str(i)
 		all_buttons.append(btn)
-
+		
+func _on_level_selected(level_index: int):
+	print("Selected Level: ", level_index)
+	if level_panel:
+		level_panel.load_level(level_index)
 
 func show_page():
 	# Clear old buttons
@@ -78,6 +83,7 @@ func show_page():
 	for i in range(start, end):
 		var btn : TextureButton = level_button.instantiate()
 		btn.get_node("Label").text = str(i + 1)
+		btn.pressed.connect(func(): _on_level_selected(i))
 		grid.add_child(btn)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
