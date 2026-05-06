@@ -5,7 +5,7 @@ var level_manager: LevelManager
 
 @onready var main=get_parent()
 func _ready():
-	level_manager=get_tree().root.get_node("Main/Background") as LevelManager
+	level_manager=get_tree().root.get_node("Main/LevelManager") as LevelManager
 	if level_manager == null:
 		print("cannot find the node")
 	else:

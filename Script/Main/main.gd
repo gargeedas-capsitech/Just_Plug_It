@@ -5,18 +5,18 @@ class_name Main
 @export var obstracle_scene: PackedScene
 
 var _rope: Rope
-var board: StaticBody2D
+var board: Node2D
 
 var is_dragging_add_button: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	#_rope = get_node("Background/Rope")
-	board = get_node("Background")
+	_rope = get_node("LevelManager/Board/PlugParent/Rope")
+	board = $LevelManager/Board
 	
 func game_play_on():
 	get_node("StartPanel").visible = false
 	get_node("GamePlayUI").visible = true
-	get_node("Background").visible = true
+	get_node("LevelManager").visible = true
 	get_node("Level_panel").visible =false
 
 

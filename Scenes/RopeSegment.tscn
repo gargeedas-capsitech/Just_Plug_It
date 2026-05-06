@@ -5,6 +5,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_47ehi"]
 radius = 8.0
+height = 29.984112
 
 [node name="RopeSegment" type="RigidBody2D" unique_id=504790251]
 mass = 0.5

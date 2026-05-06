@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cixvrmlyj5jlc"]
 
-[ext_resource type="PackedScene" uid="uid://dggj1o5fcpekt" path="res://Scenes/Main/background.tscn" id="1_0hol4"]
+[ext_resource type="PackedScene" uid="uid://dggj1o5fcpekt" path="res://Scenes/Main/LevelManager.tscn" id="1_0hol4"]
 [ext_resource type="PackedScene" uid="uid://bou1d7cm1dpsr" path="res://Scenes/obstracle.tscn" id="2_q6r6c"]
 [ext_resource type="PackedScene" uid="uid://b337d8huoe6nu" path="res://Scenes/plugIn.tscn" id="3_kdubu"]
 [ext_resource type="PackedScene" uid="uid://3j7di31jsdc2" path="res://Scenes/Rope.tscn" id="4_d21ai"]
@@ -8,7 +8,6 @@
 [node name="Node2D" type="Node2D" unique_id=976878349]
 
 [node name="Background" parent="." unique_id=646736835 instance=ExtResource("1_0hol4")]
-visible = true
 
 [node name="Obstracle2" parent="Background" unique_id=734204976 instance=ExtResource("2_q6r6c")]
 position = Vector2(-241.90858, 174.54543)

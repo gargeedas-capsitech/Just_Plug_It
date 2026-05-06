@@ -21,7 +21,7 @@ var switch_counter: Dictionary = {}
 
 var count: int = 0
 
-
+@onready var board=get_node("../Board")
 func _ready():
 	var anchor = StaticBody2D.new()
 	add_child(anchor)
