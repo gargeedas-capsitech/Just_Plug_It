@@ -9,9 +9,11 @@ class_name LevelManager
 @export var main:Main
 #@export var Rope: Rope
 
+
 func _ready():
 	load_level_data()
 	#spawn_parent_plug = get_node("../PlugParent")
+
 
 func load_level_data():
 	if leveldata == null:
@@ -35,7 +37,6 @@ func load_level(index: int):
 	spawn_players(level)
 
 	print("Level ", index, " Loaded")
-
 
 
 func spawn_obstacles(level):

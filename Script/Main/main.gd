@@ -10,7 +10,7 @@ var board: Node2D
 var is_dragging_add_button: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_rope = get_node("LevelManager/Board/PlugParent/Rope")
+	_rope = get_node("LevelManager/PlugParent/Rope")
 	board = $LevelManager/Board
 	
 func game_play_on():
@@ -31,6 +31,8 @@ func game_over():
 	await get_tree().create_timer(1.0).timeout
 	var scene= game_over_scene.instantiate()
 	add_child(scene)
+
+
 func game_win():
 	print("You Wonnn")
 	await get_tree().create_timer(1.0).timeout
@@ -38,6 +40,7 @@ func game_win():
 	var scene = game_win_scene.instantiate()
 	add_child(scene)
 	
+
 func on_add_segment_input(event):
 	if event is InputEventMouseButton:
 		var mouse = event
@@ -48,6 +51,8 @@ func on_add_segment_input(event):
 				if is_dragging_add_button:
 					_rope.add_segment()
 				is_dragging_add_button = false
+
+
 func add_obstacle_to_board():
 	var min_distance := 40.0
 	var placed_positions: Array = []
@@ -77,14 +82,18 @@ func add_obstacle_to_board():
 			obstacle.position = random_pos
 			placed_positions.append(random_pos)
 
+
 func rotate_board():
 	board.rotation_degrees += 1.0
 
 
 func rotate_board_right():
 	board.rotation_degrees -= 1.0
-		
+
+
 func add_segment():
 	_rope.add_segment()
+
+
 func  remove_segment():
 	_rope.remove_last_segment()

@@ -25,6 +25,7 @@ metadata/_custom_type_script = "uid://du7akue1br5mm"
 
 [sub_resource type="Resource" id="Resource_mta6g"]
 script = ExtResource("3_bsp1q")
+player_type = 1
 player = ExtResource("5_gqpmn")
 position = Vector2(241.909, 610.909)
 rotation = 90.0

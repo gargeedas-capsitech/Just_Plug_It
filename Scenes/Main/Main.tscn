@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://dgergra0yntxc" path="res://Scenes/UI_Scene/game_play_ui.tscn" id="7_qdkat"]
 [ext_resource type="PackedScene" uid="uid://b4dcpo0priwa8" path="res://Scenes/UI_Scene/level_panel.tscn" id="8_udh0u"]
 [ext_resource type="PackedScene" uid="uid://dggj1o5fcpekt" path="res://Scenes/Main/LevelManager.tscn" id="9_7npjy"]
-[ext_resource type="Script" uid="uid://clm6b7krhur70" path="res://HTTPRequest/Auth.gd" id="11_dvlhv"]
 
 [node name="Main" type="Node2D" unique_id=1623683046]
 script = ExtResource("1_w20t6")
@@ -41,6 +40,5 @@ visible = false
 visible = false
 
 [node name="Node" type="Node" parent="." unique_id=5312806]
-script = ExtResource("11_dvlhv")
 
 [node name="HTTPRequest" type="HTTPRequest" parent="Node" unique_id=2107958584]
