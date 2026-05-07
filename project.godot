@@ -36,6 +36,7 @@ enabled=PackedStringArray("res://addons/PlayerPrefs/plugin.cfg")
 [physics]
 
 3d/physics_engine="Jolt Physics"
+2d/default_gravity=0.0
 2d/default_linear_damp=1.5
 2d/default_angular_damp=2.0
 2d/solver/solver_iterations=25
@@ -45,3 +46,4 @@ enabled=PackedStringArray("res://addons/PlayerPrefs/plugin.cfg")
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
