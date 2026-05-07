@@ -18,6 +18,7 @@ var _joint: PinJoint2D
 var _segments: Array = []
 var _joints: Dictionary = {}              
 var switch_counter: Dictionary = {}      
+var last_gravity_direction = Vector2.DOWN
 
 var count: int = 0
 
@@ -181,9 +182,16 @@ func attach_plug(last_seg: RigidBody2D):
 	_joint.node_b = _plug.get_path()
 
 	_joint.disable_collision = true
-	_joint.softness = 0.0
-	_joint.bias = 0.9
+	_joint.softness = 0.5
+	_joint.bias = 0.0
 
+func update_gravity(gravity_direction):
+	#if gravity_direction.distance_to(last_gravity_direction) > 0.1:
+		for child in get_children():
+			if child is RigidBody2D:
+				child.sleeping = false
+				child.apply_central_force(gravity_direction * 500)
+	#last_gravity_direction = gravity_direction
 
 func _process(delta):
 	if not _is_already_cut and _segments.size() > 0:

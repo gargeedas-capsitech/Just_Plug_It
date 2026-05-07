@@ -3,16 +3,23 @@ class_name Main
 @export var game_over_scene: PackedScene
 @export var game_win_scene: PackedScene
 @export var obstracle_scene: PackedScene
+var camera: Camera2D
+@export var gravity_strength := 980.0
 
 var _rope: Rope
 var board: StaticBody2D
+@export var isRotateleftPressed:bool=false
+@export var isRotaterightPressed:bool=false
+
 
 var is_dragging_add_button: bool = false
+@onready var gravity_area = $GravityArea
+#@onready var camera = 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#_rope = get_node("Background/Rope")
 	board = get_node("Background")
-	
+	camera=get_node("Camera2D")
 func game_play_on():
 	get_node("StartPanel").visible = false
 	get_node("GamePlayUI").visible = true
@@ -77,14 +84,24 @@ func add_obstacle_to_board():
 			obstacle.position = random_pos
 			placed_positions.append(random_pos)
 
-func rotate_board():
-	board.rotation_degrees += 1.0
+func rotate_board(delta):
+	camera.rotation += 0.5 * delta
 
 
-func rotate_board_right():
-	board.rotation_degrees -= 1.0
+func rotate_board_right(delta):
+	camera.rotation -= 0.5 * delta
 		
 func add_segment():
 	_rope.add_segment()
 func  remove_segment():
 	_rope.remove_last_segment()
+
+func _process(delta: float):
+	var gravity_direction = Vector2.DOWN.rotated(camera.rotation)
+	if _rope != null:
+		_rope.update_gravity(gravity_direction)
+
+	
+	
+
+	
