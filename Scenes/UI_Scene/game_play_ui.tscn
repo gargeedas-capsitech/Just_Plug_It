@@ -3,11 +3,18 @@
 [ext_resource type="Texture2D" uid="uid://dmkpkjqomqsm5" path="res://Image/downArrow.png" id="1_cj5jh"]
 [ext_resource type="Script" uid="uid://dtog7fukmyfs0" path="res://Script/UI/game_play_ui.gd" id="1_ns6np"]
 [ext_resource type="Texture2D" uid="uid://dkg0xm231sdp8" path="res://Image/RightBtn.png" id="2_apwpe"]
+[ext_resource type="Texture2D" uid="uid://d4hofq0p2qp1m" path="res://Image/gameplyBg 1.png" id="2_i3kj5"]
 [ext_resource type="Texture2D" uid="uid://ctpphejpi7ujt" path="res://Image/leftArrow.png" id="3_vh18q"]
 [ext_resource type="Texture2D" uid="uid://s4p36f7sc875" path="res://Image/upArrow.png" id="4_vh18q"]
 
 [node name="GamePlayUI" type="CanvasLayer" unique_id=506609906]
 script = ExtResource("1_ns6np")
+
+[node name="BackImage" type="Sprite2D" parent="." unique_id=819109282]
+visible = false
+position = Vector2(1113.1478, 479.99994)
+scale = Vector2(0.36583203, 0.6461767)
+texture = ExtResource("2_i3kj5")
 
 [node name="Panel" type="Panel" parent="." unique_id=74701491]
 modulate = Color(1, 1, 1, 0)
