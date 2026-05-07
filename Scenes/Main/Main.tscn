@@ -38,5 +38,3 @@ visible = false
 
 [node name="Level_panel" parent="." unique_id=696317870 instance=ExtResource("8_udh0u")]
 visible = false
-
-[node name="Node" type="Node" parent="." unique_id=682682094]
