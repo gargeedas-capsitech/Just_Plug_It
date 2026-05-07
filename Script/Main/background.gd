@@ -74,3 +74,4 @@ func clear_level():
 
 func _process(delta):
 	pass
+"res://Scenes/Main/Main.tscn"

@@ -8,7 +8,7 @@ var isPressed =false
 var isRemovePressed =false
 var isRotateleftPressed  = false
 var isRotaterightPressed = false
-
+var delay = 0;
 # Called when the node enters the scene tree for the first time.
 @onready var main = get_parent()
 func _ready():
@@ -36,10 +36,12 @@ func _ready():
 			_upbutton.button_up.connect(func():isRemovePressed=false)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	delay -= delta
 	if main == null:
 		return
-	if isPressed and main.has_method("add_segment"):
+	if isPressed and main.has_method("add_segment") and delay<=0:
 		main.add_segment()
+		delay = float(0.1);
 	if isRemovePressed and main.has_method("remove_segment"):
 		main.remove_segment()
 	if isRotateleftPressed and main.has_method("rotate_board"):
