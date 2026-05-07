@@ -42,8 +42,9 @@ func _process(delta):
 	if isPressed and main.has_method("add_segment") and delay<=0:
 		main.add_segment()
 		delay = float(0.1);
-	if isRemovePressed and main.has_method("remove_segment"):
+	if isRemovePressed and main.has_method("remove_segment") and delay<=0:
 		main.remove_segment()
+		delay = float(0.1);
 	if isRotateleftPressed and main.has_method("rotate_board"):
 		main.rotate_board()
 	if isRotaterightPressed and main.has_method("rotate_board_right"):
