@@ -24,34 +24,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureButton" type="TextureButton" parent="." unique_id=1920702193]
-offset_left = 1672.0
-offset_top = 784.00006
-offset_right = 1896.0
-offset_bottom = 1005.00006
+[node name="TouchScreenButton" type="TouchScreenButton" parent="." unique_id=1074520126]
+position = Vector2(1675, 809)
 scale = Vector2(0.5731426, 0.5340921)
 texture_normal = ExtResource("1_cj5jh")
 
-[node name="TextureButton2" type="TextureButton" parent="." unique_id=1014051507]
-offset_left = 336.0
-offset_top = 784.0
-offset_right = 544.0
-offset_bottom = 991.0
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="." unique_id=183103768]
+position = Vector2(357, 778)
 scale = Vector2(0.57167596, 0.52698094)
 texture_normal = ExtResource("2_apwpe")
 
-[node name="TextureButton3" type="TextureButton" parent="." unique_id=30368195]
-offset_left = 152.0
-offset_top = 784.0
-offset_right = 362.0
-offset_bottom = 995.0
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="." unique_id=322779434]
+position = Vector2(136, 778)
 scale = Vector2(0.57167596, 0.52698094)
 texture_normal = ExtResource("3_vh18q")
 
-[node name="TextureButton4" type="TextureButton" parent="." unique_id=1251491384]
-offset_left = 1671.9999
-offset_top = 608.0
-offset_right = 1895.9999
-offset_bottom = 829.0
+[node name="TouchScreenButton4" type="TouchScreenButton" parent="." unique_id=1537603638]
+position = Vector2(1675, 640)
 scale = Vector2(0.57167596, 0.52698094)
 texture_normal = ExtResource("4_vh18q")
