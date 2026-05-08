@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dgergra0yntxc" path="res://Scenes/UI_Scene/game_play_ui.tscn" id="7_qdkat"]
 [ext_resource type="PackedScene" uid="uid://b4dcpo0priwa8" path="res://Scenes/UI_Scene/level_panel.tscn" id="8_udh0u"]
 [ext_resource type="PackedScene" uid="uid://dggj1o5fcpekt" path="res://Scenes/Main/background.tscn" id="9_7npjy"]
+[ext_resource type="Texture2D" uid="uid://d4hofq0p2qp1m" path="res://Image/gameplyBg 1.png" id="10_4vhfm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7npjy"]
 
@@ -18,8 +19,22 @@ game_over_scene = ExtResource("2_7npjy")
 game_win_scene = ExtResource("3_4vhfm")
 obstracle_scene = ExtResource("4_dvlhv")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=522945964]
+layer = -10
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=778742274]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_4vhfm")
+expand_mode = 3
+stretch_mode = 4
+
 [node name="Background" parent="." unique_id=646736835 node_paths=PackedStringArray("main") instance=ExtResource("9_7npjy")]
 visible = false
+z_index = 30
 position = Vector2(1001.1478, 471.99994)
 main = NodePath("..")
 
