@@ -32,6 +32,11 @@ func on_level_panel_on():
 	get_node("StartPanel").visible = false
 	get_node("GamePlayUI").visible = false
 	
+func on_Home_Panel_on():
+	get_node("GamePlayUI").visible = false
+	get_node("Level_panel").visible=false
+	board.visible=false
+
 	
 func game_over():
 	print("gameover")
@@ -85,11 +90,11 @@ func add_obstacle_to_board():
 			placed_positions.append(random_pos)
 
 func rotate_board(delta):
-	camera.rotation += 0.5 * delta
+	camera.rotation -= 0.5 * delta
 
 
 func rotate_board_right(delta):
-	camera.rotation -= 0.5 * delta
+	camera.rotation += 0.5 * delta
 		
 func add_segment():
 	_rope.add_segment()

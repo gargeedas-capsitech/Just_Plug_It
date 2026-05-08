@@ -22,8 +22,12 @@ func _ready():
 	if main != null:
 		if main.has_method("rotate_board"):
 			#_rightbutton.pressed.connect(main.rotate_board)
-			_rightbutton.pressed.connect(func(): isRotateleftPressed = true)
-			_rightbutton.released.connect(func(): isRotateleftPressed = false)
+			_rightbutton.pressed.connect(func():
+				if _rightbutton == null:
+					print("hello")
+				isRotateleftPressed = true
+				)
+		_rightbutton.released.connect(func(): isRotateleftPressed = false)
 		if main.has_method("rotate_board_right"):
 			#_leftbutton.pressed.connect(main.rotate_board_right)
 			_leftbutton.pressed.connect(func(): isRotaterightPressed = true)
