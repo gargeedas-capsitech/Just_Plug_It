@@ -33,16 +33,16 @@ visible = false
 [node name="Level_panel" parent="." unique_id=696317870 instance=ExtResource("8_udh0u")]
 visible = false
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=613858514]
+position = Vector2(992, 480)
+ignore_rotation = false
+
 [node name="GravityArea" type="Area2D" parent="." unique_id=343202981]
 priority = 1
 gravity_space_override = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GravityArea" unique_id=209279031]
 shape = SubResource("RectangleShape2D_7npjy")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=613858514]
-position = Vector2(992, 480)
-ignore_rotation = false
 
 [node name="BackGroundCanvas" type="CanvasLayer" parent="." unique_id=234536190]
 layer = -10
