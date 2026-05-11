@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://y3tnp718q4d6"]
+
+[ext_resource type="Texture2D" uid="uid://dcdjyrvneankf" path="res://3_Sprite/level_bg.png" id="1_8ihn8"]
+[ext_resource type="Script" uid="uid://culhaqephvusd" path="res://1_Script/Ui/PausePopUpController.gd" id="1_m8kw3"]
+[ext_resource type="Texture2D" uid="uid://dq3ofd1arcxnh" path="res://3_Sprite/popUp.png" id="2_finh1"]
+[ext_resource type="Texture2D" uid="uid://cyjukuabo2esw" path="res://3_Sprite/resume_btn.png" id="4_hwbyu"]
+[ext_resource type="Texture2D" uid="uid://dfrc2uvywfbn" path="res://3_Sprite/cross_btn.png" id="4_m8kw3"]
+[ext_resource type="Texture2D" uid="uid://6o82fop6qa4u" path="res://3_Sprite/level_btn.png" id="5_m8kw3"]
+[ext_resource type="Texture2D" uid="uid://csfu678t01xbx" path="res://3_Sprite/retry_btn.png" id="6_2fbrt"]
+
+[node name="PausePopup" type="Control" unique_id=17289812 node_paths=PackedStringArray("resume_button", "quit_button", "home_button", "restart_button", "close_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m8kw3")
+resume_button = NodePath("Popup/ResumeButton")
+quit_button = NodePath("Popup/CloseButton")
+home_button = NodePath("Popup/HomeButton")
+restart_button = NodePath("Popup/RestartButton")
+close_button = NodePath("CloseButton")
+
+[node name="CloseButton" type="TextureButton" parent="." unique_id=1307522071]
+modulate = Color(0, 0, 0, 0.39215687)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_8ihn8")
+stretch_mode = 0
+
+[node name="Popup" type="TextureRect" parent="." unique_id=1106778610]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -208.0
+offset_right = 152.0
+offset_bottom = 208.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_finh1")
+
+[node name="CloseButton" type="TextureButton" parent="Popup" unique_id=1513106790]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -57.0
+offset_bottom = 58.0
+grow_horizontal = 0
+texture_normal = ExtResource("4_m8kw3")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="ResumeButton" type="TextureButton" parent="Popup" unique_id=62804515]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.0
+offset_top = -68.0
+offset_right = 111.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_hwbyu")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="HomeButton" type="TextureButton" parent="Popup" unique_id=694365779]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 28.0
+offset_top = 12.0
+offset_right = 84.99997
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_m8kw3")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="RestartButton" type="TextureButton" parent="Popup" unique_id=899354746]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.0
+offset_top = 12.0
+offset_right = -25.00003
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("6_2fbrt")
+ignore_texture_size = true
+stretch_mode = 4

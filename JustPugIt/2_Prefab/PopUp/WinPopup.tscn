@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://dmmt6qtm583d"]
+
+[ext_resource type="Texture2D" uid="uid://dcdjyrvneankf" path="res://3_Sprite/level_bg.png" id="1_bosyj"]
+[ext_resource type="Script" uid="uid://dwojqauxxtpaj" path="res://1_Script/Ui/WinPopupController.gd" id="1_i1fbr"]
+[ext_resource type="Texture2D" uid="uid://dq3ofd1arcxnh" path="res://3_Sprite/popUp.png" id="2_i1fbr"]
+[ext_resource type="Texture2D" uid="uid://dfrc2uvywfbn" path="res://3_Sprite/cross_btn.png" id="3_06e13"]
+[ext_resource type="Texture2D" uid="uid://d3nycv6c6tsx7" path="res://3_Sprite/next_btn.png" id="4_bosyj"]
+[ext_resource type="Texture2D" uid="uid://6o82fop6qa4u" path="res://3_Sprite/level_btn.png" id="5_q42qp"]
+[ext_resource type="Texture2D" uid="uid://csfu678t01xbx" path="res://3_Sprite/retry_btn.png" id="6_cm1np"]
+
+[node name="WinPopup" type="Control" unique_id=17289812 node_paths=PackedStringArray("next_button", "home_button", "restart_button", "close_button", "quit_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i1fbr")
+next_button = NodePath("Popup/NextButton")
+home_button = NodePath("Popup/HomeButton")
+restart_button = NodePath("Popup/RestartButton")
+close_button = NodePath("Popup/CloseButton")
+quit_button = NodePath("CloseButton")
+
+[node name="CloseButton" type="TextureButton" parent="." unique_id=1307522071]
+modulate = Color(0, 0, 0, 0.39215687)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_bosyj")
+stretch_mode = 0
+
+[node name="Popup" type="TextureRect" parent="." unique_id=1106778610]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -208.0
+offset_right = 152.0
+offset_bottom = 208.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_i1fbr")
+
+[node name="CloseButton" type="TextureButton" parent="Popup" unique_id=1513106790]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -57.0
+offset_bottom = 58.0
+grow_horizontal = 0
+texture_normal = ExtResource("3_06e13")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="NextButton" type="TextureButton" parent="Popup" unique_id=62804515]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -111.0
+offset_top = -28.0
+offset_right = 111.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_bosyj")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="HomeButton" type="TextureButton" parent="Popup" unique_id=694365779]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 28.0
+offset_top = 52.0
+offset_right = 84.99997
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_q42qp")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="RestartButton" type="TextureButton" parent="Popup" unique_id=899354746]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.0
+offset_top = 52.0
+offset_right = -25.00003
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("6_cm1np")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Popup" unique_id=1981703333]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -99.5
+offset_top = 80.0
+offset_right = 99.5
+offset_bottom = 135.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 40
+text = "YOU WIN!!"

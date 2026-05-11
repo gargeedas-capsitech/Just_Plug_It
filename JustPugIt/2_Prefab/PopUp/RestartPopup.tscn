@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://cme8s5qtwib1k"]
+
+[ext_resource type="Texture2D" uid="uid://dcdjyrvneankf" path="res://3_Sprite/level_bg.png" id="1_nukjp"]
+[ext_resource type="Script" uid="uid://bh6b65desu5n5" path="res://1_Script/Ui/RestartPopupController.gd" id="1_o0inr"]
+[ext_resource type="Texture2D" uid="uid://dq3ofd1arcxnh" path="res://3_Sprite/popUp.png" id="2_o0inr"]
+[ext_resource type="Texture2D" uid="uid://dfrc2uvywfbn" path="res://3_Sprite/cross_btn.png" id="3_q1cx4"]
+[ext_resource type="Texture2D" uid="uid://c4xkub5usmgm1" path="res://3_Sprite/tick_btn.png" id="4_1085m"]
+
+[node name="RestartPopup" type="Control" unique_id=17289812 node_paths=PackedStringArray("quit_button", "yes_button", "no_button", "close_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o0inr")
+quit_button = NodePath("CloseButton")
+yes_button = NodePath("Popup/YesButton")
+no_button = NodePath("Popup/NoButton")
+close_button = NodePath("Popup/CloseButton")
+
+[node name="CloseButton" type="TextureButton" parent="." unique_id=1307522071]
+modulate = Color(0, 0, 0, 0.39215687)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_nukjp")
+stretch_mode = 0
+
+[node name="Popup" type="TextureRect" parent="." unique_id=1106778610]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -208.0
+offset_right = 152.0
+offset_bottom = 208.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_o0inr")
+
+[node name="CloseButton" type="TextureButton" parent="Popup" unique_id=1513106790]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -57.0
+offset_bottom = 58.0
+grow_horizontal = 0
+texture_normal = ExtResource("3_q1cx4")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="YesButton" type="TextureButton" parent="Popup" unique_id=694365779]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 28.0
+offset_top = 14.0
+offset_right = 84.99997
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_1085m")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="NoButton" type="TextureButton" parent="Popup" unique_id=899354746]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.0
+offset_top = 14.0
+offset_right = -25.00003
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_q1cx4")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Popup" unique_id=1981703333]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -111.0
+offset_top = 96.0
+offset_right = 112.0
+offset_bottom = 183.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "ARE YOU SURE 
+  TO RESTART?"

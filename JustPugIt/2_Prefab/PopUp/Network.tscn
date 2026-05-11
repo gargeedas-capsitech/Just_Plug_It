@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://cmelv2lj55q3u"]
+
+[ext_resource type="Script" uid="uid://5juj3cjf2gjg" path="res://1_Script/Ui/NetworkPopupController.gd" id="1_e0qn0"]
+[ext_resource type="Texture2D" uid="uid://dq3ofd1arcxnh" path="res://3_Sprite/popUp.png" id="2_e0qn0"]
+[ext_resource type="Texture2D" uid="uid://dfrc2uvywfbn" path="res://3_Sprite/cross_btn.png" id="3_u643s"]
+[ext_resource type="Texture2D" uid="uid://d3nycv6c6tsx7" path="res://3_Sprite/next_btn.png" id="4_e0qn0"]
+
+[node name="NetworkPopup" type="Control" unique_id=17289812 node_paths=PackedStringArray("root_panel", "open_setting_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e0qn0")
+root_panel = NodePath("RootPanel")
+open_setting_button = NodePath("RootPanel/Popup/OpenSettingButton")
+
+[node name="RootPanel" type="Panel" parent="." unique_id=559517222]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Popup" type="TextureRect" parent="RootPanel" unique_id=1106778610]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.0
+offset_top = -208.0
+offset_right = 152.0
+offset_bottom = 208.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_e0qn0")
+
+[node name="CloseButton" type="TextureButton" parent="RootPanel/Popup" unique_id=1513106790]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -57.0
+offset_bottom = 58.0
+grow_horizontal = 0
+texture_normal = ExtResource("3_u643s")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="RootPanel/Popup" unique_id=1856947688]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.0
+offset_top = -108.0
+offset_right = 104.0
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 35
+text = "No Internet!"
+
+[node name="OpenSettingButton" type="TextureButton" parent="RootPanel/Popup" unique_id=639803480]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -77.0
+offset_top = -216.0
+offset_right = 75.0
+offset_bottom = -166.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("4_e0qn0")
+ignore_texture_size = true
+stretch_mode = 4
