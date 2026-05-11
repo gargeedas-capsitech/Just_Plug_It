@@ -9,7 +9,7 @@ func _ready():
 	if level_manager == null:
 		print("cannot find the node")
 	else:
-		print("success")
+		print("successs")
 func load_level(index: int):
 	if(level_manager!= null):
 		level_manager.load_level(index)

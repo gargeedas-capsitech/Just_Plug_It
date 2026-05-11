@@ -44,7 +44,7 @@ func game_over():
 	var scene= game_over_scene.instantiate()
 	add_child(scene)
 func game_win():
-	print("You Wonnn")
+	print("You Wonnnn")
 	await get_tree().create_timer(1.0).timeout
 
 	var scene = game_win_scene.instantiate()
