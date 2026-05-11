@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cnp5y8pobjqjq" path="res://Script/Main/main.gd" id="1_w20t6"]
 [ext_resource type="PackedScene" uid="uid://cnfh8vp8b51hp" path="res://Scenes/UI_Scene/game_over_ui.tscn" id="2_7npjy"]
 [ext_resource type="PackedScene" uid="uid://dsg7rku1kbb14" path="res://Scenes/UI_Scene/game_win_ui.tscn" id="3_4vhfm"]
-[ext_resource type="PackedScene" uid="uid://bou1d7cm1dpsr" path="res://Scenes/obstracle.tscn" id="4_dvlhv"]
+[ext_resource type="PackedScene" uid="uid://bou1d7cm1dpsr" path="res://JustPugIt/2_Prefab/Spawnable/obstracle.tscn" id="4_dvlhv"]
 [ext_resource type="PackedScene" uid="uid://b6dt7cyqbewke" path="res://Scenes/UI_Scene/start_panel.tscn" id="6_hcu3t"]
 [ext_resource type="Script" uid="uid://02wr5n7e5dom" path="res://Script/UI/start_panel.gd" id="7_4vhfm"]
 [ext_resource type="PackedScene" uid="uid://dgergra0yntxc" path="res://Scenes/UI_Scene/game_play_ui.tscn" id="7_qdkat"]

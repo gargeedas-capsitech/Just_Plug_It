@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://wbc85qmm8c0w"]
+
+[ext_resource type="Script" uid="uid://cp0fbxpj5h1g7" path="res://1_Script/Ui/StartPanelController.gd" id="1_l7adk"]
+[ext_resource type="Texture2D" uid="uid://b162bp3bq2el3" path="res://3_Sprite/start_bg.png" id="1_m4n2h"]
+[ext_resource type="Texture2D" uid="uid://dq3ofd1arcxnh" path="res://3_Sprite/popUp.png" id="1_sdhnh"]
+[ext_resource type="Texture2D" uid="uid://7brolq75ssvq" path="res://3_Sprite/setting_btn.png" id="2_m4n2h"]
+[ext_resource type="Texture2D" uid="uid://4opkpa4fhwcg" path="res://3_Sprite/shop_btn.png" id="3_l7adk"]
+[ext_resource type="Texture2D" uid="uid://vedkpey3m47d" path="res://3_Sprite/play_btn.png" id="4_m3ayd"]
+
+[node name="StartPanel" type="Control" unique_id=547876178 node_paths=PackedStringArray("setting_button", "shop_button", "play_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l7adk")
+setting_button = NodePath("RootStartPanel/SettingButton")
+shop_button = NodePath("RootStartPanel/ShopButton")
+play_button = NodePath("RootStartPanel/PlayButton")
+
+[node name="RootStartPanel" type="Panel" parent="." unique_id=412793472]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="RootStartPanel" unique_id=198154075]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_m4n2h")
+expand_mode = 1
+
+[node name="Score" type="TextureRect" parent="RootStartPanel" unique_id=1122768317]
+custom_minimum_size = Vector2(150, 80)
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 170.0
+offset_bottom = 100.0
+texture = ExtResource("1_sdhnh")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="RootStartPanel/Score" unique_id=1051957040]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_right = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Score :"
+vertical_alignment = 1
+
+[node name="SettingButton" type="TextureButton" parent="RootStartPanel" unique_id=1343259032]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -132.0
+offset_top = 20.0
+offset_right = -35.0
+offset_bottom = 113.0
+grow_horizontal = 0
+texture_normal = ExtResource("2_m4n2h")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ShopButton" type="TextureButton" parent="RootStartPanel" unique_id=1916955194]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -252.0
+offset_top = 20.0
+offset_right = -155.0
+offset_bottom = 113.0
+grow_horizontal = 0
+texture_normal = ExtResource("3_l7adk")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="PlayButton" type="TextureButton" parent="RootStartPanel" unique_id=924499616]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_m3ayd")
+ignore_texture_size = true
+stretch_mode = 5

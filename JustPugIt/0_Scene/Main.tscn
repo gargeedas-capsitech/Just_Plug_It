@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://mv4i8aghx8mg"]
+
+[ext_resource type="Script" uid="uid://b2d4hl36rlyhw" path="res://1_Script/Util/GameManager.gd" id="1_fsflw"]
+[ext_resource type="PackedScene" uid="uid://wbc85qmm8c0w" path="res://2_Prefab/StartPanel.tscn" id="2_6j3va"]
+[ext_resource type="Script" uid="uid://dbbcuvq52yj3a" path="res://1_Script/Ui/UIManager.gd" id="2_y8q8k"]
+[ext_resource type="PackedScene" uid="uid://bds4k45exrljw" path="res://2_Prefab/LevelPanel.tscn" id="3_q3uv2"]
+[ext_resource type="PackedScene" uid="uid://cp7eye3asjy3p" path="res://2_Prefab/GamePanel.tscn" id="4_kf1pu"]
+[ext_resource type="PackedScene" uid="uid://cqloe7k24cgls" path="res://2_Prefab/PopupPanel.tscn" id="5_kf1pu"]
+
+[node name="Main" type="Node2D" unique_id=624411418]
+script = ExtResource("1_fsflw")
+
+[node name="Environment" type="Node2D" parent="." unique_id=882718104]
+
+[node name="Bg" type="Node2D" parent="Environment" unique_id=1490680984]
+
+[node name="Player" type="Node2D" parent="Environment" unique_id=1059232377]
+
+[node name="UIManager" type="CanvasLayer" parent="." unique_id=21275981 node_paths=PackedStringArray("start_panel", "level_panel", "game_panel", "popup_panel")]
+script = ExtResource("2_y8q8k")
+start_panel = NodePath("StartPanel")
+level_panel = NodePath("LevelPanel")
+game_panel = NodePath("GamePanel")
+popup_panel = NodePath("PopupPanel")
+
+[node name="StartPanel" parent="UIManager" unique_id=547876178 instance=ExtResource("2_6j3va")]
+
+[node name="LevelPanel" parent="UIManager" unique_id=524738158 instance=ExtResource("3_q3uv2")]
+visible = false
+
+[node name="GamePanel" parent="UIManager" unique_id=323910568 instance=ExtResource("4_kf1pu")]
+visible = false
+
+[node name="PopupPanel" parent="UIManager" unique_id=1262038868 instance=ExtResource("5_kf1pu")]
+mouse_filter = 2

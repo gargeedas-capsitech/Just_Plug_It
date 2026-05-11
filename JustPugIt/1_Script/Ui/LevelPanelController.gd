@@ -1,0 +1,87 @@
+class_name LevelPanelController
+extends Control
+
+# =========================
+# NODES (Assign in Inspector)
+# =========================
+#@export var root_level_panel: Control
+@export var level_content: Control
+@export var level_button_prefab: PackedScene
+@export var back_button: TextureButton
+@export var setting_button: TextureButton
+@export var grid_container: GridContainer
+@export var horizontal_rows : int
+
+# =========================
+# DATA
+# =========================
+var level_data = []   # Replace with GameManager data
+var is_initialized := false
+var on_level_selected: Callable = Callable()
+
+# =========================
+# READY (equivalent to Start)
+# =========================
+func _ready():
+	back_button.pressed.connect(on_back_button_clicked)
+	setting_button.pressed.connect(on_setting_button_clicked)
+
+	# Replace this with your actual GameManager call
+	# level_data = GameManager.get_level_data()
+	level_data = [] # Example data
+	level_data.resize(100)
+	print("Level data loaded: ", level_data)
+	generate_level_buttons()
+	grid_container.columns = max(
+			ceili(
+				float(level_content.get_child_count()) /
+				float(max(horizontal_rows, 1))
+			), 1)
+
+# =========================
+# SHOW / HIDE
+# =========================
+#func show_panel(on_shown: Callable = Callable()):
+#	root_level_panel.visible = true
+#	if on_shown.is_valid():
+#		on_shown.call()
+
+#func hide_panel(on_hidden: Callable = Callable()):
+#	root_level_panel.visible = false
+#	if on_hidden.is_valid():
+#		on_hidden.call()
+
+# =========================
+# BUTTON CALLBACKS
+# =========================
+func on_back_button_clicked():
+	UIManager.instance.enable_panel(UIManager.PanelType.START)
+
+func on_setting_button_clicked():
+	UIManager.instance.enable_popup(PopupPanelController.PopupType.SETTING)
+
+# =========================
+# SET CALLBACK
+# =========================
+func set_on_level_selected(callback: Callable):
+	on_level_selected = callback
+
+# =========================
+# GENERATE BUTTONS
+# =========================
+func generate_level_buttons():
+	for i in range(level_data.size()):
+		var level_index := i + 1
+
+		var btn = level_button_prefab.instantiate() as LevelButton
+		level_content.add_child(btn)
+		btn.level_index = level_index
+
+		btn.pressed.connect(on_level_button_pressed.bind(level_index))
+
+
+func on_level_button_pressed(level_index:int):
+	print("Level %d selected" % level_index)
+	if on_level_selected.is_valid():
+		on_level_selected.call(level_index)
+
