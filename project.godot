@@ -18,11 +18,14 @@ config/icon="res://icon.svg"
 [autoload]
 
 PlayerPrefs="*uid://balsbqhgam322"
+DebugConsole="*uid://b4o16uq4gbtfv"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/window_width_override=850
+window/size/window_height_override=400
 window/stretch/mode="canvas_items"
 
 [dotnet]
@@ -32,6 +35,10 @@ project/assembly_name="StartRunner"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/PlayerPrefs/plugin.cfg")
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
 
 [physics]
 

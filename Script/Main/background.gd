@@ -1,19 +1,15 @@
-extends Node2D
+extends StaticBody2D
 class_name LevelManager
 
 @export var leveldata:LevelData
 @export var spawn_parent: Node2D
-@export var spawn_parent1: Node2D
 @export var current_level: int = 0
 
 @export var main:Main
 #@export var Rope: Rope
 
-
 func _ready():
 	load_level_data()
-	#spawn_parent_plug = get_node("../PlugParent")
-
 
 func load_level_data():
 	if leveldata == null:
@@ -45,7 +41,7 @@ func spawn_obstacles(level):
 			continue
 
 		var obj = obs.Obstracle.instantiate()
-		spawn_parent1.add_child(obj)
+		spawn_parent.add_child(obj)
 
 		if obj is Node2D:
 			obj.position = obs.Position
@@ -57,10 +53,7 @@ func spawn_players(level):
 			continue
 
 		var obj = player.player.instantiate()
-		if(player.player_type==1):
-			spawn_parent1.add_child(obj)
-		else:
-			spawn_parent.add_child(obj)
+		spawn_parent.add_child(obj)
 		
 		if obj is Node2D:
 			obj.position = player.position
@@ -77,3 +70,8 @@ func spawn_players(level):
 func clear_level():
 	for child in spawn_parent.get_children():
 		child.queue_free()
+
+
+func _process(delta):
+	pass
+"res://Scenes/Main/Main.tscn"
