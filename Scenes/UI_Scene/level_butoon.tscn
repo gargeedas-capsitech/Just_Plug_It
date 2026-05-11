@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://pboj40ak4fnt" path="res://Image/levelStarUnlock.png" id="1_mp2of"]
 [ext_resource type="Texture2D" uid="uid://dr5w2wfpq0yj3" path="res://Image/gameWin&Over Star.png" id="2_a5eua"]
+[ext_resource type="FontFile" uid="uid://ni3p6awpjgph" path="res://Font/Jua-Regular.ttf" id="2_scngf"]
 [ext_resource type="Texture2D" uid="uid://eydehtn4rny8" path="res://Image/yellow star.png" id="3_g1q8o"]
 
 [node name="LevelButoon" type="TextureButton" unique_id=1907788592]
@@ -15,6 +16,7 @@ offset_top = 60.0
 offset_right = 174.0
 offset_bottom = 197.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_scngf")
 theme_override_font_sizes/font_size = 100
 text = "1"
 horizontal_alignment = 1
