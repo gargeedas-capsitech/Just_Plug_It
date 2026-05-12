@@ -1,11 +1,21 @@
 [gd_scene format=3 uid="uid://bds4k45exrljw"]
 
-[ext_resource type="Texture2D" uid="uid://dcdjyrvneankf" path="res://3_Sprite/level_bg.png" id="1_jaci8"]
-[ext_resource type="Script" uid="uid://dqmc16ab380a8" path="res://1_Script/Ui/LevelPanelController.gd" id="1_x18ii"]
-[ext_resource type="Texture2D" uid="uid://cs4nul5j3vr66" path="res://3_Sprite/levelLogo.png" id="2_x18ii"]
-[ext_resource type="PackedScene" uid="uid://balwjghshyscb" path="res://2_Prefab/Spawnable/LevelButton.tscn" id="2_y30ev"]
-[ext_resource type="Texture2D" uid="uid://7brolq75ssvq" path="res://3_Sprite/setting_btn.png" id="3_kj338"]
-[ext_resource type="Texture2D" uid="uid://brlf8xc1w6a45" path="res://3_Sprite/back_btn.png" id="5_x18ii"]
+[ext_resource type="Script" uid="uid://dqmc16ab380a8" path="res://JustPugIt/1_Script/Ui/LevelPanelController.gd" id="1_x18ii"]
+[ext_resource type="PackedScene" uid="uid://balwjghshyscb" path="res://JustPugIt/2_Prefab/Spawnable/LevelButton.tscn" id="2_y30ev"]
+[ext_resource type="Texture2D" uid="uid://7brolq75ssvq" path="res://JustPugIt/3_Sprite/setting_btn.png" id="3_kj338"]
+[ext_resource type="Texture2D" uid="uid://vync2pydiiu7" path="res://Image/LevelBtnGrp_Box.png" id="3_shbub"]
+[ext_resource type="Texture2D" uid="uid://yrqoa2wikr0p" path="res://Image/levelBox.png" id="4_ipivt"]
+[ext_resource type="Texture2D" uid="uid://dc4ij1go2nfoo" path="res://Image/SideBtn.png" id="5_5npdo"]
+[ext_resource type="FontFile" uid="uid://dt8ekwhmxfayp" path="res://JustPugIt/Jua-Regular.ttf" id="5_wxabp"]
+[ext_resource type="Texture2D" uid="uid://brlf8xc1w6a45" path="res://JustPugIt/3_Sprite/back_btn.png" id="5_x18ii"]
+[ext_resource type="Texture2D" uid="uid://dpu3myxduslon" path="res://Image/sideBtnRight.png" id="6_wxabp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_shbub"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_q4oxb"]
+font = ExtResource("5_wxabp")
+font_size = 84
+font_color = Color(0, 0, 0, 1)
 
 [node name="LevelPanel" type="Control" unique_id=547876178 node_paths=PackedStringArray("level_content", "back_button", "setting_button", "grid_container")]
 layout_mode = 3
@@ -16,11 +26,11 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_x18ii")
-level_content = NodePath("Popup/ScrollContainer/MarginContainer/GridContainer")
+level_content = NodePath("Popup/Bg/ScrollContainer/MarginContainer/GridContainer")
 level_button_prefab = ExtResource("2_y30ev")
 back_button = NodePath("Popup/BackBtn")
 setting_button = NodePath("Popup/SettingBtn")
-grid_container = NodePath("Popup/ScrollContainer/MarginContainer/GridContainer")
+grid_container = NodePath("Popup/Bg/ScrollContainer/MarginContainer/GridContainer")
 horizontal_rows = 3
 
 [node name="Popup" type="Panel" parent="." unique_id=820426958]
@@ -31,31 +41,109 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_shbub")
 
 [node name="Bg" type="TextureRect" parent="Popup" unique_id=198154075]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -687.0
+offset_top = -465.0
+offset_right = 813.0
+offset_bottom = 407.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_shbub")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LevelLogo" type="TextureRect" parent="Popup/Bg" unique_id=975124925]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -414.0
+offset_top = -16.0
+offset_right = 428.54443
+offset_bottom = 145.0
+grow_horizontal = 2
+texture = ExtResource("4_ipivt")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Popup/Bg/LevelLogo" unique_id=322203693]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_jaci8")
-expand_mode = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 70
+text = "Levels"
+label_settings = SubResource("LabelSettings_q4oxb")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="LevelLogo" type="TextureRect" parent="Popup" unique_id=975124925]
+[node name="ScrollContainer" type="ScrollContainer" parent="Popup/Bg" unique_id=793973586]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -168.0
-offset_right = 168.0
-offset_bottom = 245.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 147.0
+offset_top = 198.0
+offset_right = -179.0
+offset_bottom = -192.0
 grow_horizontal = 2
-texture = ExtResource("2_x18ii")
-expand_mode = 1
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Popup/Bg/ScrollContainer" unique_id=906704339]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="GridContainer" type="GridContainer" parent="Popup/Bg/ScrollContainer/MarginContainer" unique_id=1332595228]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 6
+
+[node name="PrevButton" type="TextureButton" parent="Popup/Bg" unique_id=865915639]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -74.0
+offset_right = 85.0
+offset_bottom = 63.0
+grow_vertical = 2
+texture_normal = ExtResource("5_5npdo")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="AfterButton" type="TextureButton" parent="Popup/Bg" unique_id=781276657]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = -75.0
+offset_right = 57.0
+offset_bottom = 62.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("6_wxabp")
+ignore_texture_size = true
 stretch_mode = 5
 
 [node name="SettingBtn" type="TextureButton" parent="Popup" unique_id=1343259032]
+visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -70,6 +158,7 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="BackBtn" type="TextureButton" parent="Popup" unique_id=1916955194]
+visible = false
 layout_mode = 1
 offset_left = 20.0
 offset_top = 14.0
@@ -78,25 +167,3 @@ offset_bottom = 107.0
 texture_normal = ExtResource("5_x18ii")
 ignore_texture_size = true
 stretch_mode = 5
-
-[node name="ScrollContainer" type="ScrollContainer" parent="Popup" unique_id=793973586]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 146.0
-offset_top = 228.0
-offset_right = -142.0
-offset_bottom = -86.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="Popup/ScrollContainer" unique_id=906704339]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="GridContainer" type="GridContainer" parent="Popup/ScrollContainer/MarginContainer" unique_id=1332595228]
-layout_mode = 2
-theme_override_constants/h_separation = 10
-theme_override_constants/v_separation = 10

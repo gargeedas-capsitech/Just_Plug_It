@@ -1,11 +1,42 @@
 [gd_scene format=3 uid="uid://wbc85qmm8c0w"]
 
-[ext_resource type="Script" uid="uid://cp0fbxpj5h1g7" path="res://1_Script/Ui/StartPanelController.gd" id="1_l7adk"]
-[ext_resource type="Texture2D" uid="uid://b162bp3bq2el3" path="res://3_Sprite/start_bg.png" id="1_m4n2h"]
-[ext_resource type="Texture2D" uid="uid://dq3ofd1arcxnh" path="res://3_Sprite/popUp.png" id="1_sdhnh"]
-[ext_resource type="Texture2D" uid="uid://7brolq75ssvq" path="res://3_Sprite/setting_btn.png" id="2_m4n2h"]
-[ext_resource type="Texture2D" uid="uid://4opkpa4fhwcg" path="res://3_Sprite/shop_btn.png" id="3_l7adk"]
-[ext_resource type="Texture2D" uid="uid://vedkpey3m47d" path="res://3_Sprite/play_btn.png" id="4_m3ayd"]
+[ext_resource type="Script" uid="uid://cp0fbxpj5h1g7" path="res://JustPugIt/1_Script/Ui/StartPanelController.gd" id="1_l7adk"]
+[ext_resource type="Texture2D" uid="uid://d4hofq0p2qp1m" path="res://Image/gameplyBg 1.png" id="2_y1yis"]
+[ext_resource type="Texture2D" uid="uid://yrqoa2wikr0p" path="res://Image/levelBox.png" id="3_xji2w"]
+[ext_resource type="FontFile" uid="uid://dt8ekwhmxfayp" path="res://JustPugIt/Jua-Regular.ttf" id="4_4kplm"]
+[ext_resource type="Texture2D" uid="uid://cdrohjphaicj7" path="res://Image/settingButton.png" id="4_xji2w"]
+[ext_resource type="Texture2D" uid="uid://dwbtvmf4fgddx" path="res://JustPugIt/3_Sprite/name.png" id="4_yeljg"]
+[ext_resource type="Texture2D" uid="uid://dgmiuehpgwmgu" path="res://JustPugIt/3_Sprite/Frame.png" id="5_4kplm"]
+[ext_resource type="Texture2D" uid="uid://82tak72cu1tf" path="res://Image/setting_logo.png" id="5_yeljg"]
+[ext_resource type="Texture2D" uid="uid://c4wly7qxy6e7t" path="res://Image/SoftGreen_Button.png" id="6_45tkc"]
+[ext_resource type="Texture2D" uid="uid://cto015y8gjvk4" path="res://Image/LeaderBoard.png" id="6_xoku5"]
+[ext_resource type="Texture2D" uid="uid://c6icand6cg8ll" path="res://Image/softViolatePlay_Button.png" id="7_dpm7p"]
+[ext_resource type="Texture2D" uid="uid://bg8e4iiyshoju" path="res://JustPugIt/3_Sprite/Fullbgstart.png" id="9_dpm7p"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wwj0g"]
+font = ExtResource("4_4kplm")
+font_size = 51
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7hboe"]
+font = ExtResource("4_4kplm")
+font_size = 29
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ffbe7"]
+font = ExtResource("4_4kplm")
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_181vf"]
+font = ExtResource("4_4kplm")
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xqf1d"]
+font = ExtResource("4_4kplm")
+font_size = 50
+font_color = Color(0, 0, 0, 1)
 
 [node name="StartPanel" type="Control" unique_id=547876178 node_paths=PackedStringArray("setting_button", "shop_button", "play_button")]
 layout_mode = 3
@@ -27,37 +58,100 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="RootStartPanel" unique_id=198154075]
+[node name="Bg" type="TextureRect" parent="RootStartPanel" unique_id=198154075]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_m4n2h")
+texture = ExtResource("2_y1yis")
 expand_mode = 1
 
-[node name="Score" type="TextureRect" parent="RootStartPanel" unique_id=1122768317]
+[node name="Profile" type="TextureRect" parent="RootStartPanel" unique_id=1122768317]
 custom_minimum_size = Vector2(150, 80)
 layout_mode = 0
-offset_left = 20.0
+offset_left = 34.0
 offset_top = 20.0
-offset_right = 170.0
-offset_bottom = 100.0
-texture = ExtResource("1_sdhnh")
+offset_right = 619.0
+offset_bottom = 162.0
+texture = ExtResource("3_xji2w")
 expand_mode = 2
 
-[node name="Label" type="Label" parent="RootStartPanel/Score" unique_id=1051957040]
+[node name="Label" type="Label" parent="RootStartPanel/Profile" unique_id=1570178792]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -184.5
+offset_top = -56.0
+offset_right = 274.5
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 46
+text = "Hritik Roshan"
+label_settings = SubResource("LabelSettings_wwj0g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="TextureRect" parent="RootStartPanel/Profile" unique_id=1097675245]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -148.5
+offset_top = -17.0
+offset_right = 186.5
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("4_yeljg")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="RootStartPanel/Profile/TextureRect2" unique_id=1242335901]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 13.0
-offset_right = -12.0
+offset_left = 29.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Score :"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 27
+text = "XP-200"
+label_settings = SubResource("LabelSettings_7hboe")
 vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="RootStartPanel/Profile" unique_id=1443677373]
+layout_mode = 0
+offset_left = -22.0
+offset_top = -4.0
+offset_right = 169.0
+offset_bottom = 180.06818
+texture = ExtResource("4_xji2w")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="RootStartPanel/Profile/TextureRect" unique_id=1239619819]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -62.5
+offset_top = -62.5
+offset_right = 62.5
+offset_bottom = 62.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_4kplm")
+expand_mode = 1
 
 [node name="SettingButton" type="TextureButton" parent="RootStartPanel" unique_id=1343259032]
 layout_mode = 1
@@ -69,9 +163,25 @@ offset_top = 20.0
 offset_right = -35.0
 offset_bottom = 113.0
 grow_horizontal = 0
-texture_normal = ExtResource("2_m4n2h")
+texture_normal = ExtResource("4_xji2w")
 ignore_texture_size = true
 stretch_mode = 5
+
+[node name="TextureRect" type="TextureRect" parent="RootStartPanel/SettingButton" unique_id=2078681301]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -29.0625
+offset_top = -29.0625
+offset_right = 32.5
+offset_bottom = 29.0625
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_yeljg")
+expand_mode = 1
 
 [node name="ShopButton" type="TextureButton" parent="RootStartPanel" unique_id=1916955194]
 layout_mode = 1
@@ -83,23 +193,117 @@ offset_top = 20.0
 offset_right = -155.0
 offset_bottom = 113.0
 grow_horizontal = 0
-texture_normal = ExtResource("3_l7adk")
 ignore_texture_size = true
 stretch_mode = 5
 
 [node name="PlayButton" type="TextureButton" parent="RootStartPanel" unique_id=924499616]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -418.0
+offset_top = -123.0
+offset_right = -3.0
+offset_bottom = -47.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("6_45tkc")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="RootStartPanel/PlayButton" unique_id=2063813744]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Play"
+label_settings = SubResource("LabelSettings_ffbe7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LeaderBoard" type="TextureButton" parent="RootStartPanel" unique_id=605126408]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -363.0
+offset_top = -234.0
+offset_right = -3.7468262
+offset_bottom = -133.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("6_xoku5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="RootStartPanel/LeaderBoard" unique_id=504214821]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 14.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "LeaderBoard"
+label_settings = SubResource("LabelSettings_181vf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelButton" type="TextureButton" parent="RootStartPanel" unique_id=1578860502]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -287.0
+offset_top = -318.0
+offset_right = -6.0
+offset_bottom = -242.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("7_dpm7p")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="RootStartPanel/LevelButton" unique_id=1492997230]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Levels"
+label_settings = SubResource("LabelSettings_xqf1d")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Board" type="TextureRect" parent="RootStartPanel" unique_id=681739747]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -60.0
-offset_top = -60.0
-offset_right = 60.0
-offset_bottom = 60.0
+offset_left = -230.25
+offset_top = -258.5
+offset_right = 230.25
+offset_bottom = 258.5
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("4_m3ayd")
-ignore_texture_size = true
-stretch_mode = 5
+texture = ExtResource("9_dpm7p")
+expand_mode = 1
+stretch_mode = 4
