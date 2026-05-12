@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bds4k45exrljw"]
+[gd_scene format=3 uid="uid://dmv3ewgfqwq20"]
 
 [ext_resource type="Script" uid="uid://dqmc16ab380a8" path="res://JustPugIt/1_Script/Ui/LevelPanelController.gd" id="1_x18ii"]
 [ext_resource type="PackedScene" uid="uid://balwjghshyscb" path="res://JustPugIt/2_Prefab/Spawnable/LevelButton.tscn" id="2_y30ev"]

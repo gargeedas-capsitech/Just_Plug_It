@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://brsybe1a4kl3v"]
 
-[ext_resource type="Texture2D" uid="uid://cjfh4mgdaqn6f" path="res://Image/plugIn.png" id="1_6q5da"]
+[ext_resource type="Texture2D" uid="uid://cjfh4mgdaqn6f" path="res://JustPugIt/3_Sprite/Image/plugIn.png" id="1_6q5da"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5w8tk"]
 radius = 88.16295

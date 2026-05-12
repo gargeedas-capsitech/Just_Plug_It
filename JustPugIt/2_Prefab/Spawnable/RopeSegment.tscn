@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cnck5i0ol6v7h"]
 
-[ext_resource type="Texture2D" uid="uid://vrfxdoex05p5" path="res://Image/Capsule.png" id="1_hqkr2"]
-[ext_resource type="Script" uid="uid://bmi2hosieoawh" path="res://Script/Main/rope_segment.gd" id="1_ogt5i"]
+[ext_resource type="Texture2D" uid="uid://vrfxdoex05p5" path="res://JustPugIt/3_Sprite/Image/Capsule.png" id="1_hqkr2"]
+[ext_resource type="Script" uid="uid://bmi2hosieoawh" path="res://JustPugIt/1_Script/Main/rope_segment.gd" id="1_ogt5i"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_47ehi"]
 radius = 8.0

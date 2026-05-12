@@ -11,6 +11,7 @@ extends Control
 @export var setting_button: TextureButton
 @export var grid_container: GridContainer
 @export var horizontal_rows : int
+@export var level_manager : LevelController
 
 # =========================
 # DATA
@@ -30,13 +31,18 @@ func _ready():
 	# level_data = GameManager.get_level_data()
 	level_data = [] # Example data
 	level_data.resize(100)
-	print("Level data loaded: ", level_data)
+	#print("Level data loaded: ", level_data)
 	generate_level_buttons()
 	grid_container.columns = max(
 			ceili(
 				float(level_content.get_child_count()) /
 				float(max(horizontal_rows, 1))
 			), 1)
+	#level_manager=get_tree().root.get_node("Main/Environment") as levelManager
+	if level_manager == null:
+		print("cannot find the node")
+	else:
+		print("successs")
 
 # =========================
 # SHOW / HIDE
@@ -81,7 +87,14 @@ func generate_level_buttons():
 
 
 func on_level_button_pressed(level_index:int):
-	print("Level %d selected" % level_index)
+	#print("Level %d selected" % level_index)
 	if on_level_selected.is_valid():
+		load_level(level_index)
 		on_level_selected.call(level_index)
-
+		
+func load_level(index: int):
+	if(level_manager!= null):
+		print(index)
+		level_manager.load_level(index)
+		PlayerPrefs.set_int("current_Index", index) 
+		PlayerPrefs.save()

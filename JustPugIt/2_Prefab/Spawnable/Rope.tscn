@@ -1,12 +1,5 @@
 [gd_scene format=3 uid="uid://3j7di31jsdc2"]
 
-[ext_resource type="Script" uid="uid://b14v1h7xdv84n" path="res://Script/Main/rope.gd" id="1_cd77x"]
-[ext_resource type="PackedScene" uid="uid://cnck5i0ol6v7h" path="res://JustPugIt/2_Prefab/Spawnable/RopeSegment.tscn" id="2_myrjw"]
-[ext_resource type="PackedScene" uid="uid://6su6eokbbtiv" path="res://JustPugIt/2_Prefab/Spawnable/test.tscn" id="3_8qppj"]
-
 [node name="Rope" type="Node2D" unique_id=381774359]
 light_mask = 2
 scale = Vector2(2.749, 2.749)
-script = ExtResource("1_cd77x")
-segment_scene = ExtResource("2_myrjw")
-plug_scene = ExtResource("3_8qppj")

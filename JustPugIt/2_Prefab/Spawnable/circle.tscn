@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dunye7yrawrsa"]
 
-[ext_resource type="Texture2D" uid="uid://c6tjmk75ahcp5" path="res://Image/ObsCutter Outer_1.png" id="1_ot13w"]
+[ext_resource type="Texture2D" uid="uid://c6tjmk75ahcp5" path="res://JustPugIt/3_Sprite/Image/ObsCutter Outer_1.png" id="1_ot13w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_whlr7"]
 radius = 36.529682

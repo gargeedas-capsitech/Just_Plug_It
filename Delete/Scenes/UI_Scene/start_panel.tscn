@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://b6dt7cyqbewke"]
+
+[ext_resource type="Texture2D" uid="uid://cdrohjphaicj7" path="res://JustPugIt/3_Sprite/Image/settingButton.png" id="1_3pn1p"]
+[ext_resource type="Texture2D" uid="uid://82tak72cu1tf" path="res://JustPugIt/3_Sprite/Image/setting_logo.png" id="2_hhstl"]
+[ext_resource type="Texture2D" uid="uid://c6icand6cg8ll" path="res://JustPugIt/3_Sprite/Image/softViolatePlay_Button.png" id="3_0kdo3"]
+[ext_resource type="Texture2D" uid="uid://cto015y8gjvk4" path="res://JustPugIt/3_Sprite/Image/LeaderBoard.png" id="4_x4jmm"]
+[ext_resource type="Texture2D" uid="uid://c4wly7qxy6e7t" path="res://JustPugIt/3_Sprite/Image/SoftGreen_Button.png" id="5_f74jl"]
+
+[node name="StartPanel" type="CanvasLayer" unique_id=80368554]
+
+[node name="Panel" type="Panel" parent="." unique_id=1668824587]
+self_modulate = Color(1, 1, 1, 0.30980393)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=1845158357]
+layout_mode = 0
+offset_left = 1696.0
+offset_top = 56.000004
+offset_right = 1916.0
+offset_bottom = 272.0
+scale = Vector2(0.61902267, 0.5765673)
+texture = ExtResource("1_3pn1p")
+
+[node name="TextureButton" type="TextureButton" parent="Panel/TextureRect" unique_id=2077148690]
+z_index = 10
+layout_mode = 0
+offset_left = 40.0
+offset_top = 24.0
+offset_right = 192.0
+offset_bottom = 176.0
+texture_normal = ExtResource("2_hhstl")
+
+[node name="Buttons" type="VBoxContainer" parent="Panel" unique_id=919335202]
+layout_mode = 0
+offset_left = 1296.0001
+offset_top = 672.0
+offset_right = 2152.0
+offset_bottom = 1240.0
+scale = Vector2(0.6272924, 0.630651)
+theme_override_constants/separation = 20
+
+[node name="Level" type="TextureButton" parent="Panel/Buttons" unique_id=188402149]
+layout_mode = 2
+texture_normal = ExtResource("3_0kdo3")
+
+[node name="Label" type="Label" parent="Panel/Buttons/Level" unique_id=1383733020]
+layout_mode = 0
+offset_left = 204.05138
+offset_right = 455.0514
+offset_bottom = 277.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Level
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LeaderBoard" type="TextureButton" parent="Panel/Buttons" unique_id=496042832]
+layout_mode = 2
+texture_normal = ExtResource("4_x4jmm")
+
+[node name="Label" type="Label" parent="Panel/Buttons/LeaderBoard" unique_id=1428975528]
+layout_mode = 0
+offset_left = 89.27237
+offset_top = 6.9648585
+offset_right = 712.27234
+offset_bottom = 283.96484
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "LeaderBoard
+"
+
+[node name="Play" type="TextureButton" parent="Panel/Buttons" unique_id=1398653161]
+layout_mode = 2
+texture_normal = ExtResource("5_f74jl")
+
+[node name="Label" type="Label" parent="Panel/Buttons/Play" unique_id=1976020086]
+layout_mode = 0
+offset_left = 280.5707
+offset_top = 1.2444125
+offset_right = 481.5707
+offset_bottom = 278.24442
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Play
+"

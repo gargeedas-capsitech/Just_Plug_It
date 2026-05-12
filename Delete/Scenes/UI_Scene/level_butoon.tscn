@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://dqd3tss3sj4fc"]
+
+[ext_resource type="Texture2D" uid="uid://pboj40ak4fnt" path="res://JustPugIt/3_Sprite/Image/levelStarUnlock.png" id="1_je5ol"]
+[ext_resource type="Texture2D" uid="uid://dr5w2wfpq0yj3" path="res://JustPugIt/3_Sprite/Image/gameWin&Over Star.png" id="2_kk0qf"]
+[ext_resource type="Texture2D" uid="uid://eydehtn4rny8" path="res://JustPugIt/3_Sprite/Image/yellow star.png" id="3_thdtr"]
+
+[node name="LevelButoon" type="TextureButton" unique_id=1907788592]
+scale = Vector2(1.1069077, 1.1069292)
+texture_normal = ExtResource("1_je5ol")
+
+[node name="Label" type="Label" parent="." unique_id=1810226501]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 60.0
+offset_right = 174.0
+offset_bottom = 197.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1898637648]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="star1" type="TextureRect" parent="." unique_id=1173409039]
+layout_mode = 0
+offset_left = 21.682022
+offset_top = 50.590405
+offset_right = 233.68205
+offset_bottom = 269.5904
+rotation = -1.8325424
+scale = Vector2(-0.28087047, 0.31500813)
+texture = ExtResource("2_kk0qf")
+
+[node name="ystar1" type="TextureRect" parent="star1" unique_id=127429185]
+visible = false
+layout_mode = 0
+offset_left = 22.113037
+offset_top = -26.882019
+offset_right = 241.11304
+offset_bottom = 194.11798
+rotation = 0.2543649
+texture = ExtResource("3_thdtr")
+
+[node name="star2" type="TextureRect" parent="." unique_id=1300288519]
+layout_mode = 0
+offset_left = 108.410126
+offset_top = 79.499214
+offset_right = 320.41016
+offset_bottom = 298.4992
+rotation = -3.4627306
+scale = Vector2(-0.29027686, 0.30119264)
+texture = ExtResource("2_kk0qf")
+
+[node name="ystar1" type="TextureRect" parent="star2" unique_id=1210467121]
+visible = false
+layout_mode = 0
+offset_left = 22.113037
+offset_top = -26.882019
+offset_right = 241.11304
+offset_bottom = 194.11798
+rotation = 0.2543649
+texture = ExtResource("3_thdtr")
+
+[node name="star3" type="TextureRect" parent="." unique_id=1305261066]
+layout_mode = 0
+offset_left = 144.54684
+offset_top = 50.590405
+offset_right = 356.54688
+offset_bottom = 269.5904
+rotation = -1.8325424
+scale = Vector2(-0.27416965, 0.2931749)
+texture = ExtResource("2_kk0qf")
+
+[node name="ystar1" type="TextureRect" parent="star3" unique_id=506549645]
+visible = false
+layout_mode = 0
+offset_left = 22.113037
+offset_top = -26.882019
+offset_right = 241.11304
+offset_bottom = 194.11798
+rotation = 0.2543649
+texture = ExtResource("3_thdtr")

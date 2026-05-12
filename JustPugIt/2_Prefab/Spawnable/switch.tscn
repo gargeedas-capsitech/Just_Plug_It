@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ch683m766lwl8"]
 
-[ext_resource type="Texture2D" uid="uid://d0cggbp3jkmrr" path="res://Image/lamp1_Green.png" id="1_it01i"]
-[ext_resource type="Texture2D" uid="uid://dw50tfhp7rhwe" path="res://Image/Switch.png" id="2_8307x"]
+[ext_resource type="Texture2D" uid="uid://d0cggbp3jkmrr" path="res://JustPugIt/3_Sprite/Image/lamp1_Green.png" id="1_it01i"]
+[ext_resource type="Texture2D" uid="uid://dw50tfhp7rhwe" path="res://JustPugIt/3_Sprite/Image/Switch.png" id="2_8307x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8307x"]
 radius = 50.205242

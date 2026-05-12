@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://bds4k45exrljw"]
+
+[ext_resource type="Texture2D" uid="uid://dcdjyrvneankf" path="res://3_Sprite/level_bg.png" id="1_jaci8"]
+[ext_resource type="Script" uid="uid://dqmc16ab380a8" path="res://1_Script/Ui/LevelPanelController.gd" id="1_x18ii"]
+[ext_resource type="Texture2D" uid="uid://cs4nul5j3vr66" path="res://3_Sprite/levelLogo.png" id="2_x18ii"]
+[ext_resource type="PackedScene" uid="uid://balwjghshyscb" path="res://2_Prefab/Spawnable/LevelButton.tscn" id="2_y30ev"]
+[ext_resource type="Texture2D" uid="uid://7brolq75ssvq" path="res://3_Sprite/setting_btn.png" id="3_kj338"]
+[ext_resource type="Texture2D" uid="uid://brlf8xc1w6a45" path="res://3_Sprite/back_btn.png" id="5_x18ii"]
+
+[node name="LevelPanel" type="Control" unique_id=547876178 node_paths=PackedStringArray("level_content", "back_button", "setting_button", "grid_container")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_x18ii")
+level_content = NodePath("Popup/ScrollContainer/MarginContainer/GridContainer")
+level_button_prefab = ExtResource("2_y30ev")
+back_button = NodePath("Popup/BackBtn")
+setting_button = NodePath("Popup/SettingBtn")
+grid_container = NodePath("Popup/ScrollContainer/MarginContainer/GridContainer")
+horizontal_rows = 3
+
+[node name="Popup" type="Panel" parent="." unique_id=820426958]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Bg" type="TextureRect" parent="Popup" unique_id=198154075]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_jaci8")
+expand_mode = 1
+
+[node name="LevelLogo" type="TextureRect" parent="Popup" unique_id=975124925]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -168.0
+offset_right = 168.0
+offset_bottom = 245.0
+grow_horizontal = 2
+texture = ExtResource("2_x18ii")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SettingBtn" type="TextureButton" parent="Popup" unique_id=1343259032]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -111.0
+offset_top = 14.0
+offset_right = -14.0
+offset_bottom = 107.0
+grow_horizontal = 0
+texture_normal = ExtResource("3_kj338")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BackBtn" type="TextureButton" parent="Popup" unique_id=1916955194]
+layout_mode = 1
+offset_left = 20.0
+offset_top = 14.0
+offset_right = 116.99994
+offset_bottom = 107.0
+texture_normal = ExtResource("5_x18ii")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Popup" unique_id=793973586]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 146.0
+offset_top = 228.0
+offset_right = -142.0
+offset_bottom = -86.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Popup/ScrollContainer" unique_id=906704339]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="GridContainer" type="GridContainer" parent="Popup/ScrollContainer/MarginContainer" unique_id=1332595228]
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10

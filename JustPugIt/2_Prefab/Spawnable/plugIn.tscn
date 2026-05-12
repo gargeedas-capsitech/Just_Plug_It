@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b337d8huoe6nu"]
 
-[ext_resource type="Texture2D" uid="uid://cfhay02q44ttp" path="res://Image/plugOut.png" id="1_uie0c"]
+[ext_resource type="Texture2D" uid="uid://cfhay02q44ttp" path="res://JustPugIt/3_Sprite/Image/plugOut.png" id="1_uie0c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yb6g2"]
 size = Vector2(90.744804, 85.78566)

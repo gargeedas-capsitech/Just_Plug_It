@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="TestLevel" format=3 uid="uid://cqvagj2ypvdoa"]
-
-[ext_resource type="Script" uid="uid://0oot5t6swl6" path="res://Script/Resource/TestLevel.cs" id="1_0rv4g"]
-
-[resource]
-script = ExtResource("1_0rv4g")
-LevelID = 1
-LevelName = "helolo"
-metadata/_custom_type_script = "uid://0oot5t6swl6"

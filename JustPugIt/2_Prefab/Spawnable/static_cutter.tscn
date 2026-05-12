@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dg7s8sop7jkgp"]
 
-[ext_resource type="Texture2D" uid="uid://dra6r7wjlibwo" path="res://Image/obsCutter.png" id="1_rusc3"]
-[ext_resource type="Texture2D" uid="uid://ckxiq2dbukxm3" path="res://Image/obsCutter Inner.png" id="2_bx33k"]
+[ext_resource type="Texture2D" uid="uid://dra6r7wjlibwo" path="res://JustPugIt/3_Sprite/Image/obsCutter.png" id="1_rusc3"]
+[ext_resource type="Texture2D" uid="uid://ckxiq2dbukxm3" path="res://JustPugIt/3_Sprite/Image/obsCutter Inner.png" id="2_bx33k"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r6wt8"]
 

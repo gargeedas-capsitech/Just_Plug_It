@@ -1,7 +1,11 @@
 class_name GameManager
 extends Node
 static var instance: GameManager
+var _rope
 
+
+@onready var gravity_area = $GravityArea
+@onready var camera = get_tree().root.get_node("Main/Camera2D")
 # =========================
 # FILE PATH
 # =========================
@@ -26,6 +30,14 @@ func _enter_tree():
 func _ready():
 	create_path()
 	load_data()
+	await wait_for_rope()
+
+func wait_for_rope():
+	while _rope == null:
+		_rope = get_node_or_null("/root/Main/Environment/Player/Board/Rope")
+		await get_tree().process_frame
+
+	print("Rope Found:", _rope)
 
 func create_path():
 	file_path = "user://" + file_name
@@ -159,3 +171,6 @@ func set_language(lang:String):
 func set_login_mode(is_guest:bool):
 	game_data["settings_data"]["is_login_mode_guest"] = is_guest
 	save_data()
+
+
+	

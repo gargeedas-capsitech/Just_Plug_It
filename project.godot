@@ -10,8 +10,7 @@ config_version=5
 
 [application]
 
-config/name="StartRunner"
-run/main_scene="uid://cxbb2trfv0817"
+config/name="Just Plug It"
 config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 

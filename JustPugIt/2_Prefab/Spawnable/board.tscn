@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://b3km3v4fe54gp"]
+
+[ext_resource type="Texture2D" uid="uid://d1fh01t7xv70y" path="res://JustPugIt/3_Sprite/Image/GameOverBox.png" id="1_0on7x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0on7x"]
+size = Vector2(1264.4071, 104.277664)
+
+[node name="Board" type="StaticBody2D" unique_id=1936349862]
+z_index = 10
+scale = Vector2(0.326, 0.364)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1593646288]
+texture = ExtResource("1_0on7x")
+
+[node name="Boundary1" type="CollisionShape2D" parent="." unique_id=468500716]
+position = Vector2(-2.3841858e-07, -699.2415)
+scale = Vector2(1.0178359, 1)
+shape = SubResource("RectangleShape2D_0on7x")
+
+[node name="Boundary2" type="CollisionShape2D" parent="." unique_id=1708555888]
+position = Vector2(598.77594, -0.013493556)
+rotation = 1.5691268
+scale = Vector2(1, 0.9999997)
+shape = SubResource("RectangleShape2D_0on7x")
+
+[node name="Boundary3" type="CollisionShape2D" parent="." unique_id=443479590]
+position = Vector2(-596.931, 0.00019073489)
+rotation = 1.5691268
+scale = Vector2(0.9999999, 0.99999976)
+shape = SubResource("RectangleShape2D_0on7x")
+
+[node name="Boundary4" type="CollisionShape2D" parent="." unique_id=1966893037]
+position = Vector2(-3.1552734, 676.3638)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_0on7x")

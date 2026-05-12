@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://wbc85qmm8c0w"]
+[gd_scene format=3 uid="uid://gx4xisvi1mtn"]
 
 [ext_resource type="Script" uid="uid://cp0fbxpj5h1g7" path="res://JustPugIt/1_Script/Ui/StartPanelController.gd" id="1_l7adk"]
 [ext_resource type="Texture2D" uid="uid://d4hofq0p2qp1m" path="res://Image/gameplyBg 1.png" id="2_y1yis"]

@@ -1,0 +1,162 @@
+[gd_scene format=3 uid="uid://dsg7rku1kbb14"]
+
+[ext_resource type="Texture2D" uid="uid://d1fh01t7xv70y" path="res://JustPugIt/3_Sprite/Image/GameOverBox.png" id="1_jjd0b"]
+[ext_resource type="Texture2D" uid="uid://bis4jbm8vt31p" path="res://JustPugIt/3_Sprite/Image/GameWin_Star Holder.png" id="2_1mu5x"]
+[ext_resource type="Texture2D" uid="uid://dr5w2wfpq0yj3" path="res://JustPugIt/3_Sprite/Image/gameWin&Over Star.png" id="3_0uhfe"]
+[ext_resource type="Texture2D" uid="uid://eydehtn4rny8" path="res://JustPugIt/3_Sprite/Image/yellow star.png" id="4_753mt"]
+[ext_resource type="Texture2D" uid="uid://cxjs2b4inkjei" path="res://JustPugIt/3_Sprite/Image/Score_Holder GameOver.png" id="5_6g1wu"]
+[ext_resource type="Texture2D" uid="uid://b2xo073p4f7si" path="res://JustPugIt/3_Sprite/Image/plug_GameOver.png" id="6_alcq5"]
+[ext_resource type="Texture2D" uid="uid://cm0r4fl1iseyq" path="res://JustPugIt/3_Sprite/Image/Restart_Btn.png" id="7_hhjmy"]
+[ext_resource type="Texture2D" uid="uid://bhpusb8vafxmy" path="res://JustPugIt/3_Sprite/Image/home_Btn.png" id="8_rv3mn"]
+
+[node name="GameWin_UI" type="CanvasLayer" unique_id=258296162]
+
+[node name="Panel" type="Panel" parent="." unique_id=905584879]
+self_modulate = Color(1, 1, 1, 0.30980393)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel" unique_id=1651935729]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -296.0
+offset_top = -444.0
+offset_right = 1013.0
+offset_bottom = 1049.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5049138, 0.5554154)
+
+[node name="Board" type="TextureRect" parent="Panel/CenterContainer" unique_id=781060373]
+layout_mode = 2
+texture = ExtResource("1_jjd0b")
+
+[node name="StarHolder" type="TextureRect" parent="Panel/CenterContainer/Board" unique_id=1491046826]
+layout_mode = 0
+offset_left = 237.66434
+offset_top = 187.24724
+offset_right = 1113.6643
+offset_bottom = 543.24725
+texture = ExtResource("2_1mu5x")
+
+[node name="star3" type="TextureRect" parent="Panel/CenterContainer/Board/StarHolder" unique_id=1014514195]
+layout_mode = 0
+offset_left = 665.4601
+offset_top = 86.42181
+offset_right = 877.4601
+offset_bottom = 305.4218
+rotation = 0.2498111
+texture = ExtResource("3_0uhfe")
+
+[node name="ystar3" type="TextureRect" parent="Panel/CenterContainer/Board/StarHolder/star3" unique_id=1760566043]
+visible = false
+layout_mode = 0
+offset_left = 23.583176
+offset_top = -35.747147
+offset_right = 242.58318
+offset_bottom = 185.25285
+rotation = 0.2543649
+texture = ExtResource("4_753mt")
+
+[node name="star2" type="TextureRect" parent="Panel/CenterContainer/Board/StarHolder" unique_id=896627795]
+layout_mode = 0
+offset_left = 332.73007
+offset_top = 28.807268
+offset_right = 544.7301
+offset_bottom = 247.80727
+rotation = -0.116432756
+texture = ExtResource("3_0uhfe")
+
+[node name="ystar2" type="TextureRect" parent="Panel/CenterContainer/Board/StarHolder/star2" unique_id=762239814]
+visible = false
+layout_mode = 0
+offset_left = 20.756897
+offset_top = -41.077713
+offset_right = 239.7569
+offset_bottom = 179.92229
+rotation = 0.2543649
+texture = ExtResource("4_753mt")
+
+[node name="star1" type="TextureRect" parent="Panel/CenterContainer/Board/StarHolder" unique_id=1562673237]
+layout_mode = 0
+offset_left = 63.377167
+offset_top = 331.28357
+offset_right = 275.3772
+offset_bottom = 550.28357
+rotation = -1.8325424
+texture = ExtResource("3_0uhfe")
+
+[node name="ystar1" type="TextureRect" parent="Panel/CenterContainer/Board/StarHolder/star1" unique_id=48589910]
+visible = false
+layout_mode = 0
+offset_left = 22.113037
+offset_top = -26.882019
+offset_right = 241.11304
+offset_bottom = 194.11798
+rotation = 0.2543649
+texture = ExtResource("4_753mt")
+
+[node name="gameoverscore" type="TextureRect" parent="Panel/CenterContainer/Board" unique_id=1223293659]
+layout_mode = 0
+offset_left = 253.50862
+offset_top = 633.7599
+offset_right = 1129.5087
+offset_bottom = 753.7599
+scale = Vector2(0.9901384, 1.425474)
+texture = ExtResource("5_6g1wu")
+
+[node name="Label" type="Label" parent="Panel/CenterContainer/Board/gameoverscore" unique_id=1982765229]
+layout_mode = 0
+offset_left = 80.01047
+offset_top = 20.208904
+offset_right = 375.01047
+offset_bottom = 103.20891
+scale = Vector2(1.1614494, 0.8362942)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Wire Used"
+
+[node name="TextureRect" type="TextureRect" parent="Panel/CenterContainer/Board/gameoverscore" unique_id=703933243]
+layout_mode = 0
+offset_left = 448.05865
+offset_top = 40.41781
+offset_right = 627.05865
+offset_bottom = 104.41781
+scale = Vector2(0.9827153, 0.7524463)
+texture = ExtResource("6_alcq5")
+
+[node name="Label" type="Label" parent="Panel/CenterContainer/Board" unique_id=179254309]
+layout_mode = 0
+offset_left = 253.50862
+offset_top = 878.6217
+offset_right = 1117.5087
+offset_bottom = 1015.6217
+theme_override_font_sizes/font_size = 80
+text = "Connection Complete"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ReplayButton" type="TextureButton" parent="Panel/CenterContainer/Board" unique_id=450490418]
+layout_mode = 0
+offset_left = 728.8373
+offset_top = 1065.8689
+offset_right = 948.8373
+offset_bottom = 1283.8689
+scale = Vector2(1.0128083, 0.96467)
+texture_normal = ExtResource("7_hhjmy")
+
+[node name="HomeButton" type="TextureButton" parent="Panel/CenterContainer/Board" unique_id=1719479851]
+layout_mode = 0
+offset_left = 396.1072
+offset_top = 1065.8689
+offset_right = 616.1072
+offset_bottom = 1283.8689
+texture_normal = ExtResource("8_rv3mn")
