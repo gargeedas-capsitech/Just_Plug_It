@@ -12,13 +12,16 @@
 [ext_resource type="Texture2D" uid="uid://c4wly7qxy6e7t" path="res://JustPugIt/3_Sprite/Image/SoftGreen_Button.png" id="7_io5t3"]
 [ext_resource type="Texture2D" uid="uid://cto015y8gjvk4" path="res://JustPugIt/3_Sprite/Image/LeaderBoard.png" id="8_22d7q"]
 [ext_resource type="Texture2D" uid="uid://yrqoa2wikr0p" path="res://JustPugIt/3_Sprite/Image/levelBox.png" id="9_0blm7"]
+[ext_resource type="Texture2D" uid="uid://bg8e4iiyshoju" path="res://JustPugIt/3_Sprite/Fullbgstart.png" id="13_io5t3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_newyj"]
 font = ExtResource("3_5q6de")
+font_size = 65
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0blm7"]
 font = ExtResource("3_5q6de")
+font_size = 43
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_d3upx"]
@@ -48,20 +51,27 @@ grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="RootStartPanel" unique_id=198154075]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1866.0
+offset_top = -552.0
+offset_right = 1820.0
+offset_bottom = 542.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_atrp4")
 expand_mode = 1
+stretch_mode = 4
 
 [node name="ProfileSec" type="TextureRect" parent="RootStartPanel" unique_id=1122768317]
 layout_mode = 0
 offset_left = 18.0
 offset_top = 33.0
-offset_right = 223.0
-offset_bottom = 78.0
+offset_right = 748.0
+offset_bottom = 253.0
 texture = ExtResource("3_ylfa7")
 expand_mode = 1
 
@@ -70,8 +80,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 45.0
-offset_right = -12.0
+offset_left = 169.0
+offset_right = -9.0
+offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Ritik Roshan"
@@ -79,10 +90,37 @@ label_settings = SubResource("LabelSettings_newyj")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="XP" type="TextureRect" parent="RootStartPanel/ProfileSec" unique_id=382557822]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -176.0
+offset_top = -30.0
+offset_right = 244.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_22d7q")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="RootStartPanel/ProfileSec/XP" unique_id=1010927931]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 81.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "XP-200"
+label_settings = SubResource("LabelSettings_0blm7")
+
 [node name="Profile" type="TextureRect" parent="RootStartPanel/ProfileSec" unique_id=136191372]
 layout_mode = 0
-offset_right = 59.0
-offset_bottom = 59.0
+offset_right = 241.0
+offset_bottom = 263.4186
 texture = ExtResource("4_1iyth")
 expand_mode = 1
 
@@ -99,32 +137,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_io5t3")
 expand_mode = 1
-
-[node name="XP" type="TextureRect" parent="RootStartPanel/ProfileSec" unique_id=382557822]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -44.5
-offset_top = -7.0
-offset_right = 78.5
-offset_bottom = 10.0
-grow_horizontal = 2
-grow_vertical = 0
-texture = ExtResource("7_22d7q")
-expand_mode = 1
-
-[node name="Label" type="Label" parent="RootStartPanel/ProfileSec/XP" unique_id=1010927931]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "XP-200"
-label_settings = SubResource("LabelSettings_0blm7")
 
 [node name="SettingButton" type="TextureButton" parent="RootStartPanel" unique_id=1343259032]
 layout_mode = 1
@@ -257,3 +269,20 @@ text = "Levels"
 label_settings = SubResource("LabelSettings_d3upx")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Board" type="TextureRect" parent="RootStartPanel" unique_id=2062434821]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_io5t3")
+expand_mode = 1
+stretch_mode = 4
