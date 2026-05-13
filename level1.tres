@@ -945,5 +945,5 @@ metadata/_custom_type_script = "uid://b2sjpfcewboge"
 
 [resource]
 script = ExtResource("2_jomf0")
-Levels = Array[ExtResource("1_6xjby")]([SubResource("Resource_er0qt"), SubResource("Resource_dt1gd"), SubResource("Resource_tvfh2"), SubResource("Resource_j4sgt"), SubResource("Resource_byasw"), SubResource("Resource_ln4l7"), SubResource("Resource_5ll4r"), SubResource("Resource_6h486"), SubResource("Resource_et7wx"), SubResource("Resource_0td47"), SubResource("Resource_4de8y"), SubResource("Resource_k0u7u"), SubResource("Resource_wtlpd"), SubResource("Resource_8mrgf"), SubResource("Resource_53ibl"), SubResource("Resource_3ql1r"), SubResource("Resource_7j2pp"), SubResource("Resource_utw7s")])
+Levels = Array[ExtResource("1_6xjby")]([SubResource("Resource_er0qt"), SubResource("Resource_dt1gd"), SubResource("Resource_tvfh2"), SubResource("Resource_j4sgt"), SubResource("Resource_byasw"), SubResource("Resource_ln4l7"), SubResource("Resource_5ll4r"), SubResource("Resource_6h486"), SubResource("Resource_et7wx"), SubResource("Resource_0td47"), SubResource("Resource_4de8y"), SubResource("Resource_k0u7u"), SubResource("Resource_wtlpd"), SubResource("Resource_8mrgf"), SubResource("Resource_53ibl"), SubResource("Resource_3ql1r"), SubResource("Resource_7j2pp"), SubResource("Resource_utw7s"), null])
 metadata/_custom_type_script = "uid://c0xxw7qnyq5kj"
