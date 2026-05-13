@@ -1,11 +1,30 @@
 [gd_scene format=3 uid="uid://wbc85qmm8c0w"]
 
 [ext_resource type="Script" uid="uid://cp0fbxpj5h1g7" path="res://JustPugIt/1_Script/Ui/StartPanelController.gd" id="1_l7adk"]
-[ext_resource type="Texture2D" uid="uid://b162bp3bq2el3" path="res://JustPugIt/3_Sprite/start_bg.png" id="1_m4n2h"]
-[ext_resource type="Texture2D" uid="uid://dq3ofd1arcxnh" path="res://JustPugIt/3_Sprite/popUp.png" id="1_sdhnh"]
-[ext_resource type="Texture2D" uid="uid://7brolq75ssvq" path="res://JustPugIt/3_Sprite/setting_btn.png" id="2_m4n2h"]
+[ext_resource type="Texture2D" uid="uid://d4hofq0p2qp1m" path="res://JustPugIt/3_Sprite/Image/gameplyBg 1.png" id="2_atrp4"]
+[ext_resource type="FontFile" uid="uid://dt8ekwhmxfayp" path="res://JustPugIt/Jua-Regular.ttf" id="3_5q6de"]
 [ext_resource type="Texture2D" uid="uid://4opkpa4fhwcg" path="res://JustPugIt/3_Sprite/shop_btn.png" id="3_l7adk"]
-[ext_resource type="Texture2D" uid="uid://vedkpey3m47d" path="res://JustPugIt/3_Sprite/play_btn.png" id="4_m3ayd"]
+[ext_resource type="Texture2D" uid="uid://do6tmnw5qc4ke" path="res://JustPugIt/3_Sprite/profilenamebg.png" id="3_ylfa7"]
+[ext_resource type="Texture2D" uid="uid://cdrohjphaicj7" path="res://JustPugIt/3_Sprite/Image/settingButton.png" id="4_1iyth"]
+[ext_resource type="Texture2D" uid="uid://82tak72cu1tf" path="res://JustPugIt/3_Sprite/Image/setting_logo.png" id="5_ylfa7"]
+[ext_resource type="Texture2D" uid="uid://dgmiuehpgwmgu" path="res://JustPugIt/3_Sprite/Frame.png" id="6_io5t3"]
+[ext_resource type="Texture2D" uid="uid://dwbtvmf4fgddx" path="res://JustPugIt/3_Sprite/name.png" id="7_22d7q"]
+[ext_resource type="Texture2D" uid="uid://c4wly7qxy6e7t" path="res://JustPugIt/3_Sprite/Image/SoftGreen_Button.png" id="7_io5t3"]
+[ext_resource type="Texture2D" uid="uid://cto015y8gjvk4" path="res://JustPugIt/3_Sprite/Image/LeaderBoard.png" id="8_22d7q"]
+[ext_resource type="Texture2D" uid="uid://yrqoa2wikr0p" path="res://JustPugIt/3_Sprite/Image/levelBox.png" id="9_0blm7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_newyj"]
+font = ExtResource("3_5q6de")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0blm7"]
+font = ExtResource("3_5q6de")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_d3upx"]
+font = ExtResource("3_5q6de")
+font_size = 63
+font_color = Color(0, 0, 0, 1)
 
 [node name="StartPanel" type="Control" unique_id=547876178 node_paths=PackedStringArray("setting_button", "shop_button", "play_button")]
 layout_mode = 3
@@ -34,30 +53,78 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_m4n2h")
+texture = ExtResource("2_atrp4")
 expand_mode = 1
 
-[node name="Score" type="TextureRect" parent="RootStartPanel" unique_id=1122768317]
-custom_minimum_size = Vector2(150, 80)
+[node name="ProfileSec" type="TextureRect" parent="RootStartPanel" unique_id=1122768317]
 layout_mode = 0
-offset_left = 20.0
-offset_top = 20.0
-offset_right = 170.0
-offset_bottom = 100.0
-texture = ExtResource("1_sdhnh")
-expand_mode = 2
+offset_left = 18.0
+offset_top = 33.0
+offset_right = 223.0
+offset_bottom = 78.0
+texture = ExtResource("3_ylfa7")
+expand_mode = 1
 
-[node name="Label" type="Label" parent="RootStartPanel/Score" unique_id=1051957040]
+[node name="Name" type="Label" parent="RootStartPanel/ProfileSec" unique_id=1051957040]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 13.0
+offset_left = 45.0
 offset_right = -12.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Score :"
+text = "Ritik Roshan"
+label_settings = SubResource("LabelSettings_newyj")
+horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Profile" type="TextureRect" parent="RootStartPanel/ProfileSec" unique_id=136191372]
+layout_mode = 0
+offset_right = 59.0
+offset_bottom = 59.0
+texture = ExtResource("4_1iyth")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="RootStartPanel/ProfileSec/Profile" unique_id=688684803]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_io5t3")
+expand_mode = 1
+
+[node name="XP" type="TextureRect" parent="RootStartPanel/ProfileSec" unique_id=382557822]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -44.5
+offset_top = -7.0
+offset_right = 78.5
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_22d7q")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="RootStartPanel/ProfileSec/XP" unique_id=1010927931]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "XP-200"
+label_settings = SubResource("LabelSettings_0blm7")
 
 [node name="SettingButton" type="TextureButton" parent="RootStartPanel" unique_id=1343259032]
 layout_mode = 1
@@ -69,11 +136,28 @@ offset_top = 20.0
 offset_right = -35.0
 offset_bottom = 113.0
 grow_horizontal = 0
-texture_normal = ExtResource("2_m4n2h")
+texture_normal = ExtResource("4_1iyth")
 ignore_texture_size = true
 stretch_mode = 5
 
+[node name="TextureRect" type="TextureRect" parent="RootStartPanel/SettingButton" unique_id=1598678826]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.075623
+offset_top = -34.23304
+offset_right = 33.075623
+offset_bottom = 34.23304
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_ylfa7")
+expand_mode = 1
+
 [node name="ShopButton" type="TextureButton" parent="RootStartPanel" unique_id=1916955194]
+visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -89,17 +173,87 @@ stretch_mode = 5
 
 [node name="PlayButton" type="TextureButton" parent="RootStartPanel" unique_id=924499616]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -60.0
-offset_top = -60.0
-offset_right = 60.0
-offset_bottom = 60.0
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("4_m3ayd")
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -592.0
+offset_top = -150.0
+offset_right = -14.0
+offset_bottom = -14.224609
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("7_io5t3")
 ignore_texture_size = true
 stretch_mode = 5
+
+[node name="Label" type="Label" parent="RootStartPanel/PlayButton" unique_id=1218530097]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play"
+label_settings = SubResource("LabelSettings_d3upx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LeaderBoardButton" type="TextureButton" parent="RootStartPanel" unique_id=440652437]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -471.0
+offset_top = -285.0
+offset_right = -6.9836426
+offset_bottom = -176.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("8_22d7q")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="RootStartPanel/LeaderBoardButton" unique_id=205814184]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "LeaderBoard"
+label_settings = SubResource("LabelSettings_d3upx")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Levels" type="TextureButton" parent="RootStartPanel" unique_id=2050209607]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -397.0
+offset_top = -397.0
+offset_right = -11.983887
+offset_bottom = -294.58502
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("9_0blm7")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="RootStartPanel/Levels" unique_id=1195705373]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Levels"
+label_settings = SubResource("LabelSettings_d3upx")
+horizontal_alignment = 1
+vertical_alignment = 1
