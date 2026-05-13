@@ -114,7 +114,7 @@ anchor_bottom = 1.0
 offset_left = 81.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "XP-200"
+text = "XP-204"
 label_settings = SubResource("LabelSettings_0blm7")
 
 [node name="Profile" type="TextureRect" parent="RootStartPanel/ProfileSec" unique_id=136191372]
