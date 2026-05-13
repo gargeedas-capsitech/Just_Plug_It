@@ -89,7 +89,10 @@ func generate_level_buttons():
 func on_level_button_pressed(level_index:int):
 	#print("Level %d selected" % level_index)
 	if on_level_selected.is_valid():
+		level_manager.clear_level();
 		load_level(level_index)
+		PlayerPrefs.set_int("current_Index", level_index);
+		
 		on_level_selected.call(level_index)
 		
 func load_level(index: int):
