@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://balwjghshyscb"]
 
-[ext_resource type="Texture2D" uid="uid://pboj40ak4fnt" path="res://Image/levelStarUnlock.png" id="1_klogb"]
+[ext_resource type="Texture2D" uid="uid://pboj40ak4fnt" path="res://JustPugIt/3_Sprite/Image/levelStarUnlock.png" id="1_klogb"]
 [ext_resource type="Script" uid="uid://n8bihasbeon8" path="res://JustPugIt/1_Script/Ui/LevelButton.gd" id="2_wkiw7"]
 [ext_resource type="Texture2D" uid="uid://cakmacjnsrxdg" path="res://JustPugIt/3_Sprite/lock1.png" id="3_corop"]
 [ext_resource type="FontFile" uid="uid://dt8ekwhmxfayp" path="res://JustPugIt/Jua-Regular.ttf" id="3_l48gc"]
-[ext_resource type="Texture2D" uid="uid://eydehtn4rny8" path="res://Image/yellow star.png" id="4_corop"]
+[ext_resource type="Texture2D" uid="uid://eydehtn4rny8" path="res://JustPugIt/3_Sprite/Image/yellow star.png" id="4_corop"]
 [ext_resource type="Texture2D" uid="uid://723ex8ppptux" path="res://JustPugIt/3_Sprite/inactivestar.png" id="5_corop"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hla1f"]
@@ -13,7 +13,7 @@ font_size = 49
 font_color = Color(0, 0, 0, 1)
 
 [node name="LevelButton" type="TextureButton" unique_id=1168276537 node_paths=PackedStringArray("level_text", "locked_icon")]
-custom_minimum_size = Vector2(80, 80)
+custom_minimum_size = Vector2(100, 100)
 texture_normal = ExtResource("1_klogb")
 ignore_texture_size = true
 stretch_mode = 0
@@ -29,13 +29,13 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -10.0
-offset_top = -62.0
+offset_top = -71.0
 offset_right = 13.0
-offset_bottom = -5.0
+offset_bottom = -14.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 41
+theme_override_font_sizes/font_size = 80
 text = "1"
 label_settings = SubResource("LabelSettings_hla1f")
 horizontal_alignment = 1
@@ -62,10 +62,10 @@ stretch_mode = 5
 
 [node name="Star1" type="TextureRect" parent="." unique_id=1425517288]
 layout_mode = 0
-offset_left = 7.367177
-offset_top = 6.685724
-offset_right = 27.367176
-offset_bottom = 26.685724
+offset_left = 8.0
+offset_top = 24.0
+offset_right = 38.0
+offset_bottom = 54.0
 rotation = -0.4306248
 pivot_offset = Vector2(9.0093, 10.897408)
 texture = ExtResource("4_corop")
@@ -76,8 +76,8 @@ visible = false
 layout_mode = 0
 offset_left = 7.367177
 offset_top = 6.685724
-offset_right = 27.367176
-offset_bottom = 26.685724
+offset_right = 37.367176
+offset_bottom = 36.685722
 rotation = -0.4306248
 pivot_offset = Vector2(9.0093, 10.897408)
 texture = ExtResource("5_corop")
@@ -90,8 +90,8 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -10.0
-offset_right = 10.0
-offset_bottom = 20.0
+offset_right = 20.0
+offset_bottom = 30.0
 grow_horizontal = 2
 texture = ExtResource("4_corop")
 expand_mode = 1
@@ -102,8 +102,8 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -10.0
-offset_right = 10.0
-offset_bottom = 20.0
+offset_right = 20.0
+offset_bottom = 30.0
 grow_horizontal = 2
 texture = ExtResource("5_corop")
 expand_mode = 1
@@ -116,8 +116,8 @@ anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -21.10424
 offset_top = 3.0
-offset_right = -1.1042404
-offset_bottom = 23.0
+offset_right = 8.89576
+offset_bottom = 33.0
 grow_horizontal = 0
 rotation = 0.19604124
 texture = ExtResource("4_corop")
@@ -128,10 +128,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -21.10424
-offset_top = 3.0
-offset_right = -1.1042404
-offset_bottom = 23.0
+offset_left = -28.999992
+offset_top = 13.000001
+offset_right = 1.0000076
+offset_bottom = 43.0
 grow_horizontal = 0
 rotation = 0.19604124
 texture = ExtResource("5_corop")

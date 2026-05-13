@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://yrqoa2wikr0p" path="res://JustPugIt/3_Sprite/Image/levelBox.png" id="4_ipivt"]
 [ext_resource type="Texture2D" uid="uid://dc4ij1go2nfoo" path="res://JustPugIt/3_Sprite/Image/SideBtn.png" id="5_5npdo"]
 [ext_resource type="FontFile" uid="uid://dt8ekwhmxfayp" path="res://JustPugIt/Jua-Regular.ttf" id="5_wxabp"]
-[ext_resource type="Texture2D" uid="uid://brlf8xc1w6a45" path="res://JustPugIt/3_Sprite/back_btn.png" id="5_x18ii"]
 [ext_resource type="Texture2D" uid="uid://dpu3myxduslon" path="res://JustPugIt/3_Sprite/Image/sideBtnRight.png" id="6_wxabp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_shbub"]
@@ -17,7 +16,7 @@ font = ExtResource("5_wxabp")
 font_size = 84
 font_color = Color(0, 0, 0, 1)
 
-[node name="LevelPanel" type="Control" unique_id=547876178 node_paths=PackedStringArray("level_content", "back_button", "setting_button", "grid_container")]
+[node name="LevelPanel" type="Control" unique_id=547876178 node_paths=PackedStringArray("level_content", "back_button", "setting_button", "grid_container", "prev_button", "next_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,6 +31,8 @@ back_button = NodePath("Popup/BackBtn")
 setting_button = NodePath("Popup/SettingBtn")
 grid_container = NodePath("Popup/Bg/ScrollContainer/MarginContainer/GridContainer")
 horizontal_rows = 3
+prev_button = NodePath("Popup/Bg/PrevButton")
+next_button = NodePath("Popup/Bg/AfterButton")
 
 [node name="Popup" type="Panel" parent="." unique_id=820426958]
 layout_mode = 1
@@ -43,8 +44,17 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_shbub")
 
+[node name="BackBtn" type="TextureButton" parent="Popup" unique_id=1916955194]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ignore_texture_size = true
+stretch_mode = 5
+
 [node name="Bg" type="TextureRect" parent="Popup" unique_id=198154075]
-z_index = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -52,8 +62,8 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -687.0
-offset_top = -465.0
-offset_right = 813.0
+offset_top = -328.0
+offset_right = 653.0
 offset_bottom = 407.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -66,10 +76,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -414.0
-offset_top = -16.0
-offset_right = 428.54443
-offset_bottom = 145.0
+offset_left = -309.0
+offset_top = -17.0
+offset_right = 308.5171
+offset_bottom = 101.0
 grow_horizontal = 2
 texture = ExtResource("4_ipivt")
 expand_mode = 1
@@ -95,19 +105,22 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 147.0
-offset_top = 198.0
+offset_top = 178.0
 offset_right = -179.0
-offset_bottom = -192.0
+offset_bottom = -198.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="Popup/Bg/ScrollContainer" unique_id=906704339]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 6
+size_flags_vertical = 6
 
 [node name="GridContainer" type="GridContainer" parent="Popup/Bg/ScrollContainer/MarginContainer" unique_id=1332595228]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 10
 columns = 6
@@ -155,16 +168,5 @@ offset_right = -14.0
 offset_bottom = 107.0
 grow_horizontal = 0
 texture_normal = ExtResource("3_kj338")
-ignore_texture_size = true
-stretch_mode = 5
-
-[node name="BackBtn" type="TextureButton" parent="Popup" unique_id=1916955194]
-visible = false
-layout_mode = 1
-offset_left = 20.0
-offset_top = 14.0
-offset_right = 116.99994
-offset_bottom = 107.0
-texture_normal = ExtResource("5_x18ii")
 ignore_texture_size = true
 stretch_mode = 5
