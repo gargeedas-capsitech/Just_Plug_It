@@ -56,7 +56,6 @@ func on_add_segment_input(event):
 		if mouse.button_index == MOUSE_BUTTON_LEFT:
 			if mouse.pressed:
 				is_dragging_add_button = true
-			else:
 				if is_dragging_add_button:
 					_rope.add_segment()
 				is_dragging_add_button = false
