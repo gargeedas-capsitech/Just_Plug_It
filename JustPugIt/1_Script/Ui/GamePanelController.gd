@@ -9,6 +9,7 @@ extends Control
 @export var score_text: Label
 @export var ropecontroller: Rope
 @export var camera: Camera2D
+@export var level_Manager : LevelController
 
 var _button: TouchScreenButton
 var _rightbutton: TouchScreenButton
@@ -65,6 +66,7 @@ func generate_level():
 	score_text.text = "   Rand No :" + str(randi() % 101) 
 	
 func on_back_button_clicked():
+	level_Manager.clear_level()
 	UIManager.instance.enable_panel(UIManager.PanelType.LEVEL)
 	hide()
 

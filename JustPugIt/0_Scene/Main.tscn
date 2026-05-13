@@ -27,11 +27,13 @@ script = ExtResource("2_dqvfn")
 
 [node name="Controller" type="Node2D" parent="." unique_id=188561190]
 
-[node name="LevelManager" type="Node2D" parent="Controller" unique_id=258608569 node_paths=PackedStringArray("spawn_parent", "ropeController")]
+[node name="LevelManager" type="Node2D" parent="Controller" unique_id=258608569 node_paths=PackedStringArray("spawn_parent", "ropeController", "board", "camera")]
 script = ExtResource("2_ell7g")
 leveldata = ExtResource("3_7bm73")
-spawn_parent = NodePath("../../Environment/Player/Board")
+spawn_parent = NodePath("../../Environment/Player/Board/Container")
 ropeController = NodePath("../RopeController")
+board = NodePath("../../Environment/Player/Board")
+camera = NodePath("../../Camera2D")
 
 [node name="RopeController" type="Node2D" parent="Controller" unique_id=1184272061 node_paths=PackedStringArray("camera")]
 script = ExtResource("4_xbsc3")
@@ -46,9 +48,12 @@ camera = NodePath("../../Camera2D")
 [node name="Player" type="Node2D" parent="Environment" unique_id=1059232377]
 
 [node name="Board" parent="Environment/Player" unique_id=1474722204 instance=ExtResource("4_j8kbn")]
+visible = false
 z_as_relative = false
 position = Vector2(956, 527)
-scale = Vector2(0.326, 0.36400002)
+
+[node name="Container" type="Node2D" parent="Environment/Player/Board" unique_id=86019182]
+z_index = 10
 
 [node name="GravityArea" type="Area2D" parent="." unique_id=1623485987]
 priority = 10
@@ -73,10 +78,11 @@ popup_panel = NodePath("CanvasLayer/PopupPanel")
 visible = false
 level_manager = NodePath("../../Controller/LevelManager")
 
-[node name="GamePanel" parent="UIManager" unique_id=323910568 node_paths=PackedStringArray("ropecontroller", "camera") instance=ExtResource("4_kf1pu")]
+[node name="GamePanel" parent="UIManager" unique_id=323910568 node_paths=PackedStringArray("ropecontroller", "camera", "level_Manager") instance=ExtResource("4_kf1pu")]
 visible = false
 ropecontroller = NodePath("../../Controller/RopeController")
 camera = NodePath("../../Camera2D")
+level_Manager = NodePath("../../Controller/LevelManager")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="UIManager" unique_id=131289889]
 layer = 100

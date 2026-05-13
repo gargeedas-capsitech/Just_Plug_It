@@ -199,10 +199,14 @@ func update_gravity(gravity_direction, parent_node):
 				child.apply_central_force(gravity_direction * 600)
 
 
-func _process(delta):
+func _process(_delta):
 	if not _is_already_cut and _segments.size() > 0:
 		var last_seg = _segments[-1]
+		if !is_instance_valid(last_seg):
+			return
 
+		if !is_instance_valid(_plug):
+			return
 		var tip_offset = last_seg.global_transform.y.normalized() * segment_distance
 		_plug.global_position = last_seg.global_position + tip_offset
 		_plug.global_rotation = last_seg.global_rotation
