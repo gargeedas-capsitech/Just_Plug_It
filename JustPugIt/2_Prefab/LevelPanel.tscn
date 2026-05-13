@@ -1,14 +1,14 @@
-[gd_scene format=3 uid="uid://dmv3ewgfqwq20"]
+[gd_scene format=3 uid="uid://bds4k45exrljw"]
 
 [ext_resource type="Script" uid="uid://dqmc16ab380a8" path="res://JustPugIt/1_Script/Ui/LevelPanelController.gd" id="1_x18ii"]
 [ext_resource type="PackedScene" uid="uid://balwjghshyscb" path="res://JustPugIt/2_Prefab/Spawnable/LevelButton.tscn" id="2_y30ev"]
 [ext_resource type="Texture2D" uid="uid://7brolq75ssvq" path="res://JustPugIt/3_Sprite/setting_btn.png" id="3_kj338"]
-[ext_resource type="Texture2D" uid="uid://vync2pydiiu7" path="res://Image/LevelBtnGrp_Box.png" id="3_shbub"]
-[ext_resource type="Texture2D" uid="uid://yrqoa2wikr0p" path="res://Image/levelBox.png" id="4_ipivt"]
-[ext_resource type="Texture2D" uid="uid://dc4ij1go2nfoo" path="res://Image/SideBtn.png" id="5_5npdo"]
+[ext_resource type="Texture2D" uid="uid://vync2pydiiu7" path="res://JustPugIt/3_Sprite/Image/LevelBtnGrp_Box.png" id="3_shbub"]
+[ext_resource type="Texture2D" uid="uid://yrqoa2wikr0p" path="res://JustPugIt/3_Sprite/Image/levelBox.png" id="4_ipivt"]
+[ext_resource type="Texture2D" uid="uid://dc4ij1go2nfoo" path="res://JustPugIt/3_Sprite/Image/SideBtn.png" id="5_5npdo"]
 [ext_resource type="FontFile" uid="uid://dt8ekwhmxfayp" path="res://JustPugIt/Jua-Regular.ttf" id="5_wxabp"]
 [ext_resource type="Texture2D" uid="uid://brlf8xc1w6a45" path="res://JustPugIt/3_Sprite/back_btn.png" id="5_x18ii"]
-[ext_resource type="Texture2D" uid="uid://dpu3myxduslon" path="res://Image/sideBtnRight.png" id="6_wxabp"]
+[ext_resource type="Texture2D" uid="uid://dpu3myxduslon" path="res://JustPugIt/3_Sprite/Image/sideBtnRight.png" id="6_wxabp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_shbub"]
 
@@ -44,6 +44,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_shbub")
 
 [node name="Bg" type="TextureRect" parent="Popup" unique_id=198154075]
+z_index = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
