@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://nni3rlwx6s08"
-path="res://.godot/imported/PrivacyPolicy.png-9e129b54f4774ec3c10659170bffc631.ctex"
+path="res://.godot/imported/PrivacyPolicy.png-abd0e346846f8f437b81ff95cdb2be19.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Image/PrivacyPolicy.png"
-dest_files=["res://.godot/imported/PrivacyPolicy.png-9e129b54f4774ec3c10659170bffc631.ctex"]
+source_file="res://JustPugIt/3_Sprite/Image/PrivacyPolicy.png"
+dest_files=["res://.godot/imported/PrivacyPolicy.png-abd0e346846f8f437b81ff95cdb2be19.ctex"]
 
 [params]
 

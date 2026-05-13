@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dy4q03wpvwhf8"
-path="res://.godot/imported/HapOff.png-b4a8b87ec8020b053f0d069ceee84d2b.ctex"
+path="res://.godot/imported/HapOff.png-e1035dfcd03f045699a85a03a3009402.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Image/HapOff.png"
-dest_files=["res://.godot/imported/HapOff.png-b4a8b87ec8020b053f0d069ceee84d2b.ctex"]
+source_file="res://JustPugIt/3_Sprite/Image/HapOff.png"
+dest_files=["res://.godot/imported/HapOff.png-e1035dfcd03f045699a85a03a3009402.ctex"]
 
 [params]
 

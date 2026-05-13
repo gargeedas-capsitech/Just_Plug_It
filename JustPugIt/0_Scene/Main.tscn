@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://cpd1odupxela3" path="res://JustPugIt/1_Script/Main/LevelManager.gd" id="2_ell7g"]
 [ext_resource type="Script" uid="uid://dbbcuvq52yj3a" path="res://JustPugIt/1_Script/Ui/UIManager.gd" id="2_y8q8k"]
 [ext_resource type="Resource" uid="uid://bflg8w5n0q18i" path="res://JustPugIt/4_Levels/level1.tres" id="3_7bm73"]
-[ext_resource type="PackedScene" uid="uid://bds4k45exrljw" path="res://JustPugIt/2_Prefab/Panel/LevelPanel.tscn" id="3_q3uv2"]
+[ext_resource type="PackedScene" uid="uid://bds4k45exrljw" path="res://JustPugIt/2_Prefab/LevelPanel.tscn" id="3_q3uv2"]
 [ext_resource type="PackedScene" uid="uid://b3km3v4fe54gp" path="res://JustPugIt/2_Prefab/Spawnable/board.tscn" id="4_j8kbn"]
 [ext_resource type="PackedScene" uid="uid://cp7eye3asjy3p" path="res://JustPugIt/2_Prefab/Panel/GamePanel.tscn" id="4_kf1pu"]
 [ext_resource type="Script" uid="uid://b14v1h7xdv84n" path="res://JustPugIt/1_Script/Main/rope.gd" id="4_xbsc3"]

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://jtw2jo6cf430"
-path="res://.godot/imported/soundOn.png-a7410d1bce28f86dff3448d479284f9b.ctex"
+path="res://.godot/imported/soundOn.png-06df490b7cdb0b5c449666ab53507fd1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Image/soundOn.png"
-dest_files=["res://.godot/imported/soundOn.png-a7410d1bce28f86dff3448d479284f9b.ctex"]
+source_file="res://JustPugIt/3_Sprite/Image/soundOn.png"
+dest_files=["res://.godot/imported/soundOn.png-06df490b7cdb0b5c449666ab53507fd1.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cke1b1o2e1bv2"
-path="res://.godot/imported/DeleteAccount.png-8156d7d19df8c882761efe4cb01c564e.ctex"
+path="res://.godot/imported/DeleteAccount.png-3c6ff0400c6befd574e9a71790da3fb8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Image/DeleteAccount.png"
-dest_files=["res://.godot/imported/DeleteAccount.png-8156d7d19df8c882761efe4cb01c564e.ctex"]
+source_file="res://JustPugIt/3_Sprite/Image/DeleteAccount.png"
+dest_files=["res://.godot/imported/DeleteAccount.png-3c6ff0400c6befd574e9a71790da3fb8.ctex"]
 
 [params]
 

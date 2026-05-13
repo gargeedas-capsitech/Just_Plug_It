@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://cqloe7k24cgls"]
 
-[ext_resource type="Script" uid="uid://denl3wtmbo502" path="res://1_Script/Ui/PopupPanelController.gd" id="1_bi728"]
-[ext_resource type="PackedScene" uid="uid://duuykxjpwvyug" path="res://2_Prefab/PopUp/SettingPopup.tscn" id="1_e07gi"]
-[ext_resource type="PackedScene" uid="uid://y3tnp718q4d6" path="res://2_Prefab/PopUp/PausePopup.tscn" id="2_bi728"]
-[ext_resource type="PackedScene" uid="uid://dmmt6qtm583d" path="res://2_Prefab/PopUp/WinPopup.tscn" id="3_68oxu"]
-[ext_resource type="PackedScene" uid="uid://c008bw1jtmhn2" path="res://2_Prefab/PopUp/LosePopup.tscn" id="5_5wmr8"]
-[ext_resource type="PackedScene" uid="uid://blg5h1wrgy1lg" path="res://2_Prefab/PopUp/ShopPopup.tscn" id="6_xr4rd"]
-[ext_resource type="PackedScene" uid="uid://cmelv2lj55q3u" path="res://2_Prefab/PopUp/Network.tscn" id="7_ns8u4"]
-[ext_resource type="PackedScene" uid="uid://b4flifli1hx1p" path="res://2_Prefab/PopUp/NoAds.tscn" id="8_xr4rd"]
-[ext_resource type="PackedScene" uid="uid://cme8s5qtwib1k" path="res://2_Prefab/PopUp/RestartPopup.tscn" id="9_ns8u4"]
-[ext_resource type="PackedScene" uid="uid://g44vlr583idt" path="res://2_Prefab/PopUp/ProfilePopup.tscn" id="10_f0m4b"]
-[ext_resource type="PackedScene" uid="uid://casafchhyfikb" path="res://2_Prefab/PopUp/LeaderboardPopup.tscn" id="11_efaqq"]
+[ext_resource type="Script" uid="uid://denl3wtmbo502" path="res://JustPugIt/1_Script/Ui/PopupPanelController.gd" id="1_bi728"]
+[ext_resource type="PackedScene" uid="uid://b0ngbmwbtdg4m" path="res://JustPugIt/2_Prefab/PopUp/SettingPopup.tscn" id="1_e07gi"]
+[ext_resource type="PackedScene" uid="uid://y3tnp718q4d6" path="res://JustPugIt/2_Prefab/PopUp/PausePopup.tscn" id="2_bi728"]
+[ext_resource type="PackedScene" uid="uid://dmmt6qtm583d" path="res://JustPugIt/2_Prefab/PopUp/WinPopup.tscn" id="3_68oxu"]
+[ext_resource type="PackedScene" uid="uid://c008bw1jtmhn2" path="res://JustPugIt/2_Prefab/PopUp/LosePopup.tscn" id="5_5wmr8"]
+[ext_resource type="PackedScene" uid="uid://blg5h1wrgy1lg" path="res://JustPugIt/2_Prefab/PopUp/ShopPopup.tscn" id="6_xr4rd"]
+[ext_resource type="PackedScene" uid="uid://cmelv2lj55q3u" path="res://JustPugIt/2_Prefab/PopUp/Network.tscn" id="7_ns8u4"]
+[ext_resource type="PackedScene" uid="uid://b4flifli1hx1p" path="res://JustPugIt/2_Prefab/PopUp/NoAds.tscn" id="8_xr4rd"]
+[ext_resource type="PackedScene" uid="uid://cme8s5qtwib1k" path="res://JustPugIt/2_Prefab/PopUp/RestartPopup.tscn" id="9_ns8u4"]
+[ext_resource type="PackedScene" uid="uid://g44vlr583idt" path="res://JustPugIt/2_Prefab/PopUp/ProfilePopup.tscn" id="10_f0m4b"]
+[ext_resource type="PackedScene" uid="uid://casafchhyfikb" path="res://JustPugIt/2_Prefab/PopUp/LeaderboardPopup.tscn" id="11_efaqq"]
 
 [node name="PopupPanel" type="Control" unique_id=1262038868 node_paths=PackedStringArray("pause_popup", "win_popup", "gameover_popup", "setting_popup", "shop_popup", "noads_popup", "network_popup", "leaderboard_popup", "restart_popup", "profile_popup")]
 layout_mode = 3
@@ -23,7 +23,7 @@ script = ExtResource("1_bi728")
 pause_popup = NodePath("PausePopup")
 win_popup = NodePath("WinPopup")
 gameover_popup = NodePath("LosePopup")
-setting_popup = NodePath("SettingPopup")
+setting_popup = NodePath("SettingsPanel")
 shop_popup = NodePath("ShopPopup")
 noads_popup = NodePath("NoAdsPopup")
 network_popup = NodePath("NetworkPopup")
@@ -31,9 +31,9 @@ leaderboard_popup = NodePath("LeaderboardPopup")
 restart_popup = NodePath("RestartPopup")
 profile_popup = NodePath("ProfilePopup")
 
-[node name="SettingPopup" parent="." unique_id=17289812 instance=ExtResource("1_e07gi")]
+[node name="SettingsPanel" parent="." unique_id=1858682037 instance=ExtResource("1_e07gi")]
 visible = false
-layout_mode = 1
+layout_mode = 0
 
 [node name="PausePopup" parent="." unique_id=1843690216 instance=ExtResource("2_bi728")]
 visible = false

@@ -1,204 +1,194 @@
-[gd_scene format=3 uid="uid://duuykxjpwvyug"]
+[gd_scene format=3 uid="uid://b0ngbmwbtdg4m"]
 
-[ext_resource type="Texture2D" uid="uid://dcdjyrvneankf" path="res://3_Sprite/level_bg.png" id="1_opol5"]
-[ext_resource type="Script" uid="uid://dxhnugeqyfej4" path="res://1_Script/Ui/SettingPopUpController.gd" id="1_pnw8w"]
-[ext_resource type="Texture2D" uid="uid://dq3ofd1arcxnh" path="res://3_Sprite/popUp.png" id="2_0aw24"]
-[ext_resource type="Texture2D" uid="uid://beb1m0qi2wabl" path="res://3_Sprite/on_btn.png" id="3_0aw24"]
-[ext_resource type="Texture2D" uid="uid://bbqa0tujwrbql" path="res://3_Sprite/off_btn.png" id="3_2psc0"]
-[ext_resource type="Texture2D" uid="uid://dfrc2uvywfbn" path="res://3_Sprite/cross_btn.png" id="4_ly7nb"]
+[ext_resource type="Script" uid="uid://dxhnugeqyfej4" path="res://JustPugIt/1_Script/Ui/SettingPopUpController.gd" id="1_pnw8w"]
+[ext_resource type="Texture2D" uid="uid://vync2pydiiu7" path="res://JustPugIt/3_Sprite/Image/LevelBtnGrp_Box.png" id="2_g3j1f"]
+[ext_resource type="Texture2D" uid="uid://fqv8hhi8d6o0" path="res://JustPugIt/3_Sprite/Image/musicOff.png" id="3_fi1hd"]
+[ext_resource type="Texture2D" uid="uid://ccuohturtcnx6" path="res://JustPugIt/3_Sprite/Image/name.png" id="3_wj8ov"]
+[ext_resource type="FontFile" uid="uid://ni3p6awpjgph" path="res://Font/Jua-Regular.ttf" id="4_fi1hd"]
+[ext_resource type="Texture2D" uid="uid://0bssx2o6wi7d" path="res://JustPugIt/3_Sprite/Image/soundOff.png" id="5_eqkbl"]
+[ext_resource type="Texture2D" uid="uid://nni3rlwx6s08" path="res://JustPugIt/3_Sprite/Image/PrivacyPolicy.png" id="5_kxaaa"]
+[ext_resource type="Texture2D" uid="uid://cke1b1o2e1bv2" path="res://JustPugIt/3_Sprite/Image/DeleteAccount.png" id="6_eqkbl"]
+[ext_resource type="Texture2D" uid="uid://cht1j1vwt7rpy" path="res://JustPugIt/3_Sprite/Image/music.png" id="7_52nfm"]
+[ext_resource type="Texture2D" uid="uid://bv3twgjek34hw" path="res://JustPugIt/3_Sprite/Image/musicOn.png" id="8_8ae8n"]
+[ext_resource type="Texture2D" uid="uid://l5t0r2wujc0p" path="res://JustPugIt/3_Sprite/Image/hapOn.png" id="9_raaxm"]
+[ext_resource type="Texture2D" uid="uid://jtw2jo6cf430" path="res://JustPugIt/3_Sprite/Image/soundOn.png" id="10_eijgs"]
 
-[node name="SettingPopup" type="Control" unique_id=17289812 node_paths=PackedStringArray("close_button1", "close_button2", "music_button", "sfx_button")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rvykh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.36078432, 0.21176471, 0.4392157, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="SettingsPanel" type="Control" unique_id=1858682037 node_paths=PackedStringArray("close_button1", "close_button2", "music_button", "sfx_button")]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 script = ExtResource("1_pnw8w")
-close_button1 = NodePath("CloseButton")
-close_button2 = NodePath("Popup/CloseButton")
-music_button = NodePath("Popup/VerticleLayout/MusicPanel/TextureButton")
-sfx_button = NodePath("Popup/VerticleLayout/SoundPanel/TextureButton")
-music_on_texture = ExtResource("3_0aw24")
-music_off_texture = ExtResource("3_2psc0")
-sfx_on_texture = ExtResource("3_0aw24")
-sfx_off_texture = ExtResource("3_2psc0")
+close_button1 = NodePath("Panel/CenterContainer/TextureRect/DeleteAccBtn")
+close_button2 = NodePath("Panel/CenterContainer/TextureRect/PrivacyBtn")
+music_button = NodePath("Panel/CenterContainer/TextureRect/buttons/HBoxContainer/music")
+sfx_button = NodePath("Panel/CenterContainer/TextureRect/buttons/HBoxContainer/sound")
+music_on_texture = ExtResource("8_8ae8n")
+music_off_texture = ExtResource("3_fi1hd")
+sfx_on_texture = ExtResource("10_eijgs")
+sfx_off_texture = ExtResource("5_eqkbl")
 
-[node name="CloseButton" type="TextureButton" parent="." unique_id=1307522071]
-modulate = Color(0, 0, 0, 0.39215687)
+[node name="Panel" type="Panel" parent="." unique_id=200227522]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("1_opol5")
-stretch_mode = 0
 
-[node name="Popup" type="TextureRect" parent="." unique_id=1106778610]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -152.0
-offset_top = -208.0
-offset_right = 152.0
-offset_bottom = 208.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_0aw24")
+[node name="CenterContainer" type="CenterContainer" parent="Panel" unique_id=1897346999]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 240.0
+offset_right = 2798.0
+offset_bottom = 1513.0
+scale = Vector2(0.459, 0.483)
 
-[node name="VerticleLayout" type="VBoxContainer" parent="Popup" unique_id=1178258156]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = 94.0
-offset_right = -5.0
-offset_bottom = -95.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 80
-
-[node name="MusicPanel" type="Panel" parent="Popup/VerticleLayout" unique_id=1369658095]
+[node name="TextureRect" type="TextureRect" parent="Panel/CenterContainer" unique_id=688145674]
 layout_mode = 2
+texture = ExtResource("2_g3j1f")
 
-[node name="TextureButton" type="TextureButton" parent="Popup/VerticleLayout/MusicPanel" unique_id=534753891]
+[node name="TextureRect" type="TextureRect" parent="Panel/CenterContainer/TextureRect" unique_id=2101775702]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 21.0
-offset_right = 101.0
-offset_bottom = 48.0
+offset_left = -600.0
+offset_top = -33.132
+offset_right = 600.0
+offset_bottom = 190.868
 grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("3_0aw24")
-stretch_mode = 5
+texture = ExtResource("3_wj8ov")
 
-[node name="Label" type="Label" parent="Popup/VerticleLayout/MusicPanel" unique_id=365226403]
+[node name="Label" type="Label" parent="Panel/CenterContainer/TextureRect/TextureRect" unique_id=2028877070]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 50.0
-offset_right = 135.0
-offset_bottom = 42.0
-grow_vertical = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 30
-text = "Music"
-
-[node name="SoundPanel" type="Panel" parent="Popup/VerticleLayout" unique_id=1827643975]
-layout_mode = 2
-
-[node name="TextureButton" type="TextureButton" parent="Popup/VerticleLayout/SoundPanel" unique_id=1514026693]
-layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 21.0
-offset_right = 101.0
-offset_bottom = 48.0
+offset_left = -290.5
+offset_right = 290.5
+offset_bottom = 205.0
 grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("3_0aw24")
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="Popup/VerticleLayout/SoundPanel" unique_id=1143829610]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 50.0
-offset_right = 135.0
-offset_bottom = 42.0
-grow_vertical = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 30
-text = "Sound"
-
-[node name="Extra" type="Panel" parent="Popup/VerticleLayout" unique_id=447665814]
-layout_mode = 2
-
-[node name="TextureButton" type="TextureButton" parent="Popup/VerticleLayout/Extra" unique_id=503640361]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 21.0
-offset_right = 101.0
-offset_bottom = 48.0
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("3_0aw24")
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="Popup/VerticleLayout/Extra" unique_id=2036559542]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 50.0
-offset_right = 135.0
-offset_bottom = 42.0
-grow_vertical = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 30
-text = "Extra"
-
-[node name="PrivacyPolicy" type="Panel" parent="Popup/VerticleLayout" unique_id=1597647036]
-layout_mode = 2
-
-[node name="TextureButton" type="TextureButton" parent="Popup/VerticleLayout/PrivacyPolicy" unique_id=1099693978]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -103.0
-offset_right = 101.0
-offset_bottom = 48.0
-grow_horizontal = 2
-grow_vertical = 2
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="Popup/VerticleLayout/PrivacyPolicy" unique_id=925537878]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -65.5
-offset_right = 65.5
-offset_bottom = 42.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 20
-text = "Privacy Policy"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_fi1hd")
+theme_override_font_sizes/font_size = 150
+text = "Settings"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CloseButton" type="TextureButton" parent="Popup" unique_id=1513106790]
+[node name="PrivacyBtn" type="TextureButton" parent="Panel/CenterContainer/TextureRect" unique_id=1572385762]
 layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
+anchors_preset = -1
+anchor_left = 0.18300001
+anchor_top = 0.66800004
+anchor_right = 0.81700003
+anchor_bottom = 0.77500004
+offset_left = 0.5579834
+offset_top = -0.3640747
+offset_right = -0.55810547
+offset_bottom = -0.57507324
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("5_kxaaa")
+
+[node name="DeleteAccBtn" type="TextureButton" parent="Panel/CenterContainer/TextureRect" unique_id=1384132641]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.18300001
+anchor_top = 0.51100004
+anchor_right = 0.81700003
+anchor_bottom = 0.61700004
+offset_left = 0.5579834
+offset_top = -0.50305176
+offset_right = -0.55810547
+offset_bottom = 0.5593262
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("6_eqkbl")
+
+[node name="buttons" type="Panel" parent="Panel/CenterContainer/TextureRect" unique_id=813673782]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -752.0
+offset_top = -340.4338
+offset_right = 752.0
+offset_bottom = -64.67407
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rvykh")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/CenterContainer/TextureRect/buttons" unique_id=726471831]
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
-offset_left = -57.0
-offset_bottom = 58.0
-grow_horizontal = 0
-texture_normal = ExtResource("4_ly7nb")
-ignore_texture_size = true
-stretch_mode = 4
+anchor_bottom = 1.0
+offset_right = 13.469971
+offset_bottom = 0.0002746582
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 120
+alignment = 1
+
+[node name="music" type="TextureButton" parent="Panel/CenterContainer/TextureRect/buttons/HBoxContainer" unique_id=167931644]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("7_52nfm")
+
+[node name="TextureRect" type="TextureRect" parent="Panel/CenterContainer/TextureRect/buttons/HBoxContainer/music" unique_id=6262108]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.071
+anchor_top = 0.081
+anchor_right = 0.48700002
+anchor_bottom = 0.87600005
+offset_left = -0.06300163
+offset_top = 0.015000343
+offset_right = 0.08898926
+offset_bottom = -0.060012817
+grow_vertical = 2
+texture = ExtResource("8_8ae8n")
+
+[node name="haptic" type="TextureButton" parent="Panel/CenterContainer/TextureRect/buttons/HBoxContainer" unique_id=763229273]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("7_52nfm")
+
+[node name="TextureRect" type="TextureRect" parent="Panel/CenterContainer/TextureRect/buttons/HBoxContainer/haptic" unique_id=918724864]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 15.0
+offset_right = 172.0
+offset_bottom = 162.0
+texture = ExtResource("9_raaxm")
+
+[node name="sound" type="TextureButton" parent="Panel/CenterContainer/TextureRect/buttons/HBoxContainer" unique_id=769848170]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("7_52nfm")
+
+[node name="TextureRect" type="TextureRect" parent="Panel/CenterContainer/TextureRect/buttons/HBoxContainer/sound" unique_id=1824964852]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 15.0
+offset_right = 172.0
+offset_bottom = 162.0
+texture = ExtResource("10_eijgs")
+
+[connection signal="pressed" from="Panel/CenterContainer/TextureRect/buttons/HBoxContainer/music" to="." method="musicbtn"]
+[connection signal="pressed" from="Panel/CenterContainer/TextureRect/buttons/HBoxContainer/haptic" to="." method="hapbtn"]
+[connection signal="pressed" from="Panel/CenterContainer/TextureRect/buttons/HBoxContainer/sound" to="." method="soundbtn"]
