@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dsg7rku1kbb14"]
 
+[ext_resource type="Script" uid="uid://bohb46fldwwjf" path="res://Scenes/UI_Scene/game_win_ui.gd" id="1_j1qql"]
 [ext_resource type="Texture2D" uid="uid://d1fh01t7xv70y" path="res://Image/GameOverBox.png" id="1_ruthb"]
 [ext_resource type="Texture2D" uid="uid://bis4jbm8vt31p" path="res://Image/GameWin_Star Holder.png" id="2_rvsxa"]
 [ext_resource type="Texture2D" uid="uid://dr5w2wfpq0yj3" path="res://Image/gameWin&Over Star.png" id="3_uodlt"]
@@ -9,7 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://cm0r4fl1iseyq" path="res://Image/Restart_Btn.png" id="6_yuv75"]
 [ext_resource type="Texture2D" uid="uid://bhpusb8vafxmy" path="res://Image/home_Btn.png" id="7_63fum"]
 
-[node name="GameWin_UI" type="CanvasLayer" unique_id=258296162]
+[node name="GameWin_UI" type="CanvasLayer" unique_id=258296162 node_paths=PackedStringArray("homeButton", "restartButton", "gameWinPanel")]
+script = ExtResource("1_j1qql")
+homeButton = NodePath("Panel/CenterContainer/Board/HomeButton")
+restartButton = NodePath("Panel/CenterContainer/Board/ReplayButton")
+gameWinPanel = NodePath("Panel")
 
 [node name="Panel" type="Panel" parent="." unique_id=905584879]
 self_modulate = Color(1, 1, 1, 0.30980393)

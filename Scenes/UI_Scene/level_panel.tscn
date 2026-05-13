@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bmeucnx4kp70u" path="res://Script/UI/level_panel.gd" id="1_csvrj"]
 [ext_resource type="Texture2D" uid="uid://yrqoa2wikr0p" path="res://Image/levelBox.png" id="2_iw4b3"]
 [ext_resource type="Script" uid="uid://bar8kxt4hx86l" path="res://Script/UI/control.gd" id="3_lxgt1"]
+[ext_resource type="FontFile" uid="uid://ni3p6awpjgph" path="res://Font/Jua-Regular.ttf" id="4_75n3l"]
 [ext_resource type="Texture2D" uid="uid://dc4ij1go2nfoo" path="res://Image/SideBtn.png" id="4_b6oqs"]
 [ext_resource type="Texture2D" uid="uid://dpu3myxduslon" path="res://Image/sideBtnRight.png" id="5_j4407"]
 [ext_resource type="PackedScene" uid="uid://dqd3tss3sj4fc" path="res://Scenes/UI_Scene/level_butoon.tscn" id="5_x6u7i"]
@@ -40,14 +41,24 @@ offset_bottom = 190.86792
 texture = ExtResource("2_iw4b3")
 
 [node name="Label" type="Label" parent="Panel/LevelBox/Image/LevelText" unique_id=99123265]
-layout_mode = 0
-offset_left = 366.13257
-offset_top = -16.566008
-offset_right = 815.13257
-offset_bottom = 188.43399
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.5
+offset_top = -102.5
+offset_right = 224.5
+offset_bottom = 102.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_75n3l")
 theme_override_font_sizes/font_size = 150
 text = "Levels"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Control" type="Control" parent="Panel/LevelBox" unique_id=951896018]
 layout_mode = 2
