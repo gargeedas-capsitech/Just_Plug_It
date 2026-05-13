@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://b0ngbmwbtdg4m"]
 
-[ext_resource type="Script" uid="uid://dxhnugeqyfej4" path="res://JustPugIt/1_Script/Ui/SettingPopUpController.gd" id="1_pnw8w"]
+[ext_resource type="Script" uid="uid://bt3dwoqvjmm8b" path="res://JustPugIt/2_Prefab/PopUp/setting_popup.gd" id="1_kxaaa"]
 [ext_resource type="Texture2D" uid="uid://vync2pydiiu7" path="res://JustPugIt/3_Sprite/Image/LevelBtnGrp_Box.png" id="2_g3j1f"]
 [ext_resource type="Texture2D" uid="uid://fqv8hhi8d6o0" path="res://JustPugIt/3_Sprite/Image/musicOff.png" id="3_fi1hd"]
 [ext_resource type="Texture2D" uid="uid://ccuohturtcnx6" path="res://JustPugIt/3_Sprite/Image/name.png" id="3_wj8ov"]
 [ext_resource type="FontFile" uid="uid://ni3p6awpjgph" path="res://Font/Jua-Regular.ttf" id="4_fi1hd"]
+[ext_resource type="Texture2D" uid="uid://dy4q03wpvwhf8" path="res://JustPugIt/3_Sprite/Image/HapOff.png" id="5_52nfm"]
 [ext_resource type="Texture2D" uid="uid://0bssx2o6wi7d" path="res://JustPugIt/3_Sprite/Image/soundOff.png" id="5_eqkbl"]
 [ext_resource type="Texture2D" uid="uid://nni3rlwx6s08" path="res://JustPugIt/3_Sprite/Image/PrivacyPolicy.png" id="5_kxaaa"]
 [ext_resource type="Texture2D" uid="uid://cke1b1o2e1bv2" path="res://JustPugIt/3_Sprite/Image/DeleteAccount.png" id="6_eqkbl"]
@@ -12,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://bv3twgjek34hw" path="res://JustPugIt/3_Sprite/Image/musicOn.png" id="8_8ae8n"]
 [ext_resource type="Texture2D" uid="uid://l5t0r2wujc0p" path="res://JustPugIt/3_Sprite/Image/hapOn.png" id="9_raaxm"]
 [ext_resource type="Texture2D" uid="uid://jtw2jo6cf430" path="res://JustPugIt/3_Sprite/Image/soundOn.png" id="10_eijgs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kxaaa"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rvykh"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -25,18 +28,24 @@ corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
-[node name="SettingsPanel" type="Control" unique_id=1858682037 node_paths=PackedStringArray("close_button1", "close_button2", "music_button", "sfx_button")]
+[node name="SettingsPanel" type="Control" unique_id=1858682037 node_paths=PackedStringArray("musicBtn", "hapBtn", "soundBtn", "closeBtn")]
 layout_mode = 3
-anchors_preset = 0
-script = ExtResource("1_pnw8w")
-close_button1 = NodePath("Panel/CenterContainer/TextureRect/DeleteAccBtn")
-close_button2 = NodePath("Panel/CenterContainer/TextureRect/PrivacyBtn")
-music_button = NodePath("Panel/CenterContainer/TextureRect/buttons/HBoxContainer/music")
-sfx_button = NodePath("Panel/CenterContainer/TextureRect/buttons/HBoxContainer/sound")
-music_on_texture = ExtResource("8_8ae8n")
-music_off_texture = ExtResource("3_fi1hd")
-sfx_on_texture = ExtResource("10_eijgs")
-sfx_off_texture = ExtResource("5_eqkbl")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kxaaa")
+musicBtn = NodePath("Panel/CenterContainer/TextureRect/buttons/HBoxContainer/music/TextureRect")
+hapBtn = NodePath("Panel/CenterContainer/TextureRect/buttons/HBoxContainer/haptic/TextureRect")
+soundBtn = NodePath("Panel/CenterContainer/TextureRect/buttons/HBoxContainer/sound/TextureRect")
+closeBtn = NodePath("Panel/CloseButton")
+musicOn = ExtResource("8_8ae8n")
+musicOff = ExtResource("3_fi1hd")
+hapOn = ExtResource("9_raaxm")
+hapOff = ExtResource("5_52nfm")
+soundOn = ExtResource("10_eijgs")
+soundOff = ExtResource("5_eqkbl")
 
 [node name="Panel" type="Panel" parent="." unique_id=200227522]
 layout_mode = 1
@@ -45,6 +54,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_kxaaa")
+
+[node name="CloseButton" type="TextureButton" parent="Panel" unique_id=440690826]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 0
 
 [node name="CenterContainer" type="CenterContainer" parent="Panel" unique_id=1897346999]
 layout_mode = 0

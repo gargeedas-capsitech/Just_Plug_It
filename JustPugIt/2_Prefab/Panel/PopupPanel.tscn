@@ -33,7 +33,7 @@ profile_popup = NodePath("ProfilePopup")
 
 [node name="SettingsPanel" parent="." unique_id=1858682037 instance=ExtResource("1_e07gi")]
 visible = false
-layout_mode = 0
+layout_mode = 1
 
 [node name="PausePopup" parent="." unique_id=1843690216 instance=ExtResource("2_bi728")]
 visible = false

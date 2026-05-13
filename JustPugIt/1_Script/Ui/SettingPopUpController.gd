@@ -1,4 +1,4 @@
-class_name SettingPopupController
+# class_name SettingPopupController
 extends Node
 
 @export var close_button1: TextureButton 
