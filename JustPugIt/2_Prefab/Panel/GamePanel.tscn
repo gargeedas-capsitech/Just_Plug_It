@@ -1,17 +1,29 @@
 [gd_scene format=3 uid="uid://cp7eye3asjy3p"]
 
-[ext_resource type="Texture2D" uid="uid://dq3ofd1arcxnh" path="res://JustPugIt/3_Sprite/popUp.png" id="1_e5s1x"]
 [ext_resource type="Script" uid="uid://dwsfnk4hu1vdn" path="res://JustPugIt/1_Script/Ui/GamePanelController.gd" id="1_v6xp3"]
 [ext_resource type="Texture2D" uid="uid://d4hofq0p2qp1m" path="res://JustPugIt/3_Sprite/Image/gameplyBg 1.png" id="2_dean6"]
-[ext_resource type="Texture2D" uid="uid://7brolq75ssvq" path="res://JustPugIt/3_Sprite/setting_btn.png" id="2_o6xn6"]
 [ext_resource type="Texture2D" uid="uid://cs4nul5j3vr66" path="res://JustPugIt/3_Sprite/levelLogo.png" id="2_v6xp3"]
+[ext_resource type="Texture2D" uid="uid://w7y5qiqoj0bv" path="res://JustPugIt/3_Sprite/wireuse.png" id="3_6p24b"]
 [ext_resource type="Texture2D" uid="uid://cghpxk8kclrrj" path="res://JustPugIt/3_Sprite/pause_btn.png" id="3_e5s1x"]
-[ext_resource type="Texture2D" uid="uid://csfu678t01xbx" path="res://JustPugIt/3_Sprite/retry_btn.png" id="4_o6xn6"]
+[ext_resource type="Texture2D" uid="uid://bkee4ykvswh24" path="res://JustPugIt/3_Sprite/settingsbtn.png" id="5_tfe08"]
+[ext_resource type="Texture2D" uid="uid://b1c42l14uidoa" path="res://JustPugIt/3_Sprite/hint.png" id="6_6p24b"]
+[ext_resource type="FontFile" uid="uid://dt8ekwhmxfayp" path="res://JustPugIt/Jua-Regular.ttf" id="7_c5eyf"]
 [ext_resource type="Texture2D" uid="uid://brlf8xc1w6a45" path="res://JustPugIt/3_Sprite/back_btn.png" id="7_ccgak"]
+[ext_resource type="Texture2D" uid="uid://cfs4vwhtrlri1" path="res://JustPugIt/3_Sprite/Image/retrybtn.png" id="7_mmnpj"]
 [ext_resource type="Texture2D" uid="uid://dmkpkjqomqsm5" path="res://JustPugIt/3_Sprite/Image/downArrow.png" id="8_51kp2"]
 [ext_resource type="Texture2D" uid="uid://dkg0xm231sdp8" path="res://JustPugIt/3_Sprite/Image/RightBtn.png" id="9_dean6"]
 [ext_resource type="Texture2D" uid="uid://ctpphejpi7ujt" path="res://JustPugIt/3_Sprite/Image/leftArrow.png" id="10_w6ygl"]
 [ext_resource type="Texture2D" uid="uid://s4p36f7sc875" path="res://JustPugIt/3_Sprite/Image/upArrow.png" id="11_e2j4y"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_c5eyf"]
+font = ExtResource("7_c5eyf")
+font_size = 57
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kmcsh"]
+font = ExtResource("7_c5eyf")
+font_size = 24
+font_color = Color(0, 0, 0, 1)
 
 [node name="GamePanel" type="Control" unique_id=547876178 node_paths=PackedStringArray("back_button", "setting_button", "pause_button", "restart_button", "level_text", "score_text")]
 layout_mode = 3
@@ -26,38 +38,38 @@ setting_button = NodePath("SettingBtn")
 pause_button = NodePath("PauseBtn")
 restart_button = NodePath("RetryBtn")
 level_text = NodePath("Level/LevelText")
-score_text = NodePath("Score/ScoreText")
+score_text = NodePath("Score/usedWire")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1631684871]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -114.0
+offset_top = -4.0
+offset_right = 3554.628
+offset_bottom = 1084.0
 texture = ExtResource("2_dean6")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="Score" type="TextureRect" parent="." unique_id=1122768317]
 custom_minimum_size = Vector2(150, 80)
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -75.0
-offset_top = 20.0
-offset_right = 75.0
-offset_bottom = 100.0
-grow_horizontal = 2
-texture = ExtResource("1_e5s1x")
+offset_left = 22.0
+offset_top = 19.0
+offset_right = 518.0
+offset_bottom = 123.0
+texture = ExtResource("3_6p24b")
 expand_mode = 2
 
-[node name="ScoreText" type="Label" parent="Score" unique_id=1051957040]
+[node name="usedWire" type="Label" parent="Score" unique_id=1051957040]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 13.0
-offset_right = -12.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "   Rand No : 99"
+text = "1/100"
+label_settings = SubResource("LabelSettings_c5eyf")
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Level" type="TextureRect" parent="." unique_id=1205773397]
@@ -102,23 +114,55 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -111.0
+offset_left = -252.0
 offset_top = 14.0
-offset_right = -14.0
+offset_right = -155.0
 offset_bottom = 107.0
 grow_horizontal = 0
-texture_normal = ExtResource("2_o6xn6")
+texture_normal = ExtResource("5_tfe08")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="PauseBtn" type="TextureButton" parent="." unique_id=1916955194]
+[node name="HintBtn" type="TextureButton" parent="." unique_id=656899357]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -252.0
+offset_left = -402.0
 offset_top = 14.0
-offset_right = -155.00006
+offset_right = -305.0
+offset_bottom = 107.0
+grow_horizontal = 0
+texture_normal = ExtResource("6_6p24b")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HintBtn" unique_id=1395273618]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -41.0
+offset_top = -38.0
+offset_right = -1.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "x2"
+label_settings = SubResource("LabelSettings_kmcsh")
+horizontal_alignment = 1
+
+[node name="PauseBtn" type="TextureButton" parent="." unique_id=1916955194]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -402.0
+offset_top = 14.0
+offset_right = -305.0
 offset_bottom = 107.0
 grow_horizontal = 0
 texture_normal = ExtResource("3_e5s1x")
@@ -130,16 +174,17 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -402.0
+offset_left = -111.0
 offset_top = 14.0
-offset_right = -305.00006
+offset_right = -14.0
 offset_bottom = 107.0
 grow_horizontal = 0
-texture_normal = ExtResource("4_o6xn6")
+texture_normal = ExtResource("7_mmnpj")
 ignore_texture_size = true
 stretch_mode = 5
 
 [node name="BackBtn" type="TextureButton" parent="." unique_id=950160523]
+visible = false
 layout_mode = 1
 offset_left = 20.0
 offset_top = 20.0

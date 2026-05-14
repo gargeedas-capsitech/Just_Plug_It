@@ -1,10 +1,33 @@
 [gd_scene format=3 uid="uid://cme8s5qtwib1k"]
 
-[ext_resource type="Texture2D" uid="uid://dcdjyrvneankf" path="res://3_Sprite/level_bg.png" id="1_nukjp"]
-[ext_resource type="Script" uid="uid://bh6b65desu5n5" path="res://1_Script/Ui/RestartPopupController.gd" id="1_o0inr"]
-[ext_resource type="Texture2D" uid="uid://dq3ofd1arcxnh" path="res://3_Sprite/popUp.png" id="2_o0inr"]
-[ext_resource type="Texture2D" uid="uid://dfrc2uvywfbn" path="res://3_Sprite/cross_btn.png" id="3_q1cx4"]
-[ext_resource type="Texture2D" uid="uid://c4xkub5usmgm1" path="res://3_Sprite/tick_btn.png" id="4_1085m"]
+[ext_resource type="Texture2D" uid="uid://dcdjyrvneankf" path="res://JustPugIt/3_Sprite/level_bg.png" id="1_nukjp"]
+[ext_resource type="Script" uid="uid://bh6b65desu5n5" path="res://JustPugIt/1_Script/Ui/RestartPopupController.gd" id="1_o0inr"]
+[ext_resource type="Texture2D" uid="uid://vync2pydiiu7" path="res://JustPugIt/3_Sprite/Image/LevelBtnGrp_Box.png" id="3_3mtb6"]
+[ext_resource type="Texture2D" uid="uid://dfrc2uvywfbn" path="res://JustPugIt/3_Sprite/cross_btn.png" id="3_q1cx4"]
+[ext_resource type="Texture2D" uid="uid://dmcoars0v8pt8" path="res://JustPugIt/3_Sprite/restrpnelbtn.png" id="5_kg032"]
+[ext_resource type="Texture2D" uid="uid://ri8nylj41vyg" path="res://JustPugIt/3_Sprite/cancel.png" id="6_7gykn"]
+[ext_resource type="Texture2D" uid="uid://yrqoa2wikr0p" path="res://JustPugIt/3_Sprite/Image/levelBox.png" id="6_kg032"]
+[ext_resource type="FontFile" uid="uid://dt8ekwhmxfayp" path="res://JustPugIt/Jua-Regular.ttf" id="7_7gykn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kg032"]
+font = ExtResource("7_7gykn")
+font_size = 42
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7gykn"]
+font = ExtResource("7_7gykn")
+font_size = 44
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3mtb6"]
+font = ExtResource("7_7gykn")
+font_size = 50
+font_color = Color(0.3254902, 0.21568628, 0.38039216, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nk4fw"]
+font = ExtResource("7_7gykn")
+font_size = 75
+font_color = Color(0, 0, 0, 1)
 
 [node name="RestartPopup" type="Control" unique_id=17289812 node_paths=PackedStringArray("quit_button", "yes_button", "no_button", "close_button")]
 layout_mode = 3
@@ -15,8 +38,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_o0inr")
 quit_button = NodePath("CloseButton")
-yes_button = NodePath("Popup/YesButton")
-no_button = NodePath("Popup/NoButton")
+yes_button = NodePath("Popup/RestartButton")
+no_button = NodePath("Popup/CancelButton")
 close_button = NodePath("Popup/CloseButton")
 
 [node name="CloseButton" type="TextureButton" parent="." unique_id=1307522071]
@@ -37,15 +60,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -152.0
-offset_top = -208.0
-offset_right = 152.0
-offset_bottom = 208.0
+offset_left = -559.71765
+offset_top = -313.0
+offset_right = 559.71765
+offset_bottom = 313.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_o0inr")
+texture = ExtResource("3_3mtb6")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="CloseButton" type="TextureButton" parent="Popup" unique_id=1513106790]
+visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -57,50 +83,122 @@ texture_normal = ExtResource("3_q1cx4")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="YesButton" type="TextureButton" parent="Popup" unique_id=694365779]
+[node name="RestartButton" type="TextureButton" parent="Popup" unique_id=694365779]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 28.0
-offset_top = 14.0
-offset_right = 84.99997
-offset_bottom = 72.0
+offset_left = -336.71765
+offset_top = 23.0
+offset_right = -52.71765
+offset_bottom = 99.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("4_1085m")
+texture_normal = ExtResource("5_kg032")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="NoButton" type="TextureButton" parent="Popup" unique_id=899354746]
+[node name="Label" type="Label" parent="Popup/RestartButton" unique_id=496838226]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Restart"
+label_settings = SubResource("LabelSettings_kg032")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CancelButton" type="TextureButton" parent="Popup" unique_id=899354746]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -82.0
-offset_top = 14.0
-offset_right = -25.00003
-offset_bottom = 72.0
+offset_left = 7.2823486
+offset_top = 21.0
+offset_right = 291.28235
+offset_bottom = 97.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("3_q1cx4")
+texture_normal = ExtResource("6_7gykn")
 ignore_texture_size = true
 stretch_mode = 4
+
+[node name="Label" type="Label" parent="Popup/CancelButton" unique_id=1833544269]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Cancel"
+label_settings = SubResource("LabelSettings_7gykn")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label" type="Label" parent="Popup" unique_id=1981703333]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -110.0
+offset_right = 168.0
+offset_bottom = -49.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Are you sure ?"
+label_settings = SubResource("LabelSettings_3mtb6")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Popup" unique_id=1097131808]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -427.0
+offset_top = -55.0
+offset_right = 437.0
+offset_bottom = 5.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "All the progress in this level will be lost"
+label_settings = SubResource("LabelSettings_3mtb6")
+horizontal_alignment = 1
+
+[node name="Header" type="TextureRect" parent="Popup" unique_id=2034528784]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -111.0
-offset_top = 96.0
-offset_right = 112.0
-offset_bottom = 183.0
+offset_left = -288.14087
+offset_right = 288.14087
+offset_bottom = 106.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 30
-text = "ARE YOU SURE 
-  TO RESTART?"
+texture = ExtResource("6_kg032")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Popup/Header" unique_id=751591938]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Restart"
+label_settings = SubResource("LabelSettings_nk4fw")
+horizontal_alignment = 1
+vertical_alignment = 1

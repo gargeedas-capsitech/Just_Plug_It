@@ -7,14 +7,19 @@
 [ext_resource type="FontFile" uid="uid://ni3p6awpjgph" path="res://Font/Jua-Regular.ttf" id="4_fi1hd"]
 [ext_resource type="Texture2D" uid="uid://dy4q03wpvwhf8" path="res://JustPugIt/3_Sprite/Image/HapOff.png" id="5_52nfm"]
 [ext_resource type="Texture2D" uid="uid://0bssx2o6wi7d" path="res://JustPugIt/3_Sprite/Image/soundOff.png" id="5_eqkbl"]
-[ext_resource type="Texture2D" uid="uid://nni3rlwx6s08" path="res://JustPugIt/3_Sprite/Image/PrivacyPolicy.png" id="5_kxaaa"]
-[ext_resource type="Texture2D" uid="uid://cke1b1o2e1bv2" path="res://JustPugIt/3_Sprite/Image/DeleteAccount.png" id="6_eqkbl"]
 [ext_resource type="Texture2D" uid="uid://cht1j1vwt7rpy" path="res://JustPugIt/3_Sprite/Image/music.png" id="7_52nfm"]
 [ext_resource type="Texture2D" uid="uid://bv3twgjek34hw" path="res://JustPugIt/3_Sprite/Image/musicOn.png" id="8_8ae8n"]
 [ext_resource type="Texture2D" uid="uid://l5t0r2wujc0p" path="res://JustPugIt/3_Sprite/Image/hapOn.png" id="9_raaxm"]
 [ext_resource type="Texture2D" uid="uid://jtw2jo6cf430" path="res://JustPugIt/3_Sprite/Image/soundOn.png" id="10_eijgs"]
+[ext_resource type="Texture2D" uid="uid://baitnvuipkb0f" path="res://JustPugIt/3_Sprite/longbtn.png" id="11_fi1hd"]
+[ext_resource type="FontFile" uid="uid://dt8ekwhmxfayp" path="res://JustPugIt/Jua-Regular.ttf" id="12_kxaaa"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kxaaa"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_eqkbl"]
+font = ExtResource("12_kxaaa")
+font_size = 81
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rvykh"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -118,9 +123,22 @@ offset_right = -0.55810547
 offset_bottom = -0.57507324
 grow_horizontal = 2
 grow_vertical = 0
-texture_normal = ExtResource("5_kxaaa")
+texture_normal = ExtResource("11_fi1hd")
 
-[node name="DeleteAccBtn" type="TextureButton" parent="Panel/CenterContainer/TextureRect" unique_id=1384132641]
+[node name="Label" type="Label" parent="Panel/CenterContainer/TextureRect/PrivacyBtn" unique_id=943994665]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "privacy policy"
+label_settings = SubResource("LabelSettings_eqkbl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HomeBtn" type="TextureButton" parent="Panel/CenterContainer/TextureRect" unique_id=1930955154]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.18300001
@@ -133,7 +151,46 @@ offset_right = -0.55810547
 offset_bottom = 0.5593262
 grow_horizontal = 2
 grow_vertical = 0
-texture_normal = ExtResource("6_eqkbl")
+texture_normal = ExtResource("11_fi1hd")
+
+[node name="Label" type="Label" parent="Panel/CenterContainer/TextureRect/HomeBtn" unique_id=353453061]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Home"
+label_settings = SubResource("LabelSettings_eqkbl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DeleteaccBtn" type="TextureButton" parent="Panel/CenterContainer/TextureRect" unique_id=628063991]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.18300001
+anchor_top = 0.51100004
+anchor_right = 0.81700003
+anchor_bottom = 0.61700004
+offset_left = 0.5579834
+offset_top = -0.50305176
+offset_right = -0.55810547
+offset_bottom = 0.5593262
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("11_fi1hd")
+
+[node name="Label" type="Label" parent="Panel/CenterContainer/TextureRect/DeleteaccBtn" unique_id=940441276]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Delete Account"
+label_settings = SubResource("LabelSettings_eqkbl")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="buttons" type="Panel" parent="Panel/CenterContainer/TextureRect" unique_id=813673782]
 layout_mode = 1
