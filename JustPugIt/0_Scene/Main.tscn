@@ -56,6 +56,7 @@ position = Vector2(956, 527)
 z_index = 10
 
 [node name="GravityArea" type="Area2D" parent="." unique_id=1623485987]
+visible = false
 priority = 10
 gravity_space_override = 3
 

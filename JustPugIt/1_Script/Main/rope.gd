@@ -3,7 +3,7 @@ class_name  Rope
 
 @export var segment_scene: PackedScene
 @export var segment_count: int = 1
-@export var segment_distance: float = 5.0
+@export var segment_distance: float = 8.0
 @export var plug_scene: PackedScene
 @export var  ropesegmentParent: Node2D
 @export var camera: Camera2D
@@ -22,6 +22,8 @@ var _joints: Dictionary = {}
 var switch_counter: Dictionary = {}      
 var last_gravity_direction = Vector2.DOWN
 
+var _current_gravity_force: Vector2 = Vector2(0, 600)
+
 var count: int = 0
 
 func set_initial_segment():
@@ -33,6 +35,7 @@ func set_initial_segment():
 
 	for i in range(segment_count):
 		var segment = segment_scene.instantiate() as RigidBody2D
+		_setup_segment(segment)
 		if(ropesegmentParent!=null):
 			ropesegmentParent.add_child(segment)
 
@@ -47,7 +50,10 @@ func set_initial_segment():
 		joint.node_a = previous.get_path()
 		joint.node_b = segment.get_path()
 		joint.disable_collision = true
-
+		
+		# Softer joints reduce shockwave
+		joint.softness = 0.02
+		joint.bias = 0.15
 		previous = segment
 
 	if plug_scene == null:
@@ -59,6 +65,44 @@ func set_initial_segment():
 		ropesegmentParent.add_child(_plug)
 
 	attach_plug(_segments[-1])
+	if camera != null:
+		if camera.has_signal("rotation_changed"):
+			camera.rotation_changed.connect(_on_camera_rotation_changed)
+			print("Rope ✓ camera signal connected")
+		else:
+			push_error("Camera has no rotation_changed signal!")
+	else:
+		push_error("Camera not assigned!")
+
+func _setup_segment(seg: RigidBody2D) -> void:
+	seg.gravity_scale = 0
+	seg.mass = 0.8
+	# var mat= PhysicsMaterial.new()
+	# mat.friction = 0.0
+	# mat.bounce = 0.0
+	# seg.physics_material_override = mat
+	seg.can_sleep = false
+	seg.sleeping = false
+
+	seg.linear_damp = 2.0
+	seg.angular_damp = 3.0
+
+	#seg.continuous_cd = RigidBody2D.CCD_MODE_CAST_RAY
+
+	seg.max_contacts_reported = 1
+
+	seg.constant_force = _current_gravity_force
+
+func _on_camera_rotation_changed(new_rotation: float) -> void:
+	var strength: float = ProjectSettings.get_setting("physics/2d/default_gravity")
+
+	_current_gravity_force = Vector2.DOWN.rotated(new_rotation) * strength
+
+	for seg in _segments:
+		if is_instance_valid(seg):
+			seg.constant_force = _current_gravity_force
+			seg.sleeping = false
+
 func set_switch_count(value: int):
 	switch_count = value
 	print("switch count is printed ", switch_count, " ho ", switch_counter.size())
@@ -95,6 +139,7 @@ func add_segment():
 		_joint = null
 
 	var new_segment = segment_scene.instantiate() as RigidBody2D
+	_setup_segment(new_segment)
 	if(ropesegmentParent!=null):
 		ropesegmentParent.add_child(new_segment)
 
@@ -113,8 +158,10 @@ func add_segment():
 	joint.global_position = last_segment.global_position + (offset / 2)
 	joint.node_a = last_segment.get_path()
 	joint.node_b = new_segment.get_path()
-	joint.softness = 0.1
-	joint.bias = 0.9
+	joint.softness = 0.02
+	joint.bias = 0.15
+
+
 
 	_segments.append(new_segment)
 	_joints[new_segment] = joint
@@ -151,12 +198,12 @@ func cut_rope_at(segment: RigidBody2D):
 		if index != -1:
 			_segments = _segments.slice(0, index)
 
-	var main = get_parent().get_parent()
+	#var main = get_parent().get_parent()
 
-	if main and main.has_method("game_over"):
-		main.game_over()
-	else:
-		print("Rope could not find Main! check hierarchy.")
+	#if main and main.has_method("game_over"):
+		#main.game_over()
+	#else:
+		#print("Rope could not find Main! check hierarchy.")
 
 
 func called_game_win():
@@ -188,15 +235,11 @@ func attach_plug(last_seg: RigidBody2D):
 	_joint.node_b = _plug.get_path()
 
 	_joint.disable_collision = true
-	_joint.softness = 0.5
-	_joint.bias = 0.0
+	_joint.softness = 0.02
+	_joint.bias = 0.15
 
-func update_gravity(gravity_direction, parent_node):
-	#if gravity_direction.distance_to(last_gravity_direction) > 0.1:
-		for child in parent_node.get_children():
-			if child is RigidBody2D:
-				child.sleeping = false
-				child.apply_central_force(gravity_direction * 600)
+
+
 
 
 func _process(_delta):
@@ -211,9 +254,7 @@ func _process(_delta):
 		_plug.global_position = last_seg.global_position + tip_offset
 		_plug.global_rotation = last_seg.global_rotation
 
-	var gravity_direction = Vector2.DOWN.rotated(camera.rotation)
-	if ropesegmentParent != null:
-		update_gravity(gravity_direction, ropesegmentParent)
+	
 
 #func _process(delta: float):
 	#var gravity_direction = Vector2.DOWN.rotated(camera.rotation)

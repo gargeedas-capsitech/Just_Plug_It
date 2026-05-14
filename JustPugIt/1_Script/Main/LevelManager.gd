@@ -64,7 +64,7 @@ func spawn_players(level):
 		
 		if obj is Node2D:
 			obj.position = player.position
-			obj.rotation = player.rotation
+			obj.rotation = deg_to_rad(player.rotation)
 			if(player.player_type==0):
 				ropeController.ropesegmentParent=obj
 				ropeController.set_initial_segment()

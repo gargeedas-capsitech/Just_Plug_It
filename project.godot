@@ -42,8 +42,9 @@ pointing/emulate_touch_from_mouse=true
 
 [physics]
 
+common/physics_ticks_per_second=120
 3d/physics_engine="Jolt Physics"
-2d/default_gravity=0.0
+2d/default_gravity=800.0
 2d/default_linear_damp=1.5
 2d/default_angular_damp=2.0
 2d/solver/solver_iterations=25

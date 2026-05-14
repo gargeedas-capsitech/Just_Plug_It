@@ -3,12 +3,18 @@
 [ext_resource type="Texture2D" uid="uid://vrfxdoex05p5" path="res://JustPugIt/3_Sprite/Image/Capsule.png" id="1_hqkr2"]
 [ext_resource type="Script" uid="uid://bmi2hosieoawh" path="res://JustPugIt/1_Script/Main/rope_segment.gd" id="1_ogt5i"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_d1ypn"]
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_47ehi"]
 radius = 8.0
 
 [node name="RopeSegment" type="RigidBody2D" unique_id=504790251]
+collision_layer = 2
 mass = 0.5
-linear_damp = 1.0
+physics_material_override = SubResource("PhysicsMaterial_d1ypn")
+continuous_cd = 2
+linear_damp = 8.0
+angular_damp = 8.0
 script = ExtResource("1_ogt5i")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=250254367]
