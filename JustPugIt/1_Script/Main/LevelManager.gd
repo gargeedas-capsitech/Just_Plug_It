@@ -68,6 +68,7 @@ func spawn_players(level):
 			if(player.player_type==0):
 				ropeController.ropesegmentParent=obj
 				ropeController.set_initial_segment()
+				ropeController.set_switch_count(level.SwitchCount)
 			print(obj, " type = ", typeof(obj))
 
 		#if obj is Rope:

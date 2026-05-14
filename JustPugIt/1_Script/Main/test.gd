@@ -12,7 +12,8 @@ func _on_body_entered(body:Node):
 		
 		if rope_parent != null and rope_parent._is_all_touch:
 			rope_parent.called_game_win()
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+			for segment in rope_parent._segments:
+				var i = 10.0 + sin(Time.get_ticks_msec() * 0.01) * 5.0
+				var sprite = segment.get_node("Sprite2D")
+				sprite.modulate = sprite.modulate.lerp(Color.WHITE,5.0)
+				sprite.self_modulate = sprite.self_modulate.lerp(Color(13.751, 0.194, 13.785),5.0)

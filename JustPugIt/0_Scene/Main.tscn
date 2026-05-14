@@ -14,9 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://cqloe7k24cgls" path="res://JustPugIt/2_Prefab/Panel/PopupPanel.tscn" id="5_kf1pu"]
 [ext_resource type="PackedScene" uid="uid://6su6eokbbtiv" path="res://JustPugIt/2_Prefab/Spawnable/test.tscn" id="6_o3p2d"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7bm73"]
-size = Vector2(988, 997)
-
 [node name="Main" type="Node2D" unique_id=624411418]
 script = ExtResource("1_fsflw")
 
@@ -54,16 +51,6 @@ position = Vector2(956, 527)
 
 [node name="Container" type="Node2D" parent="Environment/Player/Board" unique_id=86019182]
 z_index = 10
-
-[node name="GravityArea" type="Area2D" parent="." unique_id=1623485987]
-visible = false
-priority = 10
-gravity_space_override = 3
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GravityArea" unique_id=213171077]
-position = Vector2(913.99994, 504)
-scale = Vector2(0.7294863, 0.7990607)
-shape = SubResource("RectangleShape2D_7bm73")
 
 [node name="UIManager" type="CanvasLayer" parent="." unique_id=21275981 node_paths=PackedStringArray("start_panel", "level_panel", "game_panel", "popup_panel")]
 layer = -10

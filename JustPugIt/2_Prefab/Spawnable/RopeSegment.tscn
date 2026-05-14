@@ -8,6 +8,10 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_47ehi"]
 radius = 8.0
 
+[sub_resource type="Environment" id="Environment_d1ypn"]
+background_mode = 3
+glow_enabled = true
+
 [node name="RopeSegment" type="RigidBody2D" unique_id=504790251]
 collision_layer = 2
 mass = 0.5
@@ -31,5 +35,9 @@ shape = SubResource("CapsuleShape2D_47ehi")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=827782395]
 modulate = Color(0.93777376, 0.86332834, 1.1551381e-06, 1)
+self_modulate = Color(3.7045925, 3.7045925, 3.7045925, 1)
 scale = Vector2(0.038824026, -0.02876202)
 texture = ExtResource("1_hqkr2")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Sprite2D" unique_id=1463449914]
+environment = SubResource("Environment_d1ypn")
