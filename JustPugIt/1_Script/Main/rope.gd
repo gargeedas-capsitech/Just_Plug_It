@@ -8,7 +8,6 @@ class_name  Rope
 @export var  ropesegmentParent: Node2D
 @export var camera: Camera2D
 
-
 var segment_touch_switch: int = 0
 var _is_already_cut: bool = false
 var _is_all_touch: bool = true
@@ -53,7 +52,7 @@ func set_initial_segment():
 		
 		# Softer joints reduce shockwave
 		joint.softness = 0.02
-		joint.bias = 0.15
+		joint.bias = 0.0
 		previous = segment
 
 	if plug_scene == null:
@@ -87,7 +86,7 @@ func _setup_segment(seg: RigidBody2D) -> void:
 	seg.linear_damp = 2.0
 	seg.angular_damp = 3.0
 
-	#seg.continuous_cd = RigidBody2D.CCD_MODE_CAST_RAY
+	seg.continuous_cd = RigidBody2D.CCD_MODE_CAST_RAY
 
 	seg.max_contacts_reported = 1
 
@@ -159,7 +158,7 @@ func add_segment():
 	joint.node_a = last_segment.get_path()
 	joint.node_b = new_segment.get_path()
 	joint.softness = 0.02
-	joint.bias = 0.15
+	joint.bias = 0.0
 
 
 
@@ -198,6 +197,7 @@ func cut_rope_at(segment: RigidBody2D):
 		if index != -1:
 			_segments = _segments.slice(0, index)
 
+	UIManager.instance.enable_popup(PopupPanelController.PopupType.GAME_OVER)
 	#var main = get_parent().get_parent()
 
 	#if main and main.has_method("game_over"):
@@ -207,13 +207,14 @@ func cut_rope_at(segment: RigidBody2D):
 
 
 func called_game_win():
-	var main = get_parent().get_parent()
+	UIManager.instance.enable_popup(PopupPanelController.PopupType.WIN)
+	#var main = get_parent().get_parent()
 
-	if main and main.has_method("game_win"):
-		print("comee")
-		main.game_win()
-	else:
-		print("Rope could not find Main! check hierarchy.")
+	#if main and main.has_method("game_win"):
+		#main.game_win()
+	#else:
+		#print("Rope could not find Main! check hierarchy.")
+
 
 
 

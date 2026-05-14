@@ -2,6 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://d1fh01t7xv70y" path="res://JustPugIt/3_Sprite/Image/GameOverBox.png" id="1_0on7x"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4doeo"]
+size = Vector2(1269.157, 119.89096)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0on7x"]
 size = Vector2(1264.4071, 104.277664)
 
@@ -14,9 +17,9 @@ z_index = 10
 texture = ExtResource("1_0on7x")
 
 [node name="Boundary1" type="CollisionShape2D" parent="." unique_id=468500716]
-position = Vector2(-2.3841858e-07, -699.2415)
-scale = Vector2(1.0178359, 1)
-shape = SubResource("RectangleShape2D_0on7x")
+position = Vector2(7.5987434, -683.92334)
+scale = Vector2(1.0178357, 0.99999934)
+shape = SubResource("RectangleShape2D_4doeo")
 
 [node name="Boundary2" type="CollisionShape2D" parent="." unique_id=1708555888]
 position = Vector2(598.77594, -0.013493556)

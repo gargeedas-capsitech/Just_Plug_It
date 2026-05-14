@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://6su6eokbbtiv"]
 
-[ext_resource type="Script" uid="uid://chhhkauaym84k" path="res://Delete/Script/Main/test.gd" id="1_8od7v"]
+[ext_resource type="Script" uid="uid://chhhkauaym84k" path="res://JustPugIt/1_Script/Main/test.gd" id="1_8od7v"]
 [ext_resource type="Texture2D" uid="uid://cjfh4mgdaqn6f" path="res://JustPugIt/3_Sprite/Image/plugIn.png" id="1_37kl0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8uh7m"]
 radius = 85.10479
 
-[node name="Node2D" type="Area2D" unique_id=856043079]
+[node name="Point" type="Area2D" unique_id=856043079]
 z_index = 15
 scale = Vector2(0.21215074, 0.20287724)
 script = ExtResource("1_8od7v")
