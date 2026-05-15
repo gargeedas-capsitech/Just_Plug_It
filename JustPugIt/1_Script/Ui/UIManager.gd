@@ -106,6 +106,18 @@ func restart_game():
 	enable_panel(PanelType.GAME)
 	level_manager.load_level(game_panel.current_level)
 	on_level_selected(game_panel.current_level)
+func onHomeBtnClicked():
+	level_manager.clear_level()
+	disable_popup()
+	enable_panel(PanelType.START)
+
+func start_next_level():
+	level_manager.clear_level()
+	disable_popup();
+	enable_panel(PanelType.GAME)
+	game_panel.current_level+=1
+	level_manager.load_level(game_panel.current_level)
+	on_level_selected(game_panel.current_level)
 
 # =========================
 # GAME PANEL

@@ -2,10 +2,32 @@
 
 [ext_resource type="Script" uid="uid://c24qw3dmiq76u" path="res://JustPugIt/1_Script/Ui/LosePopupController.gd" id="1_h1mut"]
 [ext_resource type="Texture2D" uid="uid://dcdjyrvneankf" path="res://JustPugIt/3_Sprite/level_bg.png" id="1_xhtea"]
-[ext_resource type="Texture2D" uid="uid://dq3ofd1arcxnh" path="res://JustPugIt/3_Sprite/popUp.png" id="2_h1mut"]
 [ext_resource type="Texture2D" uid="uid://dfrc2uvywfbn" path="res://JustPugIt/3_Sprite/cross_btn.png" id="3_dyj7l"]
+[ext_resource type="Texture2D" uid="uid://d1fh01t7xv70y" path="res://JustPugIt/3_Sprite/Image/GameOverBox.png" id="3_liwou"]
+[ext_resource type="Texture2D" uid="uid://flw3r5esmtfd" path="res://JustPugIt/3_Sprite/Image/BROKEN WIRE.png" id="4_c8ejb"]
 [ext_resource type="Texture2D" uid="uid://6o82fop6qa4u" path="res://JustPugIt/3_Sprite/level_btn.png" id="5_q2hsh"]
 [ext_resource type="Texture2D" uid="uid://csfu678t01xbx" path="res://JustPugIt/3_Sprite/retry_btn.png" id="6_vylem"]
+[ext_resource type="Texture2D" uid="uid://bis4jbm8vt31p" path="res://JustPugIt/3_Sprite/Image/GameWin_Star Holder.png" id="7_v76nc"]
+[ext_resource type="Texture2D" uid="uid://dr5w2wfpq0yj3" path="res://JustPugIt/3_Sprite/Image/gameWin&Over Star.png" id="9_c8ejb"]
+[ext_resource type="Texture2D" uid="uid://baitnvuipkb0f" path="res://JustPugIt/3_Sprite/longbtn.png" id="10_sd8f1"]
+[ext_resource type="Texture2D" uid="uid://c4704yi3cr2li" path="res://JustPugIt/3_Sprite/plugwire.png" id="11_2qqwd"]
+[ext_resource type="FontFile" uid="uid://dt8ekwhmxfayp" path="res://JustPugIt/Jua-Regular.ttf" id="12_pcugr"]
+[ext_resource type="Texture2D" uid="uid://bhpusb8vafxmy" path="res://JustPugIt/3_Sprite/Image/home_Btn.png" id="13_c8ejb"]
+[ext_resource type="Texture2D" uid="uid://cm0r4fl1iseyq" path="res://JustPugIt/3_Sprite/Image/Restart_Btn.png" id="14_c8ejb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_h0al2"]
+font = ExtResource("12_pcugr")
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_25jbm"]
+font = ExtResource("12_pcugr")
+font_size = 31
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2qqwd"]
+font = ExtResource("12_pcugr")
+font_size = 42
 
 [node name="LosePopup" type="Control" unique_id=17289812 node_paths=PackedStringArray("quit_button", "retry_button", "close_button", "home_button")]
 layout_mode = 3
@@ -16,11 +38,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_h1mut")
 quit_button = NodePath("CloseButton")
-retry_button = NodePath("Popup/RestartButton")
+retry_button = NodePath("Popup/HBoxContainer/RestartButton")
 close_button = NodePath("Popup/CloseButton")
-home_button = NodePath("Popup/HomeButton")
+home_button = NodePath("Popup/HBoxContainer/HomeButton")
 
 [node name="CloseButton" type="TextureButton" parent="." unique_id=1307522071]
+visible = false
 modulate = Color(0, 0, 0, 0.39215687)
 layout_mode = 1
 anchors_preset = 15
@@ -38,15 +61,32 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -152.0
-offset_top = -208.0
-offset_right = 152.0
-offset_bottom = 208.0
+offset_left = -301.5
+offset_top = -340.0
+offset_right = 301.5
+offset_bottom = 340.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_h1mut")
+texture = ExtResource("3_liwou")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="Popup" unique_id=111722472]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -216.0
+offset_top = 48.0
+offset_right = 248.0
+offset_bottom = 476.0
+grow_horizontal = 2
+texture = ExtResource("4_c8ejb")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="CloseButton" type="TextureButton" parent="Popup" unique_id=1513106790]
+visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -59,6 +99,7 @@ ignore_texture_size = true
 stretch_mode = 4
 
 [node name="HomeButton" type="TextureButton" parent="Popup" unique_id=694365779]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -76,6 +117,7 @@ ignore_texture_size = true
 stretch_mode = 4
 
 [node name="RestartButton" type="TextureButton" parent="Popup" unique_id=899354746]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -92,15 +134,171 @@ texture_normal = ExtResource("6_vylem")
 ignore_texture_size = true
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="Popup" unique_id=1981703333]
+[node name="StarBg" type="TextureRect" parent="Popup" unique_id=1318769037]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -99.5
-offset_top = 80.0
-offset_right = 99.5
-offset_bottom = 135.0
+offset_left = -190.99998
+offset_top = 78.17926
+offset_right = 202.40942
+offset_bottom = 236.17926
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 35
-text = "GAME OVER!!"
+texture = ExtResource("7_v76nc")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Star4" type="TextureRect" parent="Popup/StarBg" unique_id=2076326236]
+layout_mode = 1
+offset_left = 7.0
+offset_top = 43.0
+offset_right = 109.0
+offset_bottom = 145.9315
+rotation = -0.8981483
+pivot_offset = Vector2(53, 49)
+texture = ExtResource("9_c8ejb")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Star5" type="TextureRect" parent="Popup/StarBg" unique_id=596125569]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -51.5
+offset_top = 1.0
+offset_right = 50.5
+offset_bottom = 103.9315
+grow_horizontal = 2
+rotation = -0.25300273
+pivot_offset = Vector2(50, 50)
+texture = ExtResource("9_c8ejb")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Star6" type="TextureRect" parent="Popup/StarBg" unique_id=2095505217]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -107.0
+offset_top = 41.0
+offset_right = -5.0
+offset_bottom = 143.9315
+grow_horizontal = 0
+rotation = 0.14158863
+pivot_offset = Vector2(53, 47)
+texture = ExtResource("9_c8ejb")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Wire" type="TextureRect" parent="Popup" unique_id=1761474182]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -52.0
+offset_right = 191.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_sd8f1")
+expand_mode = 1
+
+[node name="wir" type="TextureRect" parent="Popup/Wire" unique_id=1918709478]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.5
+offset_top = -16.0
+offset_right = 60.5
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_2qqwd")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Popup/Wire" unique_id=1519257249]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 22.0
+offset_top = -15.0
+offset_right = 151.0
+offset_bottom = 15.0
+grow_vertical = 2
+text = "Wire Used"
+label_settings = SubResource("LabelSettings_h0al2")
+
+[node name="wireUsed" type="Label" parent="Popup/Wire" unique_id=182144771]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -81.0
+offset_top = -16.0
+offset_right = -30.0
+offset_bottom = 16.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "100"
+label_settings = SubResource("LabelSettings_25jbm")
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Popup" unique_id=772553246]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -184.0
+offset_top = 28.0
+offset_right = 183.0
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Connection failed"
+label_settings = SubResource("LabelSettings_2qqwd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Popup" unique_id=437940899]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -113.0
+offset_top = -216.0
+offset_right = 146.79501
+offset_bottom = -116.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 47
+
+[node name="HomeButton" type="TextureButton" parent="Popup/HBoxContainer" unique_id=936935287]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("13_c8ejb")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="RestartButton" type="TextureButton" parent="Popup/HBoxContainer" unique_id=940305076]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("14_c8ejb")
+ignore_texture_size = true
+stretch_mode = 4

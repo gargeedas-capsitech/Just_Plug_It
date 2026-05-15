@@ -1,12 +1,34 @@
 [gd_scene format=3 uid="uid://dmmt6qtm583d"]
 
-[ext_resource type="Texture2D" uid="uid://dcdjyrvneankf" path="res://3_Sprite/level_bg.png" id="1_bosyj"]
-[ext_resource type="Script" uid="uid://dwojqauxxtpaj" path="res://1_Script/Ui/WinPopupController.gd" id="1_i1fbr"]
-[ext_resource type="Texture2D" uid="uid://dq3ofd1arcxnh" path="res://3_Sprite/popUp.png" id="2_i1fbr"]
-[ext_resource type="Texture2D" uid="uid://dfrc2uvywfbn" path="res://3_Sprite/cross_btn.png" id="3_06e13"]
-[ext_resource type="Texture2D" uid="uid://d3nycv6c6tsx7" path="res://3_Sprite/next_btn.png" id="4_bosyj"]
-[ext_resource type="Texture2D" uid="uid://6o82fop6qa4u" path="res://3_Sprite/level_btn.png" id="5_q42qp"]
-[ext_resource type="Texture2D" uid="uid://csfu678t01xbx" path="res://3_Sprite/retry_btn.png" id="6_cm1np"]
+[ext_resource type="Texture2D" uid="uid://dcdjyrvneankf" path="res://JustPugIt/3_Sprite/level_bg.png" id="1_bosyj"]
+[ext_resource type="Script" uid="uid://dwojqauxxtpaj" path="res://JustPugIt/1_Script/Ui/WinPopupController.gd" id="1_i1fbr"]
+[ext_resource type="Texture2D" uid="uid://dfrc2uvywfbn" path="res://JustPugIt/3_Sprite/cross_btn.png" id="3_06e13"]
+[ext_resource type="Texture2D" uid="uid://d1fh01t7xv70y" path="res://JustPugIt/3_Sprite/Image/GameOverBox.png" id="3_beeym"]
+[ext_resource type="Texture2D" uid="uid://d3nycv6c6tsx7" path="res://JustPugIt/3_Sprite/next_btn.png" id="4_bosyj"]
+[ext_resource type="Texture2D" uid="uid://6o82fop6qa4u" path="res://JustPugIt/3_Sprite/level_btn.png" id="5_q42qp"]
+[ext_resource type="Texture2D" uid="uid://bis4jbm8vt31p" path="res://JustPugIt/3_Sprite/Image/GameWin_Star Holder.png" id="7_7slla"]
+[ext_resource type="FontFile" uid="uid://dt8ekwhmxfayp" path="res://JustPugIt/Jua-Regular.ttf" id="7_ct7bk"]
+[ext_resource type="Texture2D" uid="uid://eydehtn4rny8" path="res://JustPugIt/3_Sprite/Image/yellow star.png" id="8_y2fvm"]
+[ext_resource type="Texture2D" uid="uid://dr5w2wfpq0yj3" path="res://JustPugIt/3_Sprite/Image/gameWin&Over Star.png" id="9_ct7bk"]
+[ext_resource type="Texture2D" uid="uid://baitnvuipkb0f" path="res://JustPugIt/3_Sprite/longbtn.png" id="11_267qq"]
+[ext_resource type="Texture2D" uid="uid://c4704yi3cr2li" path="res://JustPugIt/3_Sprite/plugwire.png" id="12_ya7xk"]
+[ext_resource type="Texture2D" uid="uid://bhpusb8vafxmy" path="res://JustPugIt/3_Sprite/Image/home_Btn.png" id="13_lb3mh"]
+[ext_resource type="Texture2D" uid="uid://rdffgfi6i06c" path="res://JustPugIt/3_Sprite/restrtbtn.png" id="14_8tx3x"]
+[ext_resource type="Texture2D" uid="uid://bhwlnl4tx37ha" path="res://JustPugIt/3_Sprite/next1.png" id="15_o4k2t"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lb3mh"]
+font = ExtResource("7_ct7bk")
+font_size = 42
+
+[sub_resource type="LabelSettings" id="LabelSettings_8tx3x"]
+font = ExtResource("7_ct7bk")
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_o4k2t"]
+font = ExtResource("7_ct7bk")
+font_size = 31
+font_color = Color(0, 0, 0, 1)
 
 [node name="WinPopup" type="Control" unique_id=17289812 node_paths=PackedStringArray("next_button", "home_button", "restart_button", "close_button", "quit_button")]
 layout_mode = 3
@@ -16,9 +38,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_i1fbr")
-next_button = NodePath("Popup/NextButton")
-home_button = NodePath("Popup/HomeButton")
-restart_button = NodePath("Popup/RestartButton")
+next_button = NodePath("Popup/HBoxContainer/NextButton")
+home_button = NodePath("Popup/HBoxContainer/HomeButton")
+restart_button = NodePath("Popup/HBoxContainer/RestartButton")
 close_button = NodePath("Popup/CloseButton")
 quit_button = NodePath("CloseButton")
 
@@ -40,15 +62,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -152.0
-offset_top = -208.0
-offset_right = 152.0
-offset_bottom = 208.0
+offset_left = -301.5
+offset_top = -340.17926
+offset_right = 301.5
+offset_bottom = 340.17926
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_i1fbr")
+texture = ExtResource("3_beeym")
+expand_mode = 1
+stretch_mode = 4
 
 [node name="CloseButton" type="TextureButton" parent="Popup" unique_id=1513106790]
+visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -61,6 +86,7 @@ ignore_texture_size = true
 stretch_mode = 4
 
 [node name="NextButton" type="TextureButton" parent="Popup" unique_id=62804515]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -78,6 +104,7 @@ ignore_texture_size = true
 stretch_mode = 4
 
 [node name="HomeButton" type="TextureButton" parent="Popup" unique_id=694365779]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -107,19 +134,226 @@ offset_right = -25.00003
 offset_bottom = 110.0
 grow_horizontal = 2
 grow_vertical = 2
-texture_normal = ExtResource("6_cm1np")
 ignore_texture_size = true
 stretch_mode = 4
 
 [node name="Label" type="Label" parent="Popup" unique_id=1981703333]
 layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -184.0
+offset_top = 28.0
+offset_right = 183.0
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Connection compete"
+label_settings = SubResource("LabelSettings_lb3mh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StarBg" type="TextureRect" parent="Popup" unique_id=510217232]
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -99.5
-offset_top = 80.0
-offset_right = 99.5
-offset_bottom = 135.0
+offset_left = -190.99998
+offset_top = 78.17926
+offset_right = 202.40942
+offset_bottom = 236.17926
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 40
-text = "YOU WIN!!"
+texture = ExtResource("7_7slla")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Star1" type="TextureRect" parent="Popup/StarBg" unique_id=1797444069]
+layout_mode = 1
+offset_left = 7.0
+offset_top = 43.0
+offset_right = 109.0
+offset_bottom = 145.9315
+rotation = -0.5866364
+pivot_offset = Vector2(53, 49)
+texture = ExtResource("8_y2fvm")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Star4" type="TextureRect" parent="Popup/StarBg" unique_id=1758917999]
+visible = false
+layout_mode = 1
+offset_left = 7.0
+offset_top = 43.0
+offset_right = 109.0
+offset_bottom = 145.9315
+rotation = -0.8981483
+pivot_offset = Vector2(53, 49)
+texture = ExtResource("9_ct7bk")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Star2" type="TextureRect" parent="Popup/StarBg" unique_id=1449102939]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -51.5
+offset_top = 1.0
+offset_right = 50.5
+offset_bottom = 103.9315
+grow_horizontal = 2
+texture = ExtResource("8_y2fvm")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Star5" type="TextureRect" parent="Popup/StarBg" unique_id=840383508]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -51.5
+offset_top = 1.0
+offset_right = 50.5
+offset_bottom = 103.9315
+grow_horizontal = 2
+rotation = -0.25300273
+pivot_offset = Vector2(50, 50)
+texture = ExtResource("9_ct7bk")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Star3" type="TextureRect" parent="Popup/StarBg" unique_id=1092739971]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -107.0
+offset_top = 41.0
+offset_right = -5.0
+offset_bottom = 143.9315
+grow_horizontal = 0
+rotation = 0.40637589
+pivot_offset = Vector2(53, 47)
+texture = ExtResource("8_y2fvm")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Star6" type="TextureRect" parent="Popup/StarBg" unique_id=273533731]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -107.0
+offset_top = 41.0
+offset_right = -5.0
+offset_bottom = 143.9315
+grow_horizontal = 0
+rotation = 0.14158863
+pivot_offset = Vector2(53, 47)
+texture = ExtResource("9_ct7bk")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Wire" type="TextureRect" parent="Popup" unique_id=1083415219]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.0
+offset_top = -52.0
+offset_right = 191.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_267qq")
+expand_mode = 1
+
+[node name="wir" type="TextureRect" parent="Popup/Wire" unique_id=1897959196]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.5
+offset_top = -16.0
+offset_right = 60.5
+offset_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_ya7xk")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Popup/Wire" unique_id=2018711848]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 22.0
+offset_top = -15.0
+offset_right = 151.0
+offset_bottom = 15.0
+grow_vertical = 2
+text = "Wire Used"
+label_settings = SubResource("LabelSettings_8tx3x")
+
+[node name="wireUsed" type="Label" parent="Popup/Wire" unique_id=1845795272]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -81.0
+offset_top = -16.0
+offset_right = -30.0
+offset_bottom = 16.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "100"
+label_settings = SubResource("LabelSettings_o4k2t")
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Popup" unique_id=896445741]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -154.0
+offset_top = -218.0
+offset_right = 154.0
+offset_bottom = -118.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 47
+
+[node name="HomeButton" type="TextureButton" parent="Popup/HBoxContainer" unique_id=823349908]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("13_lb3mh")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="RestartButton" type="TextureButton" parent="Popup/HBoxContainer" unique_id=1934229557]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("14_8tx3x")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="NextButton" type="TextureButton" parent="Popup/HBoxContainer" unique_id=805726962]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture_normal = ExtResource("15_o4k2t")
+ignore_texture_size = true
+stretch_mode = 4

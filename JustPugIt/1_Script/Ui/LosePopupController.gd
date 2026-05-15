@@ -13,8 +13,9 @@ func _ready():
 	home_button.pressed.connect(on_home_pressed)
 
 func on_home_pressed():
-	UIManager.instance.disable_popup()
-	UIManager.instance.enable_panel(UIManager.PanelType.START)	
+	UIManager.instance.onHomeBtnClicked()
+	# UIManager.instance.disable_popup()
+	# UIManager.instance.enable_panel(UIManager.PanelType.START)	
 
 func on_retry_pressed():
 	UIManager.instance.disable_popup()

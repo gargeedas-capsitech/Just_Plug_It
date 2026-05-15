@@ -84,9 +84,9 @@ func on_restart_button_clicked():
 
 func _process(delta):
 	delay -= delta
-	if main == null:
-		print("null")
-		return
+	# if main == null:
+	# 	print("null")
+	# 	return
 		
 	if isPressed  and delay<=0:
 		ropecontroller.add_segment()

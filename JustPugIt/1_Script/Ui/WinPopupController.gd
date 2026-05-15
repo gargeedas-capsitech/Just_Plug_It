@@ -19,8 +19,9 @@ func on_next_pressed():
 	UIManager.instance.start_next_level()
 
 func on_home_pressed():
-	UIManager.instance.disable_popup()
-	UIManager.instance.enable_panel(UIManager.PanelType.START)
+	UIManager.instance.onHomeBtnClicked()
+	# UIManager.instance.disable_popup()
+	# UIManager.instance.enable_panel(UIManager.PanelType.START)
 
 func on_close_pressed():
 	UIManager.instance.disable_popup()
