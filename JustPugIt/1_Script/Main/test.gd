@@ -11,9 +11,13 @@ func _on_body_entered(body:Node):
 		print("Game Win")
 		
 		if rope_parent != null and rope_parent._is_all_touch:
-			rope_parent.called_game_win()
 			for segment in rope_parent._segments:
 				var i = 10.0 + sin(Time.get_ticks_msec() * 0.01) * 5.0
-				var sprite = segment.get_node("Sprite2D")
-				sprite.modulate = sprite.modulate.lerp(Color.WHITE,5.0)
-				sprite.self_modulate = sprite.self_modulate.lerp(Color(13.751, 0.194, 13.785),5.0)
+				if segment.has_node("Sprite2D"):
+					var sprite = segment.get_node("Sprite2D")
+					sprite.self_modulate = Color(0.0, 16.498, 18.892)  # HDR cyan from your picker
+					sprite.modulate = Color.WHITE
+					await get_tree().create_timer(0.2).timeout
+
+			# await get_tree().create_timer(1).timeout
+			rope_parent.called_game_win()
