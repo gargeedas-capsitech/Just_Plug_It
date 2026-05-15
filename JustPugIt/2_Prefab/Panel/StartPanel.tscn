@@ -29,7 +29,7 @@ font = ExtResource("3_5q6de")
 font_size = 63
 font_color = Color(0, 0, 0, 1)
 
-[node name="StartPanel" type="Control" unique_id=547876178 node_paths=PackedStringArray("setting_button", "shop_button", "play_button")]
+[node name="StartPanel" type="Control" unique_id=547876178 node_paths=PackedStringArray("setting_button", "shop_button", "play_button", "level_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -40,6 +40,7 @@ script = ExtResource("1_l7adk")
 setting_button = NodePath("RootStartPanel/SettingButton")
 shop_button = NodePath("RootStartPanel/ShopButton")
 play_button = NodePath("RootStartPanel/PlayButton")
+level_button = NodePath("RootStartPanel/Levels")
 
 [node name="RootStartPanel" type="Panel" parent="." unique_id=412793472]
 layout_mode = 1

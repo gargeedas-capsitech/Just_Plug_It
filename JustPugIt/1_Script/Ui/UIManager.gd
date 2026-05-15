@@ -75,6 +75,7 @@ func disable_popup():
 
 func seton_level_selected(callback: Callable):
 	level_panel.set_on_level_selected(callback)
+	#PlayerPrefs.setInt("current_level", 0)
 
 # =========================
 # LEVEL PANEL
@@ -119,6 +120,13 @@ func start_next_level():
 	level_manager.load_level(game_panel.current_level)
 	on_level_selected(game_panel.current_level)
 
+func start_selected_level(level_index: int):
+	level_manager.clear_level()
+	disable_popup();
+	enable_panel(PanelType.GAME)
+	level_manager.load_level(level_index)
+	on_level_selected(level_index)
+
 # =========================
 # GAME PANEL
 # =========================
@@ -135,6 +143,8 @@ func on_level_selected(level_index:int):
 	print("UIManager Received Level: ", level_index)
 	enable_panel(PanelType.GAME)
 	game_panel.start_game(level_index)
+	PlayerPrefs.set_int("current_level", level_index)
+	PlayerPrefs.save()
 
 # =========================
 # PROFILE / LEADERBOARD
