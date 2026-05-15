@@ -37,7 +37,8 @@ func load_level(index: int):
 	# clear_level()  # optional if you want reset
 
 	var level = leveldata.Levels[index]
-	hintLine.hintDrow(level.HintLine)
+	#if(level.HintLine != null):
+		#hintLine.hintDrow(level.HintLine)
 	# hintLine.path_points = level.HintLine
 	load_board()
 	spawn_obstacles(level)
