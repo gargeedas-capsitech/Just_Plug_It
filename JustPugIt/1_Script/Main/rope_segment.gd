@@ -16,6 +16,7 @@ func _on_body_entered(body):
 			rope_parent.cut_rope_at(self)
 			ropecut = true
 	elif body.name.contains("Switch"):
+		
 		rope_parent.visibility_update(body, true)
 	elif body.name.contains("staticCutter"):
 		var component = body.get_node_or_null("cutter") as Sprite2D

@@ -8,6 +8,7 @@ class_name LevelController
 @export var board: StaticBody2D
 @export var camera: Camera2D
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	load_level_data()
@@ -24,6 +25,10 @@ func load_level_data():
 	 #load_level(1)
 	
 func load_level(index: int):
+
+	clear_level()
+	await get_tree().process_frame
+
 	if index < 0 or index >= leveldata.Levels.size():
 		push_error("Invalid level index!")
 		return
@@ -53,6 +58,10 @@ func spawn_obstacles(level):
 		if obj is Node2D:
 			obj.position = obs.Position
 
+		for group in obj.get_groups():
+			obj.name = str(group)
+			print("Changed name to: ", obj.name)
+			break
 
 func spawn_players(level):
 	for player in level.PlayerDatas:
@@ -80,7 +89,11 @@ func clear_level():
 	
 	for child in spawn_parent.get_children():
 		child.queue_free()
+
+	await get_tree().process_frame
 	camera.rotation_degrees = 0
+	ropeController._on_camera_rotation_changed(0)
+
 	board.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

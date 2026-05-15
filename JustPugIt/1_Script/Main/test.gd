@@ -17,7 +17,7 @@ func _on_body_entered(body:Node):
 					var sprite = segment.get_node("Sprite2D")
 					sprite.self_modulate = Color(0.0, 16.498, 18.892)  # HDR cyan from your picker
 					sprite.modulate = Color.WHITE
-					await get_tree().create_timer(0.2).timeout
+					await get_tree().create_timer(0.1).timeout
 
 			# await get_tree().create_timer(1).timeout
 			rope_parent.called_game_win()

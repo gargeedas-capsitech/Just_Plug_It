@@ -52,13 +52,14 @@ position = Vector2(956, 527)
 [node name="Container" type="Node2D" parent="Environment/Player/Board" unique_id=86019182]
 z_index = 10
 
-[node name="UIManager" type="CanvasLayer" parent="." unique_id=21275981 node_paths=PackedStringArray("start_panel", "level_panel", "game_panel", "popup_panel")]
+[node name="UIManager" type="CanvasLayer" parent="." unique_id=21275981 node_paths=PackedStringArray("start_panel", "level_panel", "game_panel", "popup_panel", "level_manager")]
 layer = -10
 script = ExtResource("2_y8q8k")
 start_panel = NodePath("StartPanel")
 level_panel = NodePath("LevelPanel")
 game_panel = NodePath("GamePanel")
 popup_panel = NodePath("CanvasLayer/PopupPanel")
+level_manager = NodePath("../Controller/LevelManager")
 
 [node name="StartPanel" parent="UIManager" unique_id=547876178 instance=ExtResource("2_6j3va")]
 

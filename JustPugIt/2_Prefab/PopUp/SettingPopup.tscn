@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b0ngbmwbtdg4m"]
 
-[ext_resource type="Script" uid="uid://bt3dwoqvjmm8b" path="res://JustPugIt/2_Prefab/PopUp/setting_popup.gd" id="1_kxaaa"]
+[ext_resource type="Script" uid="uid://bt3dwoqvjmm8b" path="res://JustPugIt/1_Script/Ui/setting_popup.gd" id="1_kxaaa"]
 [ext_resource type="Texture2D" uid="uid://vync2pydiiu7" path="res://JustPugIt/3_Sprite/Image/LevelBtnGrp_Box.png" id="2_g3j1f"]
 [ext_resource type="Texture2D" uid="uid://fqv8hhi8d6o0" path="res://JustPugIt/3_Sprite/Image/musicOff.png" id="3_fi1hd"]
 [ext_resource type="Texture2D" uid="uid://ccuohturtcnx6" path="res://JustPugIt/3_Sprite/Image/name.png" id="3_wj8ov"]

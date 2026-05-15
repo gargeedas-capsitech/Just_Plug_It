@@ -6,21 +6,21 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_8307x"]
 radius = 50.205242
 
-[node name="Switch" type="StaticBody2D" unique_id=1149383985]
+[node name="Switch" type="StaticBody2D" unique_id=1149383985 groups=["Switch"]]
 scale = Vector2(1.314, 1.314)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=928426803]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=928426803 groups=["Switch"]]
 texture = ExtResource("1_it01i")
 
-[node name="Shader" type="Sprite2D" parent="." unique_id=657733052]
+[node name="Shader" type="Sprite2D" parent="." unique_id=657733052 groups=["Switch"]]
 modulate = Color(0.49993074, 0.39873204, 2.8878452e-07, 1)
 texture = ExtResource("1_it01i")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1833528234]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1833528234 groups=["Switch"]]
 position = Vector2(6.08828, 0)
 shape = SubResource("CircleShape2D_8307x")
 
-[node name="Switch" type="Sprite2D" parent="." unique_id=1561234561]
+[node name="Switch" type="Sprite2D" parent="." unique_id=1561234561 groups=["Switch"]]
 position = Vector2(54.79452, 18.264841)
 rotation = -0.10235296
 texture = ExtResource("2_8307x")

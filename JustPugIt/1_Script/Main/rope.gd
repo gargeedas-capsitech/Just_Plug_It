@@ -66,7 +66,8 @@ func set_initial_segment():
 	attach_plug(_segments[-1])
 	if camera != null:
 		if camera.has_signal("rotation_changed"):
-			camera.rotation_changed.connect(_on_camera_rotation_changed)
+			if not camera.rotation_changed.is_connected(_on_camera_rotation_changed):
+				camera.rotation_changed.connect(_on_camera_rotation_changed)
 			print("Rope ✓ camera signal connected")
 		else:
 			push_error("Camera has no rotation_changed signal!")
@@ -113,6 +114,7 @@ func visibility_update(body: Node, is_touching: bool):
 
 	if is_touching:
 		switch_counter[body] += 1
+		
 	else:
 		switch_counter[body] -= 1
 
@@ -146,8 +148,11 @@ func add_segment():
 	new_segment.global_position = last_segment.global_position + offset
 	new_segment.global_rotation = last_segment.global_rotation
 
-	for seg in _segments:
-		new_segment.add_collision_exception_with(seg)
+	if is_instance_valid(new_segment):
+		for seg in _segments:
+			if is_instance_valid(seg) and seg is PhysicsBody2D:
+				new_segment.add_collision_exception_with(seg)
+
 
 	var joint = PinJoint2D.new()
 	if(ropesegmentParent!=null):

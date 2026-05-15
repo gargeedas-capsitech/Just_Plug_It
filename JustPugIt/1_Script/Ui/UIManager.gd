@@ -24,12 +24,14 @@ enum PanelType {
 @export var level_panel: LevelPanelController 
 @export var game_panel: GamePanelController 
 @export var popup_panel: PopupPanelController 
+@export var level_manager : LevelController
 
 @onready var win_panel =  popup_panel.win_popup	
 @onready var gameover_panel = popup_panel.gameover_popup
 @onready var setting_panel = popup_panel.setting_popup
 @onready var pause_panel = popup_panel.pause_popup
 @onready var profile_panel = popup_panel.profile_popup
+
 #@export var leaderboard_panel #= $LeaderboardPanel
 
 
@@ -102,6 +104,7 @@ func update_gameover_segments(segments: int):
 func restart_game():
 	disable_popup()
 	enable_panel(PanelType.GAME)
+	level_manager.load_level(game_panel.current_level)
 	on_level_selected(game_panel.current_level)
 
 # =========================

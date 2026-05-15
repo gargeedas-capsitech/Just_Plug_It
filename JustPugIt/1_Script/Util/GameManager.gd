@@ -3,8 +3,6 @@ extends Node
 static var instance: GameManager
 var _rope
 
-
-@onready var gravity_area = $GravityArea
 @onready var camera = get_tree().root.get_node("Main/Camera2D")
 # =========================
 # FILE PATH
