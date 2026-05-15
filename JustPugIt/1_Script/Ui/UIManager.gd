@@ -25,7 +25,7 @@ enum PanelType {
 @export var game_panel: GamePanelController 
 @export var popup_panel: PopupPanelController 
 @export var level_manager : LevelController
-
+@export var ropeController : Rope
 @onready var win_panel =  popup_panel.win_popup	
 @onready var gameover_panel = popup_panel.gameover_popup
 @onready var setting_panel = popup_panel.setting_popup
@@ -34,6 +34,10 @@ enum PanelType {
 
 #@export var leaderboard_panel #= $LeaderboardPanel
 
+@export var upButton: TouchScreenButton
+@export var downButton: TouchScreenButton
+@export var leftButton: TouchScreenButton
+@export var rightButton: TouchScreenButton
 
 func _enter_tree():
 	if instance == null:
@@ -45,7 +49,7 @@ func _enter_tree():
 # =========================
 var panel_map = {}
 
-
+var current_panel:PanelType
 func _ready():
 	panel_map = {
 		PanelType.START: start_panel,
@@ -59,6 +63,7 @@ func _ready():
 # PANEL CONTROL
 # =========================
 func enable_panel(type: PanelType):
+	current_panel = type
 	for p in panel_map.values():
 		p.hide()
 
@@ -162,3 +167,24 @@ func reset_all_ui():
 	start_panel.reset_panel()
 	#profile_panel.reset_panel()
 	#leaderboard_panel.reset_panel()
+
+func open_settings():
+	if current_panel == PanelType.START:
+		setting_panel.set_home_button_enabled(false)
+	else:
+		setting_panel.set_home_button_enabled(true)
+
+func InActivePlay():
+	game_panel.isPressed = false
+	game_panel.isRemovePressed = false
+	game_panel.isRotateleftPressed = false
+	game_panel.isRotaterightPressed = false
+	upButton.set_process_input(false)
+	downButton.set_process_input(false)
+	leftButton.set_process_input(false)
+	rightButton.set_process_input(false)
+func ActivePlay():
+	upButton.set_process_input(true)
+	downButton.set_process_input(true)
+	leftButton.set_process_input(true)
+	rightButton.set_process_input(true)

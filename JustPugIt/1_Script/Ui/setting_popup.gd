@@ -12,7 +12,9 @@ extends Control
 @export var hapOff : Texture2D
 @export var soundOn : Texture2D
 @export var soundOff : Texture2D
- 
+@export var home_button:TextureButton
+@export var deleteAcc_button:TextureButton
+
  
 @export var music_on : bool = true
 @export var hap_on : bool = true
@@ -23,6 +25,7 @@ func _ready():
 	hapBtn.texture = hapOn
 	soundBtn.texture = soundOn
 	closeBtn.pressed.connect(_on_close_pressed)
+	home_button.pressed.connect(_on_homeBtn_pressed)
 func musicbtn():
 	if music_on:
 		musicOffFn()
@@ -42,10 +45,17 @@ func soundbtn():
 		soundOnFn()
 	sound_on = !sound_on
 
+func set_home_button_enabled(enable: bool):
+	# home_button.disabled = not enable
+	home_button.visible = enable
+	deleteAcc_button.visible =not enable
+
+func _on_homeBtn_pressed():
+	UIManager.instance.onHomeBtnClicked()
+
 func _on_close_pressed():
 	print("close pressed")
 	UIManager.instance.disable_popup()
-	pass
 
 func musicOnFn():moveimage(musicBtn,25,musicOn)
 func musicOffFn():moveimage(musicBtn,185,musicOff)

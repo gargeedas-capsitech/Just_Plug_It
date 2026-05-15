@@ -25,6 +25,7 @@ var delay = 0;
 var current_level : int = 0
 #@onready var main = get_tree().root.get_node("Main")
 func _ready():
+	UIManager.instance.ropeController = ropecontroller
 	back_button.pressed.connect(on_back_button_clicked)
 	setting_button.pressed.connect(on_setting_button_clicked)
 	pause_button.pressed.connect(on_pause_button_clicked)
@@ -75,6 +76,7 @@ func on_back_button_clicked():
 
 func on_setting_button_clicked():
 	UIManager.instance.enable_popup(PopupPanelController.PopupType.SETTING)
+	UIManager.instance.open_settings()
 
 func on_pause_button_clicked():
 	UIManager.instance.enable_popup(PopupPanelController.PopupType.PAUSE)

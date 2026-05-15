@@ -63,7 +63,7 @@ func hide_panel():
 func _on_setting_pressed():
 	print("Setting button pressed")
 	UIManager.instance.enable_popup(PopupPanelController.PopupType.SETTING)
-
+	UIManager.instance.open_settings()
 
 func _on_shop_pressed():
 	print("Shop button pressed")

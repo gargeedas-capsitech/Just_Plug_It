@@ -6,6 +6,7 @@ extends Node
 @export var restart_button: TextureButton
 @export var close_button: TextureButton
 @export var quit_button: TextureButton
+@export var segments_label: Label
 
 func _ready():
 	next_button.pressed.connect(on_next_pressed)
@@ -13,6 +14,7 @@ func _ready():
 	restart_button.pressed.connect(on_restart_pressed)
 	close_button.pressed.connect(on_close_pressed)
 	quit_button.pressed.connect(on_close_pressed)
+	segments_label.text =str(UIManager.instance.ropeController.wireCount)
 
 func on_next_pressed():
 	UIManager.instance.disable_popup()

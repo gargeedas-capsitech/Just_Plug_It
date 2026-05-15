@@ -33,7 +33,7 @@ corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
-[node name="SettingsPanel" type="Control" unique_id=1858682037 node_paths=PackedStringArray("musicBtn", "hapBtn", "soundBtn", "closeBtn")]
+[node name="SettingsPanel" type="Control" unique_id=1858682037 node_paths=PackedStringArray("musicBtn", "hapBtn", "soundBtn", "closeBtn", "home_button", "deleteAcc_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -51,6 +51,8 @@ hapOn = ExtResource("9_raaxm")
 hapOff = ExtResource("5_52nfm")
 soundOn = ExtResource("10_eijgs")
 soundOff = ExtResource("5_eqkbl")
+home_button = NodePath("Panel/CenterContainer/TextureRect/HomeBtn")
+deleteAcc_button = NodePath("Panel/CenterContainer/TextureRect/DeleteaccBtn")
 
 [node name="Panel" type="Panel" parent="." unique_id=200227522]
 layout_mode = 1
@@ -71,11 +73,18 @@ grow_vertical = 2
 stretch_mode = 0
 
 [node name="CenterContainer" type="CenterContainer" parent="Panel" unique_id=1897346999]
-layout_mode = 0
-offset_left = 424.0
-offset_top = 240.0
-offset_right = 2798.0
-offset_bottom = 1513.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -485.0
+offset_top = -277.0
+offset_right = 1889.0
+offset_bottom = 996.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.459, 0.483)
 
 [node name="TextureRect" type="TextureRect" parent="Panel/CenterContainer" unique_id=688145674]
@@ -138,7 +147,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HomeBtn" type="TextureButton" parent="Panel/CenterContainer/TextureRect" unique_id=1930955154]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.18300001
