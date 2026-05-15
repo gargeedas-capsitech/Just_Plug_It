@@ -6,3 +6,4 @@ class_name LevelItems
 
 @export var PlayerDatas: Array[PlayerData]=[]
 @export var ObstacleDatas: Array[ObstracleData]=[]
+@export var HintLine: Array[Vector2]=[]

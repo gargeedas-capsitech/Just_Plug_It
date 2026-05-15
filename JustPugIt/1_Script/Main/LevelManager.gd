@@ -7,7 +7,7 @@ class_name LevelController
 @export var ropeController:Rope
 @export var board: StaticBody2D
 @export var camera: Camera2D
-
+@export var hintLine: HintLine
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -37,6 +37,8 @@ func load_level(index: int):
 	# clear_level()  # optional if you want reset
 
 	var level = leveldata.Levels[index]
+	hintLine.hintDrow(level.HintLine)
+	# hintLine.path_points = level.HintLine
 	load_board()
 	spawn_obstacles(level)
 	spawn_players(level)

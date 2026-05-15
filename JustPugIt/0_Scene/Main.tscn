@@ -24,13 +24,14 @@ script = ExtResource("2_dqvfn")
 
 [node name="Controller" type="Node2D" parent="." unique_id=188561190]
 
-[node name="LevelManager" type="Node2D" parent="Controller" unique_id=258608569 node_paths=PackedStringArray("spawn_parent", "ropeController", "board", "camera")]
+[node name="LevelManager" type="Node2D" parent="Controller" unique_id=258608569 node_paths=PackedStringArray("spawn_parent", "ropeController", "board", "camera", "hintLine")]
 script = ExtResource("2_ell7g")
 leveldata = ExtResource("3_7bm73")
 spawn_parent = NodePath("../../Environment/Player/Board/Container")
 ropeController = NodePath("../RopeController")
 board = NodePath("../../Environment/Player/Board")
 camera = NodePath("../../Camera2D")
+hintLine = NodePath("../../Environment/Player/Board/Node2D")
 
 [node name="RopeController" type="Node2D" parent="Controller" unique_id=1184272061 node_paths=PackedStringArray("camera", "gamePanelController")]
 script = ExtResource("4_xbsc3")
@@ -79,3 +80,5 @@ layer = 100
 
 [node name="PopupPanel" parent="UIManager/CanvasLayer" unique_id=1262038868 instance=ExtResource("5_kf1pu")]
 mouse_filter = 2
+
+[editable path="Environment/Player/Board"]
