@@ -192,6 +192,9 @@ func remove_last_segment():
 	wireCount -=1
 	gamePanelController.wireLength(wireCount)
 
+func reset_rope():
+	_is_already_cut = false
+	_segments.clear()
 
 func cut_rope_at(segment: RigidBody2D):
 	if _is_already_cut:
