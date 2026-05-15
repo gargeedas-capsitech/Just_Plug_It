@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://dmmt6qtm583d"]
 
-[ext_resource type="Texture2D" uid="uid://dcdjyrvneankf" path="res://JustPugIt/3_Sprite/level_bg.png" id="1_bosyj"]
 [ext_resource type="Script" uid="uid://dwojqauxxtpaj" path="res://JustPugIt/1_Script/Ui/WinPopupController.gd" id="1_i1fbr"]
 [ext_resource type="Texture2D" uid="uid://dfrc2uvywfbn" path="res://JustPugIt/3_Sprite/cross_btn.png" id="3_06e13"]
 [ext_resource type="Texture2D" uid="uid://d1fh01t7xv70y" path="res://JustPugIt/3_Sprite/Image/GameOverBox.png" id="3_beeym"]
@@ -30,7 +29,7 @@ font = ExtResource("7_ct7bk")
 font_size = 31
 font_color = Color(0, 0, 0, 1)
 
-[node name="WinPopup" type="Control" unique_id=17289812 node_paths=PackedStringArray("next_button", "home_button", "restart_button", "close_button", "quit_button", "segments_label")]
+[node name="WinPopup" type="Control" unique_id=17289812 node_paths=PackedStringArray("next_button", "home_button", "restart_button", "segments_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -41,20 +40,7 @@ script = ExtResource("1_i1fbr")
 next_button = NodePath("Popup/HBoxContainer/NextButton")
 home_button = NodePath("Popup/HBoxContainer/HomeButton")
 restart_button = NodePath("Popup/HBoxContainer/RestartButton")
-close_button = NodePath("Popup/CloseButton")
-quit_button = NodePath("CloseButton")
 segments_label = NodePath("Popup/Wire/wireUsed")
-
-[node name="CloseButton" type="TextureButton" parent="." unique_id=1307522071]
-modulate = Color(0, 0, 0, 0.39215687)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("1_bosyj")
-stretch_mode = 0
 
 [node name="Popup" type="TextureRect" parent="." unique_id=1106778610]
 layout_mode = 1
