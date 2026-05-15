@@ -7,6 +7,7 @@ class_name  Rope
 @export var plug_scene: PackedScene
 @export var  ropesegmentParent: Node2D
 @export var camera: Camera2D
+@export var gamePanelController :GamePanelController
 
 var segment_touch_switch: int = 0
 var _is_already_cut: bool = false
@@ -24,6 +25,8 @@ var last_gravity_direction = Vector2.DOWN
 var _current_gravity_force: Vector2 = Vector2(0, 600)
 
 var count: int = 0
+var wireCount: int = 0
+
 
 func set_initial_segment():
 	var anchor = StaticBody2D.new()
@@ -171,7 +174,8 @@ func add_segment():
 	_joints[new_segment] = joint
 
 	attach_plug(_segments[-1])
-
+	wireCount +=1
+	gamePanelController.wireLength(wireCount)
 
 func remove_last_segment():
 	if _segments.size() <= 2:
@@ -185,7 +189,8 @@ func remove_last_segment():
 
 	_segments.remove_at(_segments.size() - 1)
 	segment_to_remove.queue_free()
-
+	wireCount -=1
+	gamePanelController.wireLength(wireCount)
 
 
 func cut_rope_at(segment: RigidBody2D):
