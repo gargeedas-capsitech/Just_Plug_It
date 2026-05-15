@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://balwjghshyscb" path="res://JustPugIt/2_Prefab/Spawnable/LevelButton.tscn" id="2_y30ev"]
 [ext_resource type="Texture2D" uid="uid://7brolq75ssvq" path="res://JustPugIt/3_Sprite/setting_btn.png" id="3_kj338"]
 [ext_resource type="Texture2D" uid="uid://vync2pydiiu7" path="res://JustPugIt/3_Sprite/Image/LevelBtnGrp_Box.png" id="3_shbub"]
+[ext_resource type="Texture2D" uid="uid://d4hofq0p2qp1m" path="res://JustPugIt/3_Sprite/Image/gameplyBg 1.png" id="3_wxabp"]
 [ext_resource type="Texture2D" uid="uid://yrqoa2wikr0p" path="res://JustPugIt/3_Sprite/Image/levelBox.png" id="4_ipivt"]
 [ext_resource type="Texture2D" uid="uid://dc4ij1go2nfoo" path="res://JustPugIt/3_Sprite/Image/SideBtn.png" id="5_5npdo"]
 [ext_resource type="FontFile" uid="uid://dt8ekwhmxfayp" path="res://JustPugIt/Jua-Regular.ttf" id="5_wxabp"]
@@ -45,12 +46,18 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_shbub")
 
 [node name="BackBtn" type="TextureButton" parent="Popup" unique_id=1916955194]
+modulate = Color(1, 1, 1, 0.4862745)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -906.0
+offset_top = -12.0
+offset_right = 860.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
+texture_normal = ExtResource("3_wxabp")
 ignore_texture_size = true
 stretch_mode = 5
 

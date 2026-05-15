@@ -16,6 +16,7 @@ extends Control
 @export var setting_button : TextureButton #= $RootStartPanel/SettingButton
 @export var shop_button : TextureButton #= $RootStartPanel/ShopButton
 @export var play_button : TextureButton #= $RootStartPanel/PlayButton
+@export var level_button : TextureButton #= $RootStartPanel/LevelButton
 #@onready var leaderboard_button = $RootStartPanel/LeaderboardButton
 #@onready var level_button = $RootStartPanel/LevelButton
 #@onready var profile_button = $RootStartPanel/ProfileButton
@@ -36,7 +37,7 @@ func _ready():
 	shop_button.pressed.connect(_on_shop_pressed)
 	play_button.pressed.connect(_on_play_pressed)
 	#leaderboard_button.pressed.connect(_on_leaderboard_pressed)
-	#level_button.pressed.connect(_on_level_pressed)
+	level_button.pressed.connect(_on_level_panel_pressed)
 	#profile_button.pressed.connect(_on_profile_pressed)
 
 # =========================
@@ -68,11 +69,16 @@ func _on_shop_pressed():
 	print("Shop button pressed")
 	UIManager.instance.enable_popup(PopupPanelController.PopupType.SHOP)
 
+func _on_level_panel_pressed():
+	UIManager.instance.enable_panel(UIManager.PanelType.LEVEL)
 
 
 func _on_play_pressed():
 	print("Play button pressed")
-	UIManager.instance.enable_panel(UIManager.PanelType.LEVEL)
+	var current_level : int = PlayerPrefs.get_int("current_level")
+	UIManager.instance.start_selected_level(current_level)
+
+	#UIManager.instance.enable_panel(UIManager.PanelType.LEVEL)
 
 	#var max_level = data_manager.game_data.player_data.max_unlocked_level_index
 	#start_button_pressed.emit(max_level)
