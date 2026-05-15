@@ -9,6 +9,8 @@ class_name LevelController
 @export var camera: Camera2D
 @export var hintLine: HintLine
 
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	load_level_data()
@@ -27,6 +29,7 @@ func load_level_data():
 func load_level(index: int):
 
 	clear_level()
+	UIManager.instance.ActivePlay()
 	ropeController.wireCount = 0;
 	await get_tree().process_frame
 
