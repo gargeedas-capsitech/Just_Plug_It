@@ -30,7 +30,7 @@ font = ExtResource("7_ct7bk")
 font_size = 31
 font_color = Color(0, 0, 0, 1)
 
-[node name="WinPopup" type="Control" unique_id=17289812 node_paths=PackedStringArray("next_button", "home_button", "restart_button", "close_button", "quit_button")]
+[node name="WinPopup" type="Control" unique_id=17289812 node_paths=PackedStringArray("next_button", "home_button", "restart_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -41,8 +41,6 @@ script = ExtResource("1_i1fbr")
 next_button = NodePath("Popup/HBoxContainer/NextButton")
 home_button = NodePath("Popup/HBoxContainer/HomeButton")
 restart_button = NodePath("Popup/HBoxContainer/RestartButton")
-close_button = NodePath("Popup/CloseButton")
-quit_button = NodePath("CloseButton")
 
 [node name="CloseButton" type="TextureButton" parent="." unique_id=1307522071]
 modulate = Color(0, 0, 0, 0.39215687)

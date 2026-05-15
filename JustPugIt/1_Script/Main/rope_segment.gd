@@ -15,6 +15,7 @@ func _on_body_entered(body):
 		if not ropecut:
 			rope_parent.cut_rope_at(self)
 			ropecut = true
+			UIManager.instance.InActivePlay()
 	elif body.name.contains("Switch"):
 		
 		rope_parent.visibility_update(body, true)
@@ -22,9 +23,10 @@ func _on_body_entered(body):
 		var component = body.get_node_or_null("cutter") as Sprite2D
 		
 		if component:
-			print("rope " + component.name)
 			component.visible = true
-			rope_parent.cut_rope_at(self)
+			if not ropecut:
+				rope_parent.cut_rope_at(self)
+				UIManager.instance.InActivePlay()
 
 
 func _on_body_exited(body):

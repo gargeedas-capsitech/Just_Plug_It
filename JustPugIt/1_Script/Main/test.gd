@@ -25,3 +25,4 @@ func _on_body_entered(body:Node):
 
 			# await get_tree().create_timer(1).timeout
 			rope_parent.called_game_win()
+			UIManager.instance.InActivePlay()
