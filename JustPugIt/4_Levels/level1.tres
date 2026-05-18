@@ -43,6 +43,7 @@ metadata/_custom_type_script = "uid://b2sjpfcewboge"
 script = ExtResource("2_q7g2w")
 obstracle_type = 3
 Obstracle = ExtResource("9_g3g64")
+Position = Vector2(-100, 0)
 metadata/_custom_type_script = "uid://dfjyeafm4sf02"
 
 [sub_resource type="Resource" id="Resource_qh1aj"]
