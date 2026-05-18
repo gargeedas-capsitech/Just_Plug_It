@@ -13,6 +13,8 @@ script = ExtResource("1_8od7v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=425162252]
 z_index = 10
+position = Vector2(0, 14.787269)
+scale = Vector2(1.0891603, 1.3944592)
 shape = SubResource("CircleShape2D_8uh7m")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1231164760]
