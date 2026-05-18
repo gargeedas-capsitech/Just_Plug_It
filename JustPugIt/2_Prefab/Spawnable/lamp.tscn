@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://3bbevpaaje3q"]
+
+[ext_resource type="Texture2D" uid="uid://ci7nptctddamq" path="res://JustPugIt/3_Sprite/Lamp1.png" id="1_2mekw"]
+
+[sub_resource type="Gradient" id="Gradient_26bpk"]
+offsets = PackedFloat32Array(0.6769231, 0.96615386)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_32l5i"]
+gradient = SubResource("Gradient_26bpk")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+repeat = 1
+
+[node name="Lamp" type="Node2D" unique_id=131689817]
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1964556337]
+position = Vector2(-24.500011, -153.5)
+scale = Vector2(12.640626, 5.7968755)
+color = Color(1, 0.8862745, 0.22352941, 1)
+texture = SubResource("GradientTexture2D_32l5i")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1162484094]
+texture = ExtResource("1_2mekw")
