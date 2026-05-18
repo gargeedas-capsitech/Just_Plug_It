@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://brg8pfunka4gv"]
+
+[ext_resource type="Texture2D" uid="uid://ci7nptctddamq" path="res://JustPugIt/3_Sprite/Lamp1.png" id="1_2mekw"]
+
+[sub_resource type="Environment" id="Environment_26bpk"]
+background_mode = 3
+background_energy_multiplier = 2.36
+ambient_light_color = Color(0.8734934, 0.7627323, 0.43251327, 1)
+ambient_light_energy = 5.0
+glow_enabled = true
+glow_intensity = 2.79
+glow_hdr_threshold = 1.09
+glow_hdr_scale = 1.22
+glow_hdr_luminance_cap = 79.76
+
+[node name="Lamp" type="Node2D" unique_id=131689817]
+
+[node name="lampImage" type="Sprite2D" parent="." unique_id=1162484094]
+modulate = Color(1.6687808, 1.6687808, 1.0280297, 1)
+texture = ExtResource("1_2mekw")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="lampImage" unique_id=1505162390]
+environment = SubResource("Environment_26bpk")

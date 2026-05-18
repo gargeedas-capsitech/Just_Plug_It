@@ -14,7 +14,6 @@ func _ready():
 	restart_button.pressed.connect(on_restart_pressed)
 	# close_button.pressed.connect(on_close_pressed)
 	# quit_button.pressed.connect(on_close_pressed)
-	segments_label.text =str(UIManager.instance.ropeController.wireCount)
 
 func on_next_pressed():
 	UIManager.instance.disable_popup()
@@ -31,3 +30,5 @@ func on_close_pressed():
 func on_restart_pressed():
 	UIManager.instance.disable_popup()
 	UIManager.instance.restart_game()
+func update_segments(segments: int):
+	segments_label.text = str(segments)

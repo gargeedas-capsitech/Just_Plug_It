@@ -64,11 +64,11 @@ func select_Level(level_index:int):
 
 func generate_level():
 	level_text.text = "Level: " + str(current_level)	
-	score_text.text = "   Rand No :" + str(0) 
+	score_text.text = str(0) 
 	
 
 func wireLength( count :int ):
-	score_text.text = "   Rand No :" + str(count)
+	score_text.text =  str(count)
 func on_back_button_clicked():
 	level_Manager.clear_level()
 	UIManager.instance.enable_panel(UIManager.PanelType.LEVEL)

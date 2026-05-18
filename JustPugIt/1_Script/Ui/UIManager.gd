@@ -26,7 +26,7 @@ enum PanelType {
 @export var popup_panel: PopupPanelController 
 @export var level_manager : LevelController
 @export var ropeController : Rope
-@onready var win_panel =  popup_panel.win_popup	
+@onready var win_panel =  popup_panel.win_popup
 @onready var gameover_panel = popup_panel.gameover_popup
 @onready var setting_panel = popup_panel.setting_popup
 @onready var pause_panel = popup_panel.pause_popup
