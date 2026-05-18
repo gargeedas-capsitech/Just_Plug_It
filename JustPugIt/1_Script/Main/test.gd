@@ -1,5 +1,6 @@
 extends Area2D
 @export var rope_parent: Rope
+var win: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,5 +25,7 @@ func _on_body_entered(body:Node):
 					print("Segment ", segment.name, " does not have a Sprite2D child.")
 
 			# await get_tree().create_timer(1).timeout
-			rope_parent.called_game_win()
+			if not win:
+				rope_parent.called_game_win()
 			UIManager.instance.InActivePlay()
+			win = true
