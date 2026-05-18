@@ -10,6 +10,7 @@ func _ready():
 func _on_body_entered(body:Node):
 	if body.name.contains("Plug"):
 		print("Game Win")
+		UIManager.instance.InActivePlay()
 		if rope_parent == null:
 			print("Rope parent is null!")
 			return
@@ -30,6 +31,5 @@ func _on_body_entered(body:Node):
 
 			# await get_tree().create_timer(1).timeout
 			if not win:
-				rope_parent.called_game_win()
-			UIManager.instance.InActivePlay()
+				rope_parent.called_game_win()			
 			win = true
