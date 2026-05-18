@@ -14,6 +14,10 @@ func _on_body_entered(body:Node):
 			print("Rope parent is null!")
 			return
 		if rope_parent != null and rope_parent._is_all_touch:
+			global_position = body.global_position
+			global_rotation = body.global_rotation
+			for segment in rope_parent._segments:
+				segment.set_deferred("freeze", true)
 			for segment in rope_parent._segments:
 				var i = 10.0 + sin(Time.get_ticks_msec() * 0.01) * 5.0
 				if segment.has_node("Sprite2D"):

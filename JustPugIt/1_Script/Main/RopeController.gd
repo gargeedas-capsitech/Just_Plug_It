@@ -11,7 +11,7 @@ class_name  Rope
 
 var segment_touch_switch: int = 0
 var _is_already_cut: bool = false
-var _is_all_touch: bool = true
+var _is_all_touch: bool = false
 var switch_count: int = 2
 
 var _plug: Area2D
@@ -108,6 +108,8 @@ func _on_camera_rotation_changed(new_rotation: float) -> void:
 
 func set_switch_count(value: int):
 	switch_count = value
+	if switch_count <= 0:
+		_is_all_touch = true
 	print("switch count is printed ", switch_count, " ho ", switch_counter.size())
 
 
@@ -194,7 +196,7 @@ func remove_last_segment():
 
 func reset_switch_counter() -> void:
 	switch_counter.clear()
-	_is_all_touch = true
+	_is_all_touch = false
 
 func reset_rope():
 	_is_already_cut = false
