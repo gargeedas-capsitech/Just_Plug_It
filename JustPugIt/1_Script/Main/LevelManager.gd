@@ -100,6 +100,7 @@ func clear_level():
 	camera.rotation_degrees = 0
 	ropeController._on_camera_rotation_changed(0)
 	ropeController.reset_rope()
+	ropeController.reset_switch_counter()
 	board.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
