@@ -95,6 +95,15 @@ func update_level_buttons(current_level: int, saved_level: int):
 	level_panel.initial_level_update(current_level, saved_level)
 	level_panel.apply_progressions()
 
+func get_unlocked_level() -> int:
+	return PlayerPrefs.get_int("unlocked_level")
+
+func unlock_next_level(current_level: int):
+	var unlocked = PlayerPrefs.get_int("unlocked_level", 1)
+
+	if current_level >= unlocked:
+		PlayerPrefs.set_int("unlocked_level", current_level + 1)
+		PlayerPrefs.save()
 # =========================
 # WIN / GAME OVER
 # =========================

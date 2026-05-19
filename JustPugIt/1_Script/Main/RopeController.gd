@@ -228,6 +228,7 @@ func cut_rope_at(segment: RigidBody2D):
 func called_game_win():
 	UIManager.instance.update_win_segments(wireCount)
 	UIManager.instance.enable_popup(PopupPanelController.PopupType.WIN)
+	UIManager.instance.unlock_next_level(gamePanelController.current_level)
 	#var main = get_parent().get_parent()
 
 	#if main and main.has_method("game_win"):

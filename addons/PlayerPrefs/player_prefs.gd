@@ -24,14 +24,14 @@ func set_string(key: String, value: String):
 
 
 # -------- GET --------
-func get_int(key: String) -> int:
-	return int(config.get_value(section, key, 0))
+func get_int(key: String,default_value: int = 1) -> int:
+	return int(config.get_value(section, key, default_value))
 
-func get_float(key: String) -> float:
-	return float(config.get_value(section, key, 0.0))
+func get_float(key: String,default_value: float = 0.0) -> float:
+	return float(config.get_value(section, key, default_value))
 
-func get_string(key: String) -> String:
-	return str(config.get_value(section, key, ""))
+func get_string(key: String, default_value: String = "") -> String:
+	return str(config.get_value(section, key, default_value))
 
 
 

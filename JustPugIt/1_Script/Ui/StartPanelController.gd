@@ -71,6 +71,7 @@ func _on_shop_pressed():
 
 func _on_level_panel_pressed():
 	UIManager.instance.enable_panel(UIManager.PanelType.LEVEL)
+	UIManager.instance.level_panel.show_page()
 
 
 func _on_play_pressed():

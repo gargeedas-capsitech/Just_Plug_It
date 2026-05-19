@@ -35,6 +35,7 @@ var on_level_selected: Callable = Callable()
 # READY (equivalent to Start)
 # =========================
 func _ready():
+	# PlayerPrefs.delete_all()
 	back_button.pressed.connect(on_back_button_clicked)
 	setting_button.pressed.connect(on_setting_button_clicked)
 	next_button.pressed.connect(on_next_pressed)
@@ -46,7 +47,8 @@ func _ready():
 	level_data.resize(100)
 	# FIX GRID SIZE
 	grid_container.columns = Columns
-	show_page()
+	# show_page()
+
 	#print("Level data loaded: ", level_data)
 	# generate_level_buttons()
 	# grid_container.columns = max(
@@ -91,10 +93,24 @@ func show_page():
 		var btn = level_button_prefab.instantiate() as LevelButton
 		grid_container.add_child(btn)
 
+		# btn.level_index = level_index
+		# btn.get_node("LevelText").text = str(level_index)
+		var unlocked_level = PlayerPrefs.get_int("unlocked_level", 1)
 		btn.level_index = level_index
-		btn.get_node("LevelText").text = str(level_index)
 
-		btn.pressed.connect(on_level_button_pressed.bind(level_index))
+		if level_index <= unlocked_level:
+			btn.is_locked = false
+		else:
+			btn.is_locked = true
+
+		# btn.pressed.connect(on_level_button_pressed.bind(level_index))
+		
+		if level_index <= unlocked_level:
+			btn.disabled = false
+			btn.pressed.connect(on_level_button_pressed.bind(level_index))
+		else:
+			btn.disabled = true
+			# btn.modulate = Color(0.5, 0.5, 0.5) # greyed out
 
 	# Optional: disable buttons at edges
 	prev_button.disabled = current_page == 0
