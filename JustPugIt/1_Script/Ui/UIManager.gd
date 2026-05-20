@@ -26,12 +26,12 @@ enum PanelType {
 @export var popup_panel: PopupPanelController 
 @export var level_manager : LevelController
 @export var ropeController : Rope
+@export var level_data: LevelData
 @onready var win_panel =  popup_panel.win_popup
 @onready var gameover_panel = popup_panel.gameover_popup
 @onready var setting_panel = popup_panel.setting_popup
 @onready var pause_panel = popup_panel.pause_popup
 @onready var profile_panel = popup_panel.profile_popup
-
 #@export var leaderboard_panel #= $LeaderboardPanel
 
 @export var upButton: TouchScreenButton
@@ -96,14 +96,19 @@ func update_level_buttons(current_level: int, saved_level: int):
 	level_panel.apply_progressions()
 
 func get_unlocked_level() -> int:
-	return PlayerPrefs.get_int("unlocked_level")
+	# print("Getting Unlocked Level: ", GameManager.instance.game_data["player_data"]["max_unlocked_level_index"])
+	return  GameManager.instance.game_data["player_data"]["max_unlocked_level_index"]
+	
 
 func unlock_next_level(current_level: int):
-	var unlocked = PlayerPrefs.get_int("unlocked_level", 1)
+	# var unlocked = PlayerPrefs.get_int("unlocked_level", 1)
+	var unlocked = get_unlocked_level()
 
 	if current_level >= unlocked:
-		PlayerPrefs.set_int("unlocked_level", current_level + 1)
-		PlayerPrefs.save()
+		# PlayerPrefs.set_int("unlocked_level", current_level + 1)
+		# PlayerPrefs.save()
+		GameManager.instance.game_data["player_data"]["max_unlocked_level_index"] = current_level + 1
+		GameManager.instance.save_data()
 # =========================
 # WIN / GAME OVER
 # =========================
@@ -132,6 +137,7 @@ func start_next_level():
 	enable_panel(PanelType.GAME)
 	game_panel.current_level+=1
 	level_manager.load_level(game_panel.current_level)
+	# print("level_data.Levels[game_panel.current_level]",level_data.Levels[game_panel.current_level])
 	on_level_selected(game_panel.current_level)
 
 func start_selected_level(level_index: int):

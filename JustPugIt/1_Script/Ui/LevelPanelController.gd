@@ -95,7 +95,9 @@ func show_page():
 
 		# btn.level_index = level_index
 		# btn.get_node("LevelText").text = str(level_index)
-		var unlocked_level = PlayerPrefs.get_int("unlocked_level", 1)
+		# var unlocked_level = PlayerPrefs.get_int("unlocked_level", 1)
+		var unlocked_level = GameManager.instance.game_data["player_data"]["max_unlocked_level_index"]
+		# print("Unlocked Level: ", unlocked_level, " | Current Button Level: ", level_index)
 		btn.level_index = level_index
 
 		if level_index <= unlocked_level:

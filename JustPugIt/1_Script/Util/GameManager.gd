@@ -91,7 +91,7 @@ func initialize_default_data():
 			"total_coin": 0,
 			"total_score": 0,
 			"game_won_counter": 0,
-			"max_unlocked_level_index": 0,
+			"max_unlocked_level_index": 1,
 			"level_progressions": _create_level_list(50)
 		},
 
